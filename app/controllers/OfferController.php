@@ -222,7 +222,7 @@ class OfferController extends BaseController {
 	 */
 	public function destroy($id)
 	{
-		Session::clear();
+		Session::forget('document');
 		Document::destroy($id);
 		return Redirect::back()
 			->with('global','Položka byla úspěšně smazána.');
