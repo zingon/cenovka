@@ -1,0 +1,110 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 7.6.2014, 14:16:37
+    Author     : Luďa
+*/
+#faktura {
+  font-family: sans-serif;
+  border-collapse: collapse;
+}
+#faktura tr td {
+  padding: 0;
+  margin: 0;
+}
+#faktura tr td #fakturaHlavicka {
+  border: 1px solid black;
+  border-collapse: collapse;
+  border-bottom: none;
+  float: right;
+}
+#faktura tr td #fakturaHlavicka tr:nth-child(1) td {
+  padding: 0.3em 1em;
+}
+#faktura tr td #fakturaHlavicka tr td {
+  padding: 0.3em 1.8em;
+}
+#faktura tr td #fakturaHlavicka tr td:nth-child(2) {
+  font-size: 1.2em;
+}
+#faktura tr td #fakturaUdaje {
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 100%;
+  border-bottom: none;
+}
+#faktura tr td #fakturaUdaje tr:nth-child(1) td {
+  padding: 0.3em 1em;
+}
+#faktura tr td #fakturaUdaje tr td {
+  padding: 0.3em 1.8em;
+}
+#faktura tr td #fakturaUdaje tr:nth-child(1) {
+  font-size: 0.9em;
+}
+#faktura tr td #fakturaUdaje tr td:nth-child(1) {
+  border-right: 1px solid black;
+}
+#faktura tr td #fakturaUdaje tr:nth-child(4) td:nth-child(1) {
+  font-size: 0.9em;
+}
+#faktura tr td #fakturaPodm {
+  border: 1px solid black;
+  border-collapse: collapse;
+  border-bottom: none;
+  width: 100%;
+}
+#faktura tr td #fakturaPodm tr:nth-child(1) td {
+  padding: 0.3em 1em;
+}
+#faktura tr td #fakturaPodm tr td {
+  padding: 0.3em 1.8em;
+}
+#faktura tr td #fakturaFakturace {
+  border: 1px solid black;
+  border-collapse: collapse;
+  border-bottom: none;
+  width: 100%;
+  padding: 0.3em;
+}
+#faktura tr td #fakturaFakturace tr td:nth-child(2) {
+  text-align: right;
+}
+#faktura tr td #fakturaFakturace tr td:nth-child(3) {
+  text-align: right;
+}
+#faktura tr td #fakturaFakturace tr td:nth-child(4) {
+  text-align: right;
+}
+#faktura tr td #fakturaFakturace tr td {
+  padding: 0.3em 0em 0.3em 1em;
+}
+#faktura tr td #fakturaFakturace tr td:nth-child(1) {
+  width: 20em;
+}
+#faktura tr td #fakturaFakturace tr td:nth-child(4) {
+  padding-right: 1em;
+}
+#faktura tr td #fakturaPaticka {
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 100%;
+}
+#faktura tr td #fakturaPaticka tr:nth-child(1) {
+  text-align: right;
+}
+#faktura tr td #fakturaPaticka tr:nth-child(1) td {
+  padding: 1em 0 0 0;
+}
+#faktura tr td #fakturaPaticka tr:nth-child(1) td:nth-child(1) {
+  padding-left: 20em;
+}
+#faktura tr td #fakturaPaticka tr:nth-child(1) td:nth-child(2) {
+  padding-right: 1em;
+}
+#faktura tr td #fakturaPaticka tr:nth-child(2) td {
+  padding: 0 0 3em 3em;
+}

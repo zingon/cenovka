@@ -1,0 +1,26 @@
+/*
+HTML5, CSS3/LESS and jQuery code Copyright 2014 Libor Hála 
+libor.hala@gmail.com
+*/
+/* 
+    Created on : 16.5.2014, 20:44:16
+    Author     : Libor
+*/
+.loader {
+	height:34px;
+}
+
+body .mainContent {
+  padding: 10px 0 0 0;
+}
+body .mainContent #sideNav {
+  width: 250px;
+  float: left;
+}
+body .mainContent #mainTable {
+  float: right;
+  max-width: 870px;
+}
+body .mainContent .textContent {
+  outline: 10px solid red;
+}
