@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="<?php echo Lang::locale(); ?>">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Cenová nabídka</title>
+
+    <!-- Bootstrap core CSS -->
+   <?php echo HTML::style('css/bootstrap.min.css'); ?>
+
+
+    <!-- Custom styles for this template -->
+    <?php echo HTML::style('css/starter-template.css'); ?>
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <?php echo HTML::style('css/style.css'); ?>
+
+    <?php echo HTML::style('css/jquery-ui.min.css'); ?>
+
+    <style type="text/css">
+    .modal{
+        visibility: visible;
+        display:block;
+        overflow-y: auto;
+    }
+    .table {
+       overflow-x: auto; 
+    }
+    </style>
+ <?php echo $__env->yieldContent('css'); ?>
+</head>
+<body>
+<div id="modal"></div>
+<?php echo $__env->make('layout.navigation', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<!-- tělo -->
+<div class="container mainContent">
+<?php if(Session::has('global')): ?>
+<div class="alert alert-success" role="alert"><?php echo Session::get('global'); ?></div>
+<?php endif; ?>
+<?php if(Session::has('warning')): ?>
+<div class="alert alert-warning" role="alert"><?php echo Session::get('warning'); ?></div>
+<?php endif; ?>
+<?php if(!empty($errors)): ?>
+<?php foreach($errors->all() as $error): ?>
+<div class="alert alert-danger" role="alert"><?php echo $error; ?></div>
+<?php endforeach; ?>
+<?php endif; ?>
+    <!-- menu -->
+    <nav id="sideNav">
+    </nav>
+
+    <?php echo $__env->yieldContent('content'); ?>
+
+</div>
+<?php echo HTML::script('js/jquery.min.js'); ?>
+
+<?php echo HTML::script('js/jquery-ui.min.js'); ?>
+
+<?php echo HTML::script('js/jquery.form.min.js'); ?>
+
+<?php echo HTML::script('js/bootstrap.min.js'); ?>
+
+<?php echo HTML::script('js/script.js'); ?>
+
+<?php echo $__env->yieldContent('script'); ?>
+</body>
+</html>

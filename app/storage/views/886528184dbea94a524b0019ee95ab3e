@@ -1,0 +1,23 @@
+<?php $__env->startSection('content'); ?>
+<div class="container">
+  <?php echo Form::open(array('route'=>'login.store','class'=>'form-signin')); ?> 
+    <h2 class="form-signin-heading">Prosím přihlašte se:</h2>
+      <?php echo Form::label('email','Emailová adresa',array("class"=>'sr-only')); ?>
+
+      <?php echo Form::input('email','email','',array('placeholder'=>'Emailová adresa','required','autofocus','class'=>'form-control')); ?>
+
+      <?php echo Form::label('password','Heslo',array("class"=>'sr-only')); ?>
+
+      <?php echo Form::input('password','password','',array('placeholder'=>'Heslo','required','class'=>'form-control')); ?>
+
+        <div class="checkbox">
+          <label>
+            <?php echo Form::checkbox('remember-me','remember-me'); ?> Zapamatovat si údaje
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  <?php echo Form::close(); ?>
+
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.login-page', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

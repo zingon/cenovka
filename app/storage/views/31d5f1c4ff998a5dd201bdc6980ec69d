@@ -1,0 +1,8 @@
+<ul class="nav categories">
+    	<a class="btn btn-default reset">Zrušit filrování</a>
+    	<h4>Kategorie</h4>
+    	<?php foreach($categories as $item): ?>
+        	<li><a data-filter="<?php echo $item->class; ?>" class='category'><?php echo $item->name; ?></a></li>
+    	<?php endforeach; ?>
+</ul>
+
