@@ -232,7 +232,7 @@ class OfferController extends BaseController {
 	private function saveValues()
 	{
 		return array(
-				'name' 		=> 'required|max:255|regex:/^[a-žA-Ž0-9\- ]+$/',
+				'name' 		=> 'required|max:255',
 				'vystaven' 	=> 'required|date_format:Y-m-d',
 				'expire' 	=> 'required|date_format:Y-m-d',
 				'note' 		=> 'max:65535',

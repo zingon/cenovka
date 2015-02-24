@@ -173,7 +173,7 @@ class ItemController extends BaseController {
 	private function saveValues()
 	{
 		return array(
-			'name' 		=> 'required|max:255|regex:/^[a-žA-Ž0-9\-/\\.,()=*-+\"\' ]+$/',
+			'name' 		=> 'required|max:255',
             "price"   	=> 'required|alpha_dash',
             'note' 		=> 'max:65535',
             'unit'		=> 'required',

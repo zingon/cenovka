@@ -83,7 +83,7 @@ class CategoryController extends BaseController
 
     private function saveValues() {
         return array(
-            'name' => 'required|max:255|regex:/^[a-žA-Ž0-9\-,. ]+$/',
+            'name' => 'required|max:255',
             'note' => 'max:65535',
             );
     }

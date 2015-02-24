@@ -118,7 +118,7 @@ class ContactController extends BaseController {
 
 	private function saveValues(){
 		return array(
-			'name' 			=> 'required|max:255|regex:/^[a-žA-Ž0-9\- ]+$/',
+			'name' 			=> 'required|max:255',
 			'firstname' 	=> 'max:80', 
 			'lastname' 		=> 'max:80', 
 			'email'			=> 'max:255|email',
