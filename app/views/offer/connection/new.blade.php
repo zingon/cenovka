@@ -21,8 +21,8 @@
             <td>{{$item->name}}</td>
             <td>{{$item->price}}</td>
             <td>{{$item->note}}</td>
-            <td>{{Form::number('count['.$item->id.']',1)}}</td>
-            <td>{{Form::number('discount['.$item->id.']',0)}}</td>
+            <td>{{Form::input('number','count['.$item->id.']',1,array('class'=>'form-control'))}}</td>
+            <td>{{Form::input('number','discount['.$item->id.']',0,array('class'=>'form-control'))}}</td>
         </tr>
             @endforeach
         

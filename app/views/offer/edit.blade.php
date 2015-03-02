@@ -55,7 +55,7 @@
         <div class="form-group">
             {{Form::label('dph','DPH:',array('class'=>'col-sm-2'))}}
             <div class="col-sm-10">
-                {{Form::select('dph',array('21'=>'21%','15'=>'15%','0'=>'0%'),'',array('class'=>'form-control'))}}
+                {{Form::select('dph',array('21'=>'21%','15'=>'15%','0'=>'0%'),$document->dph,array('class'=>'form-control'))}}
             </div>
         </div>
 
@@ -77,8 +77,8 @@
                 <th>Název</th>
                 <th>Cena</th>
                 <th>Poznámka</th>
-                <th>Počet</th>
-                <th>Sleva</th>
+                <th class="col-xs-2">Počet</th>
+                <th class="col-xs-2">Sleva</th>
                 <th><span class="glyphicon glyphicon-remove"></span></th>
             </tr>
             </thead>
@@ -90,8 +90,8 @@
                 <td>{{$item->name}}</td>
                 <td>{{$item->price}}</td>
                 <td>{{$item->note}}</td>
-                <td>{{Form::input('text','count['.$item->id.']',$item->count,array("form"=>"documentItemEdit"))}}</td>
-                <td>{{Form::input('number','discount['.$item->id.']',$item->discount,array("form"=>"documentItemEdit"))}}</td>
+                <td>{{Form::input('text','count['.$item->id.']',$item->count,array("form"=>"documentItemEdit",'class'=>'form-control'))}}</td>
+                <td>{{Form::input('number','discount['.$item->id.']',$item->discount,array("form"=>"documentItemEdit",'class'=>'form-control'))}}</td>
                 <td>{{Form::destroy('select',$item->id)}}</td>
             </tr>
                 @endforeach
