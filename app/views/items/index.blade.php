@@ -23,7 +23,7 @@
         </thead>
         <tbody id="items">
             @foreach($items as $item)
-        <tr data-filter="{{$item->category->class}}" data-position="{{$item->id}}">
+        <tr data-filter="{{$item->category->class or 'bez'}}" data-position="{{$item->id}}">
             <td><button class="glyphicon glyphicon-arrow-up up"></button> <button class="glyphicon glyphicon-arrow-down down"></button></td>
             <td>{{{$item->code}}}</td>
             <td>{{{$item->name}}}</td>

@@ -77,6 +77,8 @@ class CategoryController extends BaseController
      */
     public function destroy($id) {
         $category = Category::find($id);
+        Item::where('category_id','=',$id)->update(array('category_id'=>0));
+
         $category->delete();
         return Redirect::back()->with('warning','Položka byla úspěšně smazána !');
     }

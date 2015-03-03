@@ -24,7 +24,7 @@
 			<div class="form-group">
 				{{Form::label('category','Kategorie',array('class'=>'col-sm-2'))}}
 				 <div class="col-sm-4">
-					{{Form::select('category',$categories,$item->category->id,array('class'=>'form-control'))}}
+					{{Form::select('category',$categories,(isset($item->category->id)?$item->category->id:0),array('class'=>'form-control'))}}
 				</div>
 				{{Form::label('unit','Jednotka',array('class'=>'col-sm-2'))}}
 				 <div class="col-sm-4">

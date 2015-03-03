@@ -115,7 +115,7 @@ class ItemController extends BaseController {
 		foreach ($categories_native as $key => $value) {
 			$categories[$value->id] = $value->name;
 		}
-
+		$categories = array_add($categories,null,'Bez kategorie');
 		return Response::view('items.edit',array('item'=>Item::find($id), 'categories' => $categories));
 	}
 
@@ -133,7 +133,7 @@ class ItemController extends BaseController {
 			return Redirect::route('item.edit',$id)
                 ->withErrors($validator);
 		} else {
-
+			$item_category_id = isset($item->category->id)?$item->category->id:0;
 			foreach ($this->saveValues() as $key => $value) {
 				$$key = Input::get($key);
 			}
@@ -144,7 +144,7 @@ class ItemController extends BaseController {
 				$item->$key 	= $$key;
 			}
 
-			if($item->category->id != Input::get('category')){
+			if($item_category_id != Input::get('category')){
 				$category = Category::find(Input::get('category'));
 				$item->category()->associate($category);
 			}	

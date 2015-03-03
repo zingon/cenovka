@@ -85,7 +85,7 @@
             <tbody>
             
                 @foreach($items as $item)
-            <tr data-filter="{{$item->category->class}}">
+            <tr data-filter="{{$item->category->class or 'bez'}}">
                 <td>{{$item->code}}</td>
                 <td>{{$item->name}}</td>
                 <td>{{$item->price}}</td>

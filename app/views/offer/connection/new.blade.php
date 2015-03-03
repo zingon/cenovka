@@ -15,7 +15,7 @@
         <tbody>
         
             @foreach($items as $item)
-        <tr  data-filter="{{$item->category->class}}">
+        <tr  data-filter="{{$item->category->class or 'bez'}}">
         	<td>{{Form::checkbox('selected['.$item->id.']',$item->id,false)}}</td>
             <td>{{$item->code}}</td>
             <td>{{$item->name}}</td>
