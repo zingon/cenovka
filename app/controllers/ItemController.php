@@ -2,27 +2,8 @@
 
 class ItemController extends BaseController {
 
-	public function changePosition($id,$action){
-		$now = Item::find($id);
-		$poradi = $now->poradi;
+	public function changePosition(){
 
-		if($action=="up"||$action=="down"){
-			if($action=="up"){
-				$poradi_next = $poradi-1;
-			}
-			else{
-				$poradi_next = $poradi+1;
-			}
-			$next = Item::where('poradi','=',$poradi_next)->first();
-
-
-
-			$now->poradi = $next->poradi;
-			$next->poradi = $poradi;
-			
-			$next->save();
-			$now->save();
-		}
 	}
 	/**
 	 * Display a listing of the resource.
@@ -31,13 +12,9 @@ class ItemController extends BaseController {
 	 */
 	public function index()
 	{
-		
-		if(!Request::ajax()){
-			$items = Item::orderBy('poradi','ASC')->get();
-			return Response::view('items.index',array('items'=>$items));
-		} else {
-			return Response::json($items);
-		}
+		$category = Category::first();
+		$items = $category->items()->orderBy('poradi','DESC')->get();
+		return Response::view('items.index',array('items'=>$items));
 		
 	}
 
@@ -79,17 +56,21 @@ class ItemController extends BaseController {
 
 			$category = Category::find(Input::get('category'));
 
-			$last = $category->items()->orderBy('created_at','desc')->first();
+			$last = $category->items()->orderBy('created_at','desc')->first(); // největší identifikační číslo
+
 			if(empty($last->code)){
 				$code = sprintf("%04s","1");
 			} else {
 				$code = sprintf("%04s",($last->code+1));
 			}
 
+			$last = $category->items()->orderBy('poradi','desc')->first(); // nevíš postavení záznam na frontendu
 			
 			
 
 			$save['code'] = $code."/".$category->code; 
+			$save['poradi']=empty($last->poradi)?1:$last->poradi+1;
+			
 			$item = new Item($save);
 			$item->category()->associate($category);
 

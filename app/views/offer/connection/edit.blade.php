@@ -13,10 +13,10 @@
             <th>Sleva<th>
         </tr>
         </thead>
-        <tbody>
+        <tbody id="items">
         
             @foreach($items as $item)
-        <tr>
+        <tr data-filter="{{$item->category->id or '0'}}">
             <td>{{$item->item->code}}</td>
             <td>{{$item->item->name}}</td>
             <td>{{$item->item->price}}</td>

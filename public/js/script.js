@@ -15,6 +15,8 @@ function tableFilter(arg, on) {
         $(on).each(function(index, val) {
             if ($(val).data('filter') != filter) {
                 $(val).addClass('hidden');
+            } else {
+                $(val).removeClass('hidden');
             }
         });
     });
@@ -24,6 +26,7 @@ function tableReseter(arg, on) {
     $(arg).click(function(event) {
         event.preventDefault();
         $(on).removeClass('hidden');
+        $(on).addClass('active');
     });
 }
 
@@ -52,13 +55,8 @@ function getToken() {
         $('input[name="_token"]').val(token);
     });
 }
-$(function() {
-    $('.destroy').click(function(e) {
-        var fakt = confirm("Opravdu chcete smazat tuto položku");
-        if (!fakt) {
-            e.preventDefault();
-        }
-    });
+
+function renewModals() {
     $('a.modalLink').click(function(event) {
         event.preventDefault();
         var url = $(this).attr('href');
@@ -69,4 +67,13 @@ $(function() {
             modalSetter(url);
         });
     });
+}
+$(function() {
+    $('.destroy').click(function(e) {
+        var fakt = confirm("Opravdu chcete smazat tuto položku");
+        if (!fakt) {
+            e.preventDefault();
+        }
+    });
+    renewModals();
 });

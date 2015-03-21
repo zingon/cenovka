@@ -60,8 +60,12 @@ class CategoryController extends BaseController
      * @return Response
      */
     public function show($id) {
-        $items = Category::find($id)->items;
-        return Response::view('category.show',array('items'=>$items));
+        if($id == 0){
+            $items = Item::where('category_id',"=",0)->get();
+        } else {
+            $items = Category::find($id)->items()->orderBy('poradi','desc')->get();
+        }
+        return Response::view("category.show",array("items"=>$items));
     }
 
     public function edit() {
@@ -77,8 +81,7 @@ class CategoryController extends BaseController
      */
     public function destroy($id) {
         $category = Category::find($id);
-        Item::where('category_id','=',$id)->update(array('category_id'=>0));
-
+        $items = Item::where('category_id','=',$id)->update(array('category_id'=>0));
         $category->delete();
         return Redirect::back()->with('warning','Položka byla úspěšně smazána !');
     }

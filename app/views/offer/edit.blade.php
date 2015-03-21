@@ -76,7 +76,7 @@
                 <th>Kód</th>
                 <th>Název</th>
                 <th>Cena</th>
-                <th>Poznámka</th>
+                {{--<th>Poznámka</th>--}}
                 <th class="col-xs-2">Počet</th>
                 <th class="col-xs-2">Sleva</th>
                 <th><span class="glyphicon glyphicon-remove"></span></th>
@@ -85,14 +85,15 @@
             <tbody>
             
                 @foreach($items as $item)
-            <tr data-filter="{{$item->category->class or 'bez'}}">
-                <td>{{$item->code}}</td>
-                <td>{{$item->name}}</td>
-                <td>{{$item->price}}</td>
-                <td>{{$item->note}}</td>
-                <td>{{Form::input('text','count['.$item->id.']',$item->count,array("form"=>"documentItemEdit",'class'=>'form-control'))}}</td>
-                <td>{{Form::input('number','discount['.$item->id.']',$item->discount,array("form"=>"documentItemEdit",'class'=>'form-control'))}}</td>
-                <td>{{Form::destroy('select',$item->id)}}</td>
+
+            <tr data-filter="{{$item->category->id or 0}}" @if(!empty($item->note)) data-placement="bottom" data-toggle="popover" title="Poznámka" data-content="{{$item->note}}"@endif>
+                <td class="col-md-2">{{$item->code}}</td>
+                <td class="col-md-3">{{$item->name}}</td>
+                <td class="col-md-2">{{$item->price}}</td>
+                {{--<td>{{$item->note}}</td>--}}
+                <td class="col-md-2">{{Form::input('text','count['.$item->id.']',$item->count,array("form"=>"documentItemEdit",'class'=>'form-control',"size"=>5,"patern"=>'^\\$?(([1-9](\\d*|\\d{0,2}(,\\d{3})*))|0)(\\.\\d{1,2})?$'))}}</td>
+                <td class="col-md-2">{{Form::input('number','discount['.$item->id.']',$item->discount,array("form"=>"documentItemEdit",'class'=>'form-control',"patern"=>'^\\$?(([1-9](\\d*|\\d{0,2}(,\\d{3})*))|0)(\\.\\d{1,2})?$'))}}</td>
+                <td class="col-md-1">{{Form::destroy('select',$item->id)}}</td>
             </tr>
                 @endforeach
             </tbody>
@@ -118,6 +119,8 @@ var expire      = new Date(Date.parse({{json_encode($document->expire)}}));
 
 
 $(function() {
+    $("tr").popover({ trigger: "hover" });
+
     $( "#vystaven" ).datepicker()
     $( "#vystaven" ).datepicker("option", "dateFormat","yy-mm-dd");
     $( "#vystaven" ).datepicker('setDate', vystaven);
@@ -195,6 +198,7 @@ $(function() {
             $.get('{{URL::route('select.create')}}',function(shtml){
                 $('div.new').html('');
                 $('div.new').append(shtml);
+                $("tr").popover({ trigger: "hover" });
                 tableFilter('li>a.category','div.new tbody>tr');
                 tableReseter('a.reset','div.new tbody>tr');
                 var formID = $('div.new form').attr('id');
