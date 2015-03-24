@@ -2,8 +2,40 @@
 
 class ItemController extends BaseController {
 
+	/**
+	* Change position of ordered items
+	*/
 	public function changePosition(){
+		$category_id = Input::get('category');
+		$items_raw = Item::where('category_id',"=",$category_id);
 
+		$items_count = $items_raw->count();
+		$from = $items_count-Input::get('from');
+		$to = $items_count-Input::get('to');
+
+		$from_item = $items_raw->where('poradi','=',$from)->first();
+		$from_item_id = $from_item->id;
+		$from = $from_item->poradi;
+		
+
+		$items_raw = Item::where('category_id',"=",$category_id);
+
+		if($from<$to) {
+			echo $from . " ". $to;
+			$items_betwen = $items_raw->where('poradi','<=',$to)->where('poradi','>',$from)->get();
+			print_r($items_betwen);
+
+			foreach ($items_betwen as $item) {
+				$item->decrement('poradi');
+			}
+		} elseif($from>$to){
+			$items_betwen = $items_raw->where('poradi','>=',$to)->where('poradi','<',$from)->get();
+			foreach ($items_betwen as $item) {
+				$item->increment('poradi');
+			}
+
+		}
+		Item::find($from_item_id)->update(array('poradi'=>$to));
 	}
 	/**
 	 * Display a listing of the resource.
@@ -14,7 +46,7 @@ class ItemController extends BaseController {
 	{
 		$category = Category::first();
 		$items = $category->items()->orderBy('poradi','DESC')->get();
-		return Response::view('items.index',array('items'=>$items));
+		return Response::view('items.index',array('items'=>$items,'category'=>$category->id));
 		
 	}
 
@@ -75,7 +107,7 @@ class ItemController extends BaseController {
 			$item->category()->associate($category);
 
   			if($item->save()){
-  				return Redirect::route('item.index')
+  				return Redirect::route('item.index', ['#'.$item->category->id])
   					->with('global','Položka byla úspěšně přidána.');
   			}
 		}

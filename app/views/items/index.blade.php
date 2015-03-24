@@ -37,48 +37,37 @@
 @stop
 @section('script')
 <script type="text/javascript">
-
+function getItemsByCategory(id,to){
+	$.get('/category/'+id,function(html){
+		$(to).empty();
+		$(to).append(html);
+		renewModals();
+	});
+}
 $(function() {
+
+	
 	$.get("{{URL::route('category.index')}}",function(data) {
 		$("#sideNav").html(data);
-
-	  	$('.category').click(function(){
-		  	var cat = $(this).data('filter');
-			$.get('/category/'+cat,function(html){
-			  $('#items').empty();
-			  $('#items').append(html);
-			  renewModals();
-			  });
-			});
-		});
-	
-	  /*
-	  $(".up,.down").click(function () {
-	  var $element = this;
-	  var row = $($element).parents("tr:first");
-	  var poradi = row.data('position');
-	  if($(this).is('.up')){
-		var prev = row.prev('.active')
-		 row.insertBefore(prev);
-		 
-		 $.get('/items/'+poradi+'/poradi/'+prev.data('position'));
-	  } 
-	  else{
-		var next = row.next('.active');
-		 row.insertAfter(next);
-		 $.get('/items/'+poradi+'/poradi/'+next.data('position'));
-	  }
-  });*/
+		console.log(document.location.hash);
+		if(document.location.hash.length){
+			getItemsByCategory(document.location.hash.replace("#",""),'#items')
+		}
+		window.onhashchange = function() {
+			var id = document.location.hash; 
+			id = id.replace("#","");
+			getItemsByCategory(id,"#items"); 
+			
+		};
+	});
 
 	$( "#items" ).sortable({
 	  start: function(event, ui) {
 		ui.item.startPos = ui.item.index();
 	  },
 	  stop: function(event, ui){
-		if(ui.item.startPos>ui.item.index()){
-		  $.post('/item/poradi')
-		} else if(ui.item.startPos<ui.item.index()) {
-
+	  	if(ui.item.startPos!=ui.item.index()){
+			$.post("{{route('changePosition')}}",({"from": ui.item.startPos,"to": ui.item.index(),'category':cat}));
 		}
 	  }
 	});

@@ -61,7 +61,7 @@ class CategoryController extends BaseController
      */
     public function show($id) {
         if($id == 0){
-            $items = Item::where('category_id',"=",0)->get();
+            $items = Item::where('category_id',"=",0)->orderBy('poradi','DESC')->get();
         } else {
             $items = Category::find($id)->items()->orderBy('poradi','desc')->get();
         }
