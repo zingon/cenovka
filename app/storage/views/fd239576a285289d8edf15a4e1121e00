@@ -68,7 +68,7 @@
             <?php echo Form::label('dph','DPH:',array('class'=>'col-sm-2')); ?>
 
             <div class="col-sm-10">
-                <?php echo Form::select('dph',array('21'=>'21%','15'=>'15%','0'=>'0%'),'',array('class'=>'form-control')); ?>
+                <?php echo Form::select('dph',array('21'=>'21%','15'=>'15%','0'=>'0%'),$document->dph,array('class'=>'form-control')); ?>
 
             </div>
         </div>
@@ -94,23 +94,24 @@
                 <th>Kód</th>
                 <th>Název</th>
                 <th>Cena</th>
-                <th>Poznámka</th>
-                <th>Počet</th>
-                <th>Sleva</th>
+                <?php /*<th>Poznámka</th>*/ ?>
+                <th class="col-xs-2">Počet</th>
+                <th class="col-xs-2">Sleva</th>
                 <th><span class="glyphicon glyphicon-remove"></span></th>
             </tr>
             </thead>
             <tbody>
             
                 <?php foreach($items as $item): ?>
-            <tr data-filter="<?php echo $item->category->class; ?>">
-                <td><?php echo $item->code; ?></td>
-                <td><?php echo $item->name; ?></td>
-                <td><?php echo $item->price; ?></td>
-                <td><?php echo $item->note; ?></td>
-                <td><?php echo Form::input('text','count['.$item->id.']',$item->count,array("form"=>"documentItemEdit")); ?></td>
-                <td><?php echo Form::input('number','discount['.$item->id.']',$item->discount,array("form"=>"documentItemEdit")); ?></td>
-                <td><?php echo Form::destroy('select',$item->id); ?></td>
+
+            <tr data-filter="<?php echo isset($item->category->id) ? $item->category->id : 0; ?>" <?php if(!empty($item->note)): ?> data-placement="bottom" data-toggle="popover" title="Poznámka" data-content="<?php echo $item->note; ?>"<?php endif; ?>>
+                <td class="col-md-2"><?php echo $item->code; ?></td>
+                <td class="col-md-3"><?php echo $item->name; ?></td>
+                <td class="col-md-2"><?php echo $item->price; ?></td>
+                <?php /*<td><?php echo $item->note; ?></td>*/ ?>
+                <td class="col-md-2"><?php echo Form::input('text','count['.$item->id.']',$item->count,array("form"=>"documentItemEdit",'class'=>'form-control',"size"=>5,"patern"=>'^\\$?(([1-9](\\d*|\\d{0,2}(,\\d{3})*))|0)(\\.\\d{1,2})?$')); ?></td>
+                <td class="col-md-2"><?php echo Form::input('number','discount['.$item->id.']',$item->discount,array("form"=>"documentItemEdit",'class'=>'form-control',"patern"=>'^\\$?(([1-9](\\d*|\\d{0,2}(,\\d{3})*))|0)(\\.\\d{1,2})?$')); ?></td>
+                <td class="col-md-1"><?php echo Form::destroy('select',$item->id); ?></td>
             </tr>
                 <?php endforeach; ?>
             </tbody>
@@ -136,6 +137,8 @@ var expire      = new Date(Date.parse(<?php echo json_encode($document->expire);
 
 
 $(function() {
+    $("tr").popover({ trigger: "hover" });
+
     $( "#vystaven" ).datepicker()
     $( "#vystaven" ).datepicker("option", "dateFormat","yy-mm-dd");
     $( "#vystaven" ).datepicker('setDate', vystaven);
@@ -213,6 +216,7 @@ $(function() {
             $.get('<?php echo URL::route('select.create'); ?>',function(shtml){
                 $('div.new').html('');
                 $('div.new').append(shtml);
+                $("tr").popover({ trigger: "hover" });
                 tableFilter('li>a.category','div.new tbody>tr');
                 tableReseter('a.reset','div.new tbody>tr');
                 var formID = $('div.new form').attr('id');

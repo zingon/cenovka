@@ -1,8 +1,13 @@
 <ul class="nav categories">
-    	<a class="btn btn-default reset">Zrušit filrování</a>
     	<h4>Kategorie</h4>
     	<?php foreach($categories as $item): ?>
-        	<li><a data-filter="<?php echo $item->class; ?>" class='category'><?php echo $item->name; ?></a></li>
+        	<li><a data-filter="<?php echo $item->id; ?>" class='category'><?php echo $item->name; ?></a></li>
     	<?php endforeach; ?>
+    	<li><a data-filter="0" class='category'>Bez kategorie</a></li>
 </ul>
 
+<script type="text/javascript">
+	$(".category").click(function(){
+		location.hash = $(this).data('filter');
+	});
+</script>

@@ -26,16 +26,30 @@ Route::group(['before'=>'auth'],function(){
 		));
 	Route::get('/items/serad', function(){
 		$i = 1; 
-		foreach (Item::orderBy('created_at','ASC')->get() as $key => $value) {
-			$value->poradi = $i;
-			if($value->save()){
+		$categories = Category::all();
+		foreach ($categories as $category) {
+			$i = 1; 
+			foreach ($category->items()->orderBy('poradi')->get() as $item) {
+				$item->poradi = $i;
+				if($item->save()){
+					$i++;
+				} else {
+					break;
+				}
+			}
+		}
+		$i=1;
+		$items = Item::where('category_id','=',0)->orderBy('poradi')->get();
+		foreach($items as $item){
+			$item->poradi = $i;
+			if($item->save()){
 				$i++;
 			} else {
 				break;
 			}
 		}
 	});
-	Route::get('/items/{id}/poradi/{action}', array(
+	Route::post('/item/poradi/', array(
 			'uses' 	=> 'ItemController@changePosition',
 			'as'	=> 'changePosition',
 		));

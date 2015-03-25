@@ -46,16 +46,18 @@ function getItemsByCategory(id,to){
 }
 $(function() {
 
-	
+	var cat = 0;
 	$.get("{{URL::route('category.index')}}",function(data) {
 		$("#sideNav").html(data);
 		console.log(document.location.hash);
 		if(document.location.hash.length){
 			getItemsByCategory(document.location.hash.replace("#",""),'#items')
+			cat = document.location.hash.replace("#","");
 		}
 		window.onhashchange = function() {
 			var id = document.location.hash; 
 			id = id.replace("#","");
+			cat = id;
 			getItemsByCategory(id,"#items"); 
 			
 		};
