@@ -46,7 +46,7 @@ function getItemsByCategory(id,to){
 }
 $(function() {
 
-	var cat = 0;
+	var cat = "{{$category}}";
 	$.get("{{URL::route('category.index')}}",function(data) {
 		$("#sideNav").html(data);
 		console.log(document.location.hash);
