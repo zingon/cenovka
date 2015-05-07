@@ -11,9 +11,16 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
+                @if (!Auth::getUser()->admin)
+                    {{-- expr --}}
+                
                 <li {{(URL::current()==URL::route('item.index'))?'class="active"':""}}><a href="{{ URL::route('item.index') }}">Ceník</a></li>
                 <li {{(URL::current()==URL::route('contact.index'))?'class="active"':""}}><a href="{{ URL::route('contact.index') }}">Adresář</a></li>
                 <li {{(URL::current()==URL::route('document.index'))?'class="active"':""}}><a href="{{ URL::route('document.index') }}">Dokumenty</a></li>
+                @else
+                 <li {{(URL::current()==URL::route('user.index'))?'class="active"':""}}><a href="{{ URL::route('user.index') }}">Uživatelé</a></li>
+                @endif
+                s
 
             </ul>
             <!--<button type="button" class="btn btn-default navbar-btn">Vytvořit fakturu</button>

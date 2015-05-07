@@ -8,7 +8,7 @@ class CategoryController extends BaseController
      * @return Response
      */
     public function index() {
-        $categories = Category::all();
+        $categories = Auth::getUser()->categories;
         return Response::view('category.index', array('categories' => $categories));
     }
     
@@ -18,7 +18,7 @@ class CategoryController extends BaseController
      * @return Response
      */
     public function create() {
-        $last = Category::orderBy('code','DESC')->first();
+        $last = Auth::getUser()->categories()->orderBy('code','DESC')->first();
         $code = isset($last->code)?sprintf("%03s",$last->code+1):sprintf("%04s","1");
         return Response::view('category.new',array('code'=> $code));
     }
@@ -39,12 +39,12 @@ class CategoryController extends BaseController
             foreach ($this->saveValues() as $key => $value) {
                 $save[$key] = Input::get($key);
             }
-            $last = Category::orderBy('code','DESC')->first();
+            $last = Auth::getUser()->categories()->orderBy('code','DESC')->first();
 
             $save['code']   = isset($last->code)?sprintf("%03s",$last->code+1):sprintf("%03s","1");
             $save['class']  = implode('-', explode(' ', Input::get('name')));
             
-            $category = new Category($save);
+            $category = Auth::getUser()->categories();
 
             if($category->save()){
                 return Redirect::route('item.index')
@@ -61,15 +61,15 @@ class CategoryController extends BaseController
      */
     public function show($id) {
         if($id == 0){
-            $items = Item::where('category_id',"=",0)->orderBy('poradi','DESC')->get();
+            $items = Auth::getUser()->items()->where('category_id',"=",0)->orderBy('poradi','DESC')->get();
         } else {
-            $items = Category::find($id)->items()->orderBy('poradi','desc')->get();
+            $items = Auth::getUser()->items()->where('category_id','=',$id)->orderBy('poradi','desc')->get();
         }
         return Response::view("category.show",array("items"=>$items));
     }
 
     public function edit() {
-        $category = Category::all();
+        $category = Auth::getUser()->categories;
         return Response::view('category.edit',array('categories'=>$category));
     }
     
@@ -80,8 +80,8 @@ class CategoryController extends BaseController
      * @return Response
      */
     public function destroy($id) {
-        $category = Category::find($id);
-        $items = Item::where('category_id','=',$id)->update(array('category_id'=>0));
+        $category = Auth::getUser()->categories()->find($id);
+        $items = Auth::getUser()->categories()->where('category_id','=',$id)->update(array('category_id'=>0));
         $category->delete();
         return Redirect::back()->with('warning','Položka byla úspěšně smazána !');
     }

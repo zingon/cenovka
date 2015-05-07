@@ -26,8 +26,8 @@ return array(
 	|
 	*/
 
-	'default' => 'mysql',
-	//'default' => 'mysql-localhost',
+	//'default' => 'mysql',
+	'default' => 'mysql-localhost',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -68,7 +68,7 @@ return array(
 		'mysql-localhost' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'laravel',
+			'database'  => 'cenovka',
 			'username'  => 'root',
 			'password'  => 'H1596321',
 			'charset'   => 'utf8',

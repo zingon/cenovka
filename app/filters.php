@@ -48,6 +48,12 @@ Route::filter('auth', function()
 	}
 });
 
+Route::filter('admin', function()
+{
+	if( !Auth::getUser()->admin){
+		return Response::make('Na to nemáš právo', 401);
+	}
+});
 
 Route::filter('auth.basic', function()
 {

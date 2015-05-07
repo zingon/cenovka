@@ -21,25 +21,15 @@
 		</tr>
 		</thead>
 		<tbody id="items">
-			@foreach($items as $item)
-			<tr>
-				<td>{{{$item->code}}}</td>
-				<td>{{{$item->name}}}</td>
-				<td>{{{$item->price}}}</td>
-				<td>{{{$item->unit}}}</td>
-				<td>{{{$item->note}}}</td>
-				<td><a href='{{URL::route("item.edit",$item->id)}}' class="glyphicon glyphicon-pencil btn btn-primary modalLink"></a></td>
-				<td>{{Form::destroy('item',$item->id)}}</td>
-			</tr>
-			@endforeach
+			
 		</tbody>
 	</table>
 @stop
 @section('script')
 <script type="text/javascript">
 function getItemsByCategory(id,to){
+	$(to).empty();
 	$.get('/category/'+id,function(html){
-		$(to).empty();
 		$(to).append(html);
 		renewModals();
 	});

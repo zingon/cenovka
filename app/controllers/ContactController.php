@@ -9,7 +9,7 @@ class ContactController extends BaseController {
 	 */
 	public function index()
 	{	
-		$contacts = Contact::orderBy('created_at','DESC')->paginate(10);
+		$contacts = Auth::getUser()->contacts()->orderBy('created_at','DESC')->paginate(10);
 		return Response::view('contact.index', array('contacts' => $contacts));
 	}
 
@@ -47,7 +47,7 @@ class ContactController extends BaseController {
 
 			$contact = new Contact((array)$save);
 
-			if($contact->save()){
+			if(Auth::getUser()->contacts()->save($contact)){
 				return Redirect::route('contact.index')
 					->with('global','Položka byla úspěšně přidána.');
 			}
@@ -62,7 +62,7 @@ class ContactController extends BaseController {
 	 */
 	public function edit($id)
 	{
-		return Response::view('contact.edit',array('contact'=>Contact::find($id)));
+		return Response::view('contact.edit',array('contact'=>Auth::getUser()->contacts()->find($id)));
 	}
 
 
@@ -86,7 +86,7 @@ class ContactController extends BaseController {
 				$$key = Input::get($key);
 			}
 
-			$contact = Contact::find($id);
+			$contact = Auth::getUser()->contacts()->find($id);
 
 			foreach ($this->saveValues() as $key => $value) {
 				$contact->$key = $$key;
@@ -111,7 +111,7 @@ class ContactController extends BaseController {
 	 */
 	public function destroy($id)
 	{
-		Contact::destroy($id);
+		Auth::getUser()->contacts()->destroy($id);
 		return Redirect::route('contact.index')
 			->with('global','Položka byla úspěšně smazána.');
 	}

@@ -1,0 +1,1 @@
+{{$document->exported_document}}

@@ -7,7 +7,7 @@ class ItemController extends BaseController {
 	*/
 	public function changePosition(){
 		$category_id = Input::get('category');
-		$items_raw = Item::where('category_id',"=",$category_id);
+		$items_raw = Auth::getUser()->items()->where('category_id',"=",$category_id);
 
 		$items_count = $items_raw->count();
 		$from = $items_count-Input::get('from');
@@ -17,11 +17,9 @@ class ItemController extends BaseController {
 		$from_item_id = $from_item->id;
 		$from = $from_item->poradi;
 
-		$items_raw = Item::where('category_id',"=",$category_id);
+		$items_raw = Auth::getUser()->items()->where('category_id',"=",$category_id);
 			if($from<$to) {
-				echo $from . " ". $to;
 				$items_betwen = $items_raw->where('poradi','<=',$to)->where('poradi','>',$from)->get();
-				print_r($items_betwen);
 
 				foreach ($items_betwen as $item) {
 					$item->decrement('poradi');
@@ -34,7 +32,7 @@ class ItemController extends BaseController {
 
 			}
 
-		Item::find($from_item_id)->update(array('poradi'=>$to));
+		Auth::getUser()->items()->find($from_item_id)->update(array('poradi'=>$to));
 	}
 	/**
 	 * Display a listing of the resource.
@@ -43,9 +41,8 @@ class ItemController extends BaseController {
 	 */
 	public function index()
 	{
-		$category = Category::first();
-		$items = $category->items()->orderBy('poradi','DESC')->get();
-		return Response::view('items.index',array('items'=>$items,'category'=>$category->id));
+		$category = Auth::getUser()->categories()->first();
+		return Response::view('items.index',array('category'=>$category->id));
 		
 	}
 
@@ -56,7 +53,7 @@ class ItemController extends BaseController {
 	 */
 	public function create()
 	{
-		$categories_native = Category::all();
+		$categories_native = Auth::getUser()->categories;
 		$categories = array();
 
 		foreach ($categories_native as $key => $value) {
@@ -85,7 +82,7 @@ class ItemController extends BaseController {
 				$save[$key] = Input::get($key);
 			}
 
-			$category = Category::find(Input::get('category'));
+			$category = Auth::getUser()->categories()->find(Input::get('category'));
 
 			$last = $category->items()->orderBy('created_at','desc')->first(); // největší identifikační číslo
 
@@ -105,7 +102,7 @@ class ItemController extends BaseController {
 			$item = new Item($save);
 			$item->category()->associate($category);
 
-  			if($item->save()){
+  			if(Auth::getUser()->items()->save($item)){
   				return Redirect::route('item.index', ['#'.$item->category->id])
   					->with('global','Položka byla úspěšně přidána.');
   			}
@@ -121,14 +118,14 @@ class ItemController extends BaseController {
 	 */
 	public function edit($id)
 	{
-		$categories_native = Category::all();
+		$categories_native = Auth::getUser()->categories;
 		$categories = array();
 
 		foreach ($categories_native as $key => $value) {
 			$categories[$value->id] = $value->name;
 		}
 		$categories = array_add($categories,null,'Bez kategorie');
-		return Response::view('items.edit',array('item'=>Item::find($id), 'categories' => $categories));
+		return Response::view('items.edit',array('item'=>Auth::getUser()->items()->find($id), 'categories' => $categories));
 	}
 
 
@@ -157,7 +154,7 @@ class ItemController extends BaseController {
 			}
 
 			if($item_category_id != Input::get('category')){
-				$category = Category::find(Input::get('category'));
+				$category = Auth::getUser()->categories()->find(Input::get('category'));
 				$item->category()->associate($category);
 			}	
 			
@@ -177,7 +174,7 @@ class ItemController extends BaseController {
 	 */
 	public function destroy($id)
 	{
-		Item::destroy($id);
+		Auth::getUser()->items()->destroy($id);
 		return Redirect::route('item.index')
 			->with('global','Položka byla úspěšně smazána.');
 	}
@@ -187,6 +184,7 @@ class ItemController extends BaseController {
 		return array(
 			'name' 		=> 'required|max:255',
             "price"   	=> 'required|alpha_dash',
+            "buy_price" => '',
             'note' 		=> 'max:65535',
             'unit'		=> 'required',
 			);

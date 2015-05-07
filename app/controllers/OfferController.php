@@ -13,7 +13,7 @@ class OfferController extends BaseController {
 	 */
 	public function index()
 	{
-		$documents = Document::orderBy('created_at','DESC')->paginate($this->itemsOnPage);
+		$documents = Auth::getUser()->documents()->orderBy('created_at','DESC')->paginate($this->itemsOnPage);
 		
 		return Response::view('offer.index',array('documents'=>$documents));
 	}
@@ -26,8 +26,8 @@ class OfferController extends BaseController {
 	 */
 	public function create()
 	{
-		$dodavatel = Contact::where('me','=',true)->first();
-		$odberatele_native = Contact::where('me','!=',true)->get();
+		$dodavatel = Auth::getUser()->contacts()->where('me','=',true)->first();
+		$odberatele_native = Auth::getUser()->contacts()->where('me','!=',true)->get();
 		$odberatele = array();
 		Session::put('document',"new");
 		foreach ($odberatele_native as $key => $value) {
@@ -57,10 +57,10 @@ class OfferController extends BaseController {
 			}
 			$save['odberatel'] = Input::get('odberatel');
 
-			$odberatel = Contact::find($save['odberatel']);
-			$dodavatel = Contact::where('me','=',true)->first();
+			$odberatel = Auth::getUser()->contacts()->find($save['odberatel']);
+			$dodavatel = Auth::getUser()->contacts()->where('me','=',true)->first();
 			
-			$last = Document::orderBy('created_at','desc')->first();
+			$last = Auth::getUser()->documents()->orderBy('created_at','desc')->first();
 
 			if(empty($last->code)){
 				$code = sprintf("%04s","1") ."/".date('Y',time());
@@ -79,7 +79,7 @@ class OfferController extends BaseController {
 			$document->odberatel()->associate($odberatel);
 			$document->dodavatel()->associate($dodavatel);
 
-			if($document->save()){
+			if(Auth::getUser()->documents()->save($document)){
 				Session::forget('document');
 				Session::put('document',$document->id);
 				return Response::json(array('type'=>'success','m'=>'Dokument byl úspěšně přidán.','document'=>$document->id));
@@ -89,7 +89,7 @@ class OfferController extends BaseController {
 
 	public function reload($id)
 	{
-		$document = Document::find($id);
+		$document = Auth::getUser()->documents()->find($id);
 		$total_price=0;
 	 	$polozky = array();
 	 	$dph_kons = $document->dph/100;
@@ -108,7 +108,7 @@ class OfferController extends BaseController {
 	 		$polozky[$item->id]->unit 			= explode('^',$item->unit); 
 	 	}
 
-	 	$document->exported_document = View::make('offer.export',array(
+	 	$document->exported_document = View::make('offer.test',array(
 	 		'document' => $document,
 	 		'polozky' => $polozky,
 	 		'total_price' => $total_price,
@@ -129,7 +129,7 @@ class OfferController extends BaseController {
 	 */
 	public function show($id)
 	{
-	 	$document = Document::find($id); 
+	 	$document = Auth::getUser()->documents()->find($id); 
 	 	/*$total_price=0;
 	 	$polozky = array();
 	 	$dph_kons = $document->dph/100;
@@ -159,7 +159,7 @@ class OfferController extends BaseController {
 	 */
 	public function edit($id)
 	{
-		$document 	= Document::find($id);
+		$document 	= Auth::getUser()->documents()->find($id);
 		$polozky	= array();
 
 		foreach ($document->items()->withTrashed()->get() as $key => $item) {
@@ -200,7 +200,7 @@ class OfferController extends BaseController {
 				$$key 	= Input::get($key,'');
 			}
 
-			$document = Document::find($id);
+			$document = Auth::getUser()->documents()->find($id);
 			foreach ($this->saveValues() as $key => $value) {
 				$document->$key = $$key;
 			}
@@ -223,10 +223,17 @@ class OfferController extends BaseController {
 	public function destroy($id)
 	{
 		Session::forget('document');
-		Document::destroy($id);
+		Auth::getUser()->documents()->destroy($id);
 		return Redirect::back()
 			->with('global','Položka byla úspěšně smazána.');
 
+	}
+
+	public function exportPdf($id)
+	{
+		$document = Auth::getUser()->documents()->find($id); 
+		$pdf = PDF::loadView('offer.pdf',array('document' => $document));
+		return Response::view('offer.pdf');
 	}
 
 	private function saveValues()

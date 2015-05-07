@@ -21,6 +21,10 @@ class Document extends Eloquent {
     }
 
     public function items_conection() {
-    	$this->hasMany('DocumentItem', 'document_id');
+    	return $this->hasMany('DocumentItem', 'document_id');
+    }
+
+    public function cell_values() {
+        return $this->hasMany('OwnCellValue');
     }
 }

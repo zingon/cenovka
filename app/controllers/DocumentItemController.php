@@ -16,9 +16,9 @@ class DocumentItemController extends BaseController {
 	public function create()
 	{
 		if(Session::get('document')=='new'){
-			$items = Item::with('category')->get();
+			$items = Auth::user()->items()->with('category')->get();
 		} else {
-		$document = Document::find(Session::get('document'));
+		$document = Auth::user()->documents()->find(Session::get('document'));
 		
 		if($document->items()->count()!=0&&Session::has('document')){
 			
@@ -27,10 +27,10 @@ class DocumentItemController extends BaseController {
 			foreach ($document->items as $value) {
 				$keys[] = $value->id;
 			}
-			$items = Item::whereNotIn('id',$keys)->get();
+			$items = Auth::user()->items()->whereNotIn('id',$keys)->get();
 		
 		} else {
-			$items = Item::all();
+			$items = Auth::user()->items()->all();
 		}
 		}
 		return Response::view('offer.connection.new', array('items'=>$items));

@@ -20,6 +20,9 @@ Route::group(['before'=>'auth'],function(){
 	Route::resource('contact', 'ContactController', ['except' => ['store', 'update', 'destory']]);
 	Route::resource('document', 'OfferController', ['except' => ['store', 'update', 'destory']]);
 	Route::resource('select', 'DocumentItemController', ['only' => ['create', 'edit']]);
+	Route::group(['before'=>'admin'],function(){
+		Route::resource('user', 'UserController', ['only' => ['index', 'destroy']]);
+	});
 	Route::get('/document/{id}/reload', array(
 			'uses' => 'OfferController@reload',
 			'as' => 'reload'
@@ -56,6 +59,11 @@ Route::group(['before'=>'auth'],function(){
 	Route::get('/ajax/token',array(
 			'uses' => 'DocumentItemController@getToken',
 			'as' => 'token'
+		));
+
+	Route::get('/export/pdf/{id}',array(
+			'uses' => 'OfferController@exportPdf',
+			'as' => 'export'
 		));
 
 	Route::group(['before' => 'ajax'], function() {

@@ -15,8 +15,12 @@
 			</div>
 
 			<div class="form-group">
+				{{Form::label('price','Nákupní cena:',array('class'=>'col-sm-2'))}}
+				 <div class="col-sm-4">
+					{{Form::number('buy_price',(float)$item->buy_price,array('class'=>'form-control','placeholder'=>'Nákupní cena'))}}
+				</div>
 				{{Form::label('price','Cena:',array('class'=>'col-sm-2'))}}
-				 <div class="col-sm-10">
+				 <div class="col-sm-4">
 					{{Form::number('price',(float)$item->price,array('class'=>'form-control','placeholder'=>'Cena'))}}
 				</div>
 			</div>
@@ -28,7 +32,7 @@
 				</div>
 				{{Form::label('unit','Jednotka',array('class'=>'col-sm-2'))}}
 				 <div class="col-sm-4">
-					{{Form::select('unit',array('bm'=>'bm','ks'=>'ks','m^2'=>'m2','m^3'=>'m3','km'=>'km'),$item->unit,array('class'=>'form-control'))}}
+					{{Form::select('unit',array('bm'=>'bm','ks'=>'ks','m^2'=>'m2','m^3'=>'m3','km'=>'km','h'=>'h'),$item->unit,array('class'=>'form-control'))}}
 				</div>
 			</div>
 
