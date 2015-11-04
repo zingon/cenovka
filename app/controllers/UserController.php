@@ -19,10 +19,10 @@ class UserController extends BaseController {
 	 *
 	 * @return Response
 	 */
-	/*public function create()
+	public function create()
 	{
-		//
-	}*/
+		return Response::view('user.create');
+	}
 
 
 	/**
@@ -30,10 +30,32 @@ class UserController extends BaseController {
 	 *
 	 * @return Response
 	 */
-	/*public function store()
+	public function store()
 	{
-		//
-	}*/
+		$validator = Validator::make(Input::all(),array(
+			'email' 		=> 'email|required',
+			'password' 		=> 'min:8|required',
+			'password_again'=> 'same:password',
+			));
+		if($validator->fails()){
+			return Redirect::back()
+        		->withErrors($validator);
+		}
+		$email 		= Input::get('email');
+		$password 	= Hash::make(Input::get('password'));
+
+		$user = new User();
+
+		$user->email = $email;
+		$user->password = $password;
+
+		if($user->save()) {
+			if(Auth::attempt(array('email'=>$user->email,'password'=>$user->password),false)) {
+				return Redirect::url("/");
+			}
+		}
+
+	}
 
 
 	/**

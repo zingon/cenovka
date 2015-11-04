@@ -1,0 +1,1248 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pas",
+				"$password〔variable〕"
+			],
+			[
+				"Has",
+				"Hash::make	Hash the given value."
+			],
+			[
+				"A",
+				"Auth()	mixed"
+			],
+			[
+				"contac",
+				"contactform"
+			],
+			[
+				"incl",
+				"included"
+			],
+			[
+				"ind",
+				"included"
+			],
+			[
+				"max-",
+				"max-width: 〔property〕"
+			],
+			[
+				"Ser",
+				"Service_Product	Service_Product"
+			],
+			[
+				"paren",
+				"$parent_product_orm〔variable〕"
+			],
+			[
+				"vari",
+				"variant"
+			],
+			[
+				"fun",
+				"fun	Function"
+			],
+			[
+				"clas",
+				"class=〔attribute〕"
+			],
+			[
+				"img",
+				"img_click"
+			],
+			[
+				"fore",
+				"foreach"
+			],
+			[
+				"array_",
+				"array_values"
+			],
+			[
+				"Service_Prod",
+				"Service_Product_Category〔class〕"
+			],
+			[
+				"array",
+				"array_merge〔function〕"
+			],
+			[
+				"els",
+				"elseif"
+			],
+			[
+				"else",
+				"elseif	elseif"
+			],
+			[
+				"route",
+				"$route_ids〔variable〕"
+			],
+			[
+				"result",
+				"$result_data〔variable〕"
+			],
+			[
+				"get",
+				"get_children_categories_route_id〔function〕"
+			],
+			[
+				"cate",
+				"$categories_orm〔variable〕"
+			],
+			[
+				"parent",
+				"$parent_id〔variable〕"
+			],
+			[
+				"chld",
+				"child_products"
+			],
+			[
+				"res",
+				"$result_data〔variable〕"
+			],
+			[
+				"category",
+				"category_array"
+			],
+			[
+				"pare",
+				"$parent_id〔variable〕"
+			],
+			[
+				"ch",
+				"$child_products〔variable〕"
+			],
+			[
+				"categor",
+				"$category〔variable〕"
+			],
+			[
+				"parame",
+				"$parameters〔variable〕"
+			],
+			[
+				"return",
+				"return_data"
+			],
+			[
+				"retun",
+				"return_data"
+			],
+			[
+				"catego",
+				"categories_orm"
+			],
+			[
+				"static",
+				"static_content"
+			],
+			[
+				"no",
+				"no_photo"
+			],
+			[
+				"array_pi",
+				"array_push〔function〕"
+			],
+			[
+				"langua",
+				"language_id"
+			],
+			[
+				"get_rand",
+				"get_random_products_by_category〔function〕"
+			],
+			[
+				"retu",
+				"return_data"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
+				"get_",
+				"get_actual_route〔function〕"
+			],
+			[
+				"find",
+				"find_all"
+			],
+			[
+				"ret",
+				"return_data"
+			],
+			[
+				"ins",
+				"instanceof〔keyword〕"
+			],
+			[
+				"product_cate",
+				"product_category_data"
+			],
+			[
+				"chil",
+				"$children_orm〔variable〕"
+			],
+			[
+				"category_",
+				"category_orm"
+			],
+			[
+				"child",
+				"children_orm"
+			],
+			[
+				"defa",
+				"default"
+			],
+			[
+				"rand",
+				"$rand_products〔variable〕"
+			],
+			[
+				"produ",
+				"products"
+			],
+			[
+				"curre",
+				"cena_bez_dph|currency:$language_code"
+			],
+			[
+				"product",
+				"product_variant"
+			],
+			[
+				"prod",
+				"product_variants_orm"
+			],
+			[
+				"var",
+				"var_dump〔function〕"
+			],
+			[
+				"pricv",
+				"$price_table〔variable〕"
+			],
+			[
+				"print",
+				"print_r〔function〕"
+			],
+			[
+				"price",
+				"$price_table〔variable〕"
+			],
+			[
+				"price_",
+				"price_table"
+			],
+			[
+				"cena",
+				"$cena_orm〔variable〕"
+			],
+			[
+				"varia",
+				"variables_orm"
+			],
+			[
+				"va",
+				"variables_orm〔variable〕"
+			],
+			[
+				"edi",
+				"$editparam_orm〔variable〕"
+			],
+			[
+				"he",
+				"height=\"290"
+			],
+			[
+				"odb",
+				"odborne_informace"
+			],
+			[
+				"cat",
+				"$cat_id〔variable〕"
+			],
+			[
+				"pc_te",
+				"$pc_template_outer〔variable〕"
+			],
+			[
+				"photo",
+				"photo_detail_suffix"
+			],
+			[
+				"under",
+				"undercat"
+			],
+			[
+				"if",
+				"if	if"
+			],
+			[
+				"unde",
+				"$undercategory〔variable〕"
+			],
+			[
+				"foreach",
+				"foreach"
+			],
+			[
+				"contro",
+				"controller=\"navigation"
+			],
+			[
+				"lan",
+				"language_id"
+			],
+			[
+				"const",
+				"constructor	keyword"
+			],
+			[
+				"imp",
+				"import	keyword"
+			],
+			[
+				"V",
+				"View	alias"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/home/ondra/Workspace/cenovka/app/controllers/UserController.php",
+			"settings":
+			{
+				"buffer_size": 1855,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/ondra/Workspace/cenovka/app/controllers/OfferController.php",
+			"settings":
+			{
+				"buffer_size": 6610,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/ondra/Workspace/cenovka/app/controllers/SessionController.php",
+			"settings":
+			{
+				"buffer_size": 941,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/ondra/Workspace/cenovka/app/routes.php",
+			"settings":
+			{
+				"buffer_size": 3040,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/ondra/Workspace/cenovka/app/views/user/create.blade.php",
+			"settings":
+			{
+				"buffer_size": 930,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/ondra/Workspace/cenovka/public/css/signin.css",
+			"settings":
+			{
+				"buffer_size": 869,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 588.0,
+		"last_filter": "cod",
+		"selected_items":
+		[
+			[
+				"cod",
+				"CodeFormatter: Format as HTML Syntax"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Preferences: Package Control Settings – Default"
+			],
+			[
+				"side",
+				"View: Toggle Side Bar"
+			],
+			[
+				"htm",
+				"CodeFormatter: Format as HTML Syntax"
+			],
+			[
+				"space",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"",
+				"CodeFormatter: Format as HTML Syntax"
+			],
+			[
+				"code",
+				"CodeFormatter: Format as HTML Syntax"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"bookma",
+				"SublimeBookmarks: Remove A Bookmark"
+			],
+			[
+				"add",
+				"SublimeBookmarks: Add Bookmark"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"form",
+				"CodeFormatter: Format as HTML Syntax"
+			],
+			[
+				"istal",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 788.0
+	},
+	"console":
+	{
+		"height": 162.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/ondra/Workspace/cenovka",
+		"/home/ondra/Workspace/cenovka/app",
+		"/home/ondra/Workspace/cenovka/app/controllers",
+		"/home/ondra/Workspace/cenovka/app/models",
+		"/home/ondra/Workspace/cenovka/app/views",
+		"/home/ondra/Workspace/cenovka/app/views/session",
+		"/home/ondra/Workspace/cenovka/app/views/user",
+		"/home/ondra/Workspace/cenovka/public",
+		"/home/ondra/Workspace/cenovka/public/css"
+	],
+	"file_history":
+	[
+		"/home/ondra/Workspace/cenovka/app/views/session/create.blade.php",
+		"/home/ondra/Workspace/cenovka/app/models/Category.php",
+		"/home/ondra/Workspace/cenovka/app/views/offer/new.blade.php",
+		"/home/ondra/Workspace/cenovka/app/controllers/CategoryController.php",
+		"/home/ondra/Workspace/cenovka/app/controllers/ItemController.php",
+		"/home/ondra/Workspace/cenovka/app/config/database.php",
+		"/etc/apache2/sites-enabled/000-default.conf",
+		"/home/ondra/Workspace/prace/nabytek/media/stylesheets/app.css",
+		"/home/ondra/Workspace/prace/nabytek/media/scss/app.scss",
+		"/home/ondra/Plocha/luk/kancelarskezidle/index.html",
+		"/home/ondra/Plocha/luk/kancelarskezidle/kontakt.html",
+		"/home/ondra/Workspace/prace/nabytek/application/classes/controller/contact.php",
+		"/home/ondra/Workspace/prace/nabytek/application/views/page/contact.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/views/page/page.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/views/site/base_template.tpl",
+		"/home/ondra/Workspace/prace/nabytek/modules/hana/classes/model/email/form/contact.php",
+		"/home/ondra/Workspace/prace/nabytek/application/views/contact/contactform.tpl",
+		"/home/ondra/Workspace/prace/nabytek/old/index.php",
+		"/home/ondra/Workspace/prace/nabytek/index.php",
+		"/home/ondra/.config/sublime-text-3/Packages/Package Control/Package Control.sublime-settings",
+		"/home/ondra/Workspace/prace/nabytek/application/views/order/order_complete.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/views/order/order_confirmation.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/views/user/user_registration.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/views/order/order_unregistered_user.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/classes/controller/shoppingcart.php",
+		"/home/ondra/Workspace/prace/nabytek/application/views/order/order_shipping_payment.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/classes/controller/order.php",
+		"/home/ondra/Workspace/prace/nabytek/application/config/database.php",
+		"/home/ondra/Workspace/prace/nabytek/application/views/order/order_container.tpl",
+		"/home/ondra/Plocha/luk/kancelarskezidle/kosik4.html",
+		"/home/ondra/Plocha/luk/kancelarskezidle/kosik3.html",
+		"/home/ondra/Plocha/luk/kancelarskezidle/kosik22.html",
+		"/home/ondra/Plocha/luk/kancelarskezidle/kosik21.html",
+		"/home/ondra/Plocha/luk/kancelarskezidle/kosik2.html",
+		"/home/ondra/Plocha/luk/kancelarskezidle/kosik1.html",
+		"/home/ondra/Workspace/prace/nabytek/old/application/views/shoppingcart/cart_detail_table.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/views/order/order_user_data_source.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/classes/controller/product.php",
+		"/home/ondra/Workspace/prace/nabytek/modules/smarty/plugins/function.form_password.php",
+		"/home/ondra/Workspace/prace/nabytek/modules/smarty/plugins/function.form_input.php",
+		"/home/ondra/Workspace/prace/nabytek/application/views/user/user_login.tpl",
+		"/home/ondra/Workspace/prace/nabytek/modules/hana/classes/service/hana/page.php",
+		"/home/ondra/Workspace/prace/nabytek/application/views/order/order_shipping.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/views/order/order_payment.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/views/order/order_user_delivery_data.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/views/shoppingcart/cart_detail_container.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/views/shoppingcart/cart_detail_table.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/classes/service/product.php",
+		"/home/ondra/Workspace/prace/nabytek/old/modules/hana/classes/model/cart.php",
+		"/home/ondra/Workspace/prace/nabytek/application/views/product/product_category_items.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/views/offer.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/views/navigation/nav.tpl",
+		"/etc/hosts",
+		"/home/ondra/Workspace/prace/nabytek/application/views/shoppingcart/cart_widget.tpl",
+		"/home/ondra/Plocha/luk/kancelarskezidle/product.html",
+		"/home/ondra/Workspace/prace/nabytek/application/views/banners/banners.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/views/product/product_carousel.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/views/product/top.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/views/page/homepage.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/views/product/product_detail.tpl",
+		"/home/ondra/Workspace/prace/nabytek/media/images/no_photo.svg",
+		"/home/ondra/Workspace/prace/nabytek/old/application/classes/service/product.php",
+		"/home/ondra/Workspace/prace/nabytek/media/admin/js/jquery-ui-1.8.18.custom.min.js",
+		"/tmp/fz3temp-1/kosik_formular.php",
+		"/home/ondra/Workspace/prace/nabytek/application/classes/controller/form.php",
+		"/home/ondra/Workspace/prace/nabytek/application/views/product/product_rand.tpl",
+		"/home/ondra/Workspace/prace/nabytek/modules/hana/classes/service/hana/product.php",
+		"/home/ondra/Workspace/prace/nabytek/application/views/emails/offer.tpl",
+		"/home/ondra/Workspace/prace/nabytek/modules/hana/classes/service/hana/product/category.php",
+		"/home/ondra/Workspace/prace/nabytek/modules/hana/classes/service/hana/order.php",
+		"/home/ondra/Workspace/prace/nabytek/modules/hana/classes/service/hana/forms.php",
+		"/home/ondra/Workspace/prace/nabytek/old/modules/hana/classes/service/forms.php",
+		"/home/ondra/Workspace/prace/nabytek/application/classes/model/email/form/offer.php",
+		"/home/ondra/Workspace/prace/nabytek/application/classes/controller/offer.php",
+		"/home/ondra/Workspace/prace/nabytek/application/views/admin/edit/variants_modal.tpl",
+		"/home/ondra/Workspace/prace/nabytek/modules/hana/classes/autoform/item/modals.php",
+		"/home/ondra/Workspace/prace/nabytek/modules/hana/classes/service/product/category.php",
+		"/home/ondra/Workspace/prace/nabytek/application/views/oldold/catalog/homepage_widget.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/views/product/subnav.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/classes/controller/admin/cz/product/item/edit.php",
+		"/home/ondra/Workspace/prace/nabytek/application/views/product/product_category.tpl",
+		"/tmp/fz3temp-1/ukaz_produkt.php",
+		"/home/ondra/Plocha/luk/kancelarskezidle/products.html",
+		"/home/ondra/Workspace/prace/nabytek/modules/hana/classes/service/hana/module.php",
+		"/var/log/apt/history.log",
+		"/var/log/apt/term.log",
+		"/home/ondra/Workspace/prace/nabytek/media/js/menu.js",
+		"/home/ondra/Workspace/prace/nabytek/application/classes/controller/search.php",
+		"/home/ondra/Workspace/prace/nabytek/application/views/search/widget.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/classes/service/search.php",
+		"/home/ondra/Workspace/prace/nabytek/application/views/search/results.tpl",
+		"/home/ondra/.homestead/Homestead.yaml",
+		"/home/ondra/.bashrc",
+		"/home/ondra/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/ondra/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/ondra/Workspace/prace/nabytek/application/views/search_widget.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/classes/controller/user.php",
+		"/home/ondra/Workspace/prace/nabytek/application/views/user/user_account_order_detail.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/classes/service/order.php",
+		"/home/ondra/Workspace/prace/nabytek/application/views/user/user_account_orders_list.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/views/user/user_account_branch_edit.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/views/user/user_account_setup.tpl",
+		"/home/ondra/Workspace/prace/nabytek/modules/hana/classes/model/cart.php",
+		"/home/ondra/Workspace/prace/nabytek/old/modules/hana/classes/service/shoppingcart.php",
+		"/home/ondra/Workspace/prace/nabytek/modules/hana/classes/service/hana/shoppingcart.php",
+		"/home/ondra/Workspace/prace/nabytek/modules/hana/classes/model/payment.php",
+		"/home/ondra/Workspace/prace/nabytek/application/classes/controller/admin/cz/product/payment/edit.php",
+		"/home/ondra/Workspace/prace/nabytek/modules/hana/classes/model/payment/type.php",
+		"/home/ondra/Workspace/prace/nabytek/application/views/user/subnav.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/views/user/user_account_index.tpl",
+		"/home/ondra/Workspace/prace/nabytek/old/modules/hana/classes/hana/navigation.php",
+		"/home/ondra/Workspace/prace/nabytek/application/views/user/user_registration_popup.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/views/user/user_account_branch_list.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/views/user/user_account_branch_edit_form.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/views/user/user_widget.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/views/user/user_login_popup.tpl",
+		"/home/ondra/Workspace/prace/nabytek/modules/hana/classes/controller.php",
+		"/home/ondra/Workspace/prace/nabytek/application/logs/2015/08/25.php",
+		"/home/ondra/Workspace/prace/nabytek/modules/hana/classes/service/hana/product/category_old.php",
+		"/home/ondra/Workspace/prace/nabytek/application/views/article_homepage_list.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/classes/controller/admin/cz/article/item/edit.php",
+		"/home/ondra/Workspace/prace/nabytek/application/views/article/list.tpl",
+		"/home/ondra/Workspace/prace/nabytek/modules/hana/classes/service/product.php",
+		"/home/ondra/Workspace/prace/nabytek/media/admin/js/filemanager/scripts/filemanager.config.js",
+		"/home/ondra/Workspace/prace/nabytek/application/logs/filemanager/log.log",
+		"/home/ondra/Workspace/prace/nabytek/application/classes/service/product/variant.php",
+		"/home/ondra/Workspace/prace/nabytek/application/views/admin/edit/variants.tpl",
+		"/home/ondra/Workspace/prace/nabytek/old/modules/hana/classes/service/hana/module.php"
+	],
+	"find":
+	{
+		"height": 47.0
+	},
+	"find_in_files":
+	{
+		"height": 111.0,
+		"where_history":
+		[
+			"/home/ondra/Workspace/prace/nabytek/application/classes/controller/admin/cz/replace",
+			"/home/ondra/Workspace/prace/nabytek/application/classes/controller/admin",
+			"/home/ondra/Workspace/prace/nabytek/application/classes/controller/admin/cz",
+			"/home/ondra/Workspace/prace/zoozlin-shop/application"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"top",
+			"</td>",
+			"<td/>",
+			"<td>",
+			"<tr>",
+			"udaje-o-uzivateli",
+			"kosik",
+			"top",
+			"ui-dialog",
+			"modal",
+			"get_product_category_by_route_id",
+			"$pc_filters",
+			"ProductListForm",
+			"img_click",
+			"filters-basic",
+			"login",
+			"()",
+			"variant",
+			"product",
+			" $",
+			"random",
+			"media",
+			"svg",
+			"get_random_products_by_category",
+			"[]\">",
+			"}",
+			"  </",
+			" <",
+			"variant_id",
+			"null",
+			"print_r",
+			"var_dump",
+			"}\n",
+			"die",
+			"}\n",
+			"key",
+			"customer",
+			"gift",
+			"variables_orm",
+			"product_orm",
+			"$data",
+			"data",
+			"customer",
+			"tree_mode",
+			"parent_id",
+			"pare",
+			"base_path_to_gallery",
+			"settings_submodule_code",
+			"[$category->id]",
+			"under",
+			"shopper_widget",
+			"minicart",
+			"shopper_wi",
+			"shoper_wi",
+			"   {widget action=\"carousel_widget\" controller=\"product\"}\n",
+			"{widget action=\"carousel_widget\" controller=\"product\"}",
+			"SynchronizeMessage",
+			"Controller_Admin",
+			"MAX_",
+			"PRIVATE_KEY_WEB_PASSWORD"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"",
+			"uzivatelske-udaje",
+			"doplnek",
+			"variant",
+			"up_orm",
+			"variables_orm",
+			"variant",
+			"",
+			"Controller_Admin_Cz"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/home/ondra/Workspace/cenovka/app/controllers/UserController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1855,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1077,
+								1077
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 450.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/ondra/Workspace/cenovka/app/controllers/OfferController.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 6610,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 825.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/ondra/Workspace/cenovka/app/controllers/SessionController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 941,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								476,
+								476
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 300.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/ondra/Workspace/cenovka/app/routes.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3040,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3027,
+								3033
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1500.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/ondra/Workspace/cenovka/app/views/user/create.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 930,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								930,
+								930
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"is_xml": false,
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/home/ondra/Workspace/cenovka/public/css/signin.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 869,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								864,
+								864
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 130.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/TypeScript/TypeScript.sublime-build",
+	"project": "cenovka-old.sublime-project",
+	"replace":
+	{
+		"height": 88.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"modelcontact",
+				"nabytek/modules/hana/classes/model/email/form/contact.php"
+			],
+			[
+				"contactf",
+				"nabytek/application/views/contact/contactform.tpl"
+			],
+			[
+				"contac",
+				"nabytek/application/views/page/contact.tpl"
+			],
+			[
+				"index.html",
+				"kancelarskezidle/index.html"
+			],
+			[
+				"index",
+				"nabytek/old/index.php"
+			],
+			[
+				"inde",
+				"nabytek/index.php"
+			],
+			[
+				"pag",
+				"nabytek/application/views/page/page.tpl"
+			],
+			[
+				"kon",
+				"kancelarskezidle/kontakt.html"
+			],
+			[
+				"orderuse",
+				"nabytek/application/views/order/order_unregistered_user.tpl"
+			],
+			[
+				"regist",
+				"nabytek/application/views/user/user_registration.tpl"
+			],
+			[
+				"order",
+				"nabytek/application/views/order/order_shipping_payment.tpl"
+			],
+			[
+				"unregis",
+				"nabytek/application/views/order/order_unregistered_user.tpl"
+			],
+			[
+				"viewshoping",
+				"nabytek/old/application/views/shoppingcart/cart_detail_table.tpl"
+			],
+			[
+				"order_comp",
+				"nabytek/application/views/order/order_complete.tpl"
+			],
+			[
+				"confirmat",
+				"nabytek/application/views/order/order_confirmation.tpl"
+			],
+			[
+				"data",
+				"nabytek/application/config/database.php"
+			],
+			[
+				"formpasswo",
+				"nabytek/modules/smarty/plugins/function.form_password.php"
+			],
+			[
+				"smartyinput",
+				"nabytek/modules/smarty/plugins/function.form_input.php"
+			],
+			[
+				"forminput",
+				"nabytek/modules/smarty/plugins/function.form_input.php"
+			],
+			[
+				"hanaservicehanapahe",
+				"nabytek/modules/hana/classes/service/hana/page.php"
+			],
+			[
+				"prod",
+				"nabytek/application/classes/controller/product.php"
+			],
+			[
+				"cartdeta",
+				"nabytek/application/views/shoppingcart/cart_detail_table.tpl"
+			],
+			[
+				"product",
+				"nabytek/application/classes/controller/product.php"
+			],
+			[
+				"shoping",
+				"nabytek/application/classes/controller/shoppingcart.php"
+			],
+			[
+				"",
+				"nabytek/application/config/database.php"
+			],
+			[
+				"homepa",
+				"nabytek/application/views/page/homepage.tpl"
+			],
+			[
+				"product_de",
+				"nabytek/application/views/product/product_detail.tpl"
+			],
+			[
+				"base",
+				"nabytek/application/views/site/base_template.tpl"
+			],
+			[
+				"servicehanaform",
+				"nabytek/modules/hana/classes/service/hana/forms.php"
+			],
+			[
+				"controllerprodu",
+				"nabytek/application/classes/controller/product.php"
+			],
+			[
+				"autoformmod",
+				"nabytek/modules/hana/classes/autoform/item/modals.php"
+			],
+			[
+				"serviceproduct",
+				"nabytek/modules/hana/classes/service/hana/product.php"
+			],
+			[
+				"serviceproductcate",
+				"nabytek/modules/hana/classes/service/hana/product/category.php"
+			],
+			[
+				"servicecate",
+				"nabytek/modules/hana/classes/service/product/category.php"
+			],
+			[
+				"kaninde",
+				"kancelarskezidle/index.html"
+			],
+			[
+				"idex",
+				"nabytek/index.php"
+			],
+			[
+				"base_",
+				"nabytek/application/views/site/base_template.tpl"
+			],
+			[
+				"servicehanaprductca",
+				"nabytek/modules/hana/classes/service/hana/product/category.php"
+			],
+			[
+				"subnav",
+				"nabytek/application/views/product/subnav.tpl"
+			],
+			[
+				"productitemedi",
+				"nabytek/application/classes/controller/admin/cz/product/item/edit.php"
+			],
+			[
+				"top",
+				"nabytek/application/views/product/top.tpl"
+			],
+			[
+				"productcate",
+				"nabytek/application/views/product/product_category_items.tpl"
+			],
+			[
+				"nav",
+				"nabytek/application/views/navigation/nav.tpl"
+			],
+			[
+				"kancelarskeinde",
+				"kancelarskezidle/index.html"
+			],
+			[
+				"productsub",
+				"nabytek/application/views/product/subnav.tpl"
+			],
+			[
+				"productdetail",
+				"nabytek/application/views/product/product_detail.tpl"
+			],
+			[
+				"configdata",
+				"nabytek/application/config/database.php"
+			],
+			[
+				"articleedit",
+				"nabytek/application/classes/controller/admin/cz/article/item/edit.php"
+			],
+			[
+				"productitemedit",
+				"nabytek/application/classes/controller/admin/cz/product/item/edit.php"
+			],
+			[
+				"hanaserviceproductcate",
+				"nabytek/modules/hana/classes/service/hana/product/category.php"
+			],
+			[
+				"hanaservicehanaprodu",
+				"nabytek/modules/hana/classes/service/hana/product.php"
+			],
+			[
+				"hanaprodut",
+				"nabytek/modules/hana/classes/service/product.php"
+			],
+			[
+				"user",
+				"nabytek/application/classes/controller/user.php"
+			],
+			[
+				"hanaproductcate",
+				"nabytek/modules/hana/classes/service/hana/product/category.php"
+			],
+			[
+				"hanaproduct",
+				"nabytek/modules/hana/classes/service/hana/product.php"
+			],
+			[
+				"hanamodule",
+				"nabytek/modules/hana/classes/service/hana/module.php"
+			],
+			[
+				"modals",
+				"nabytek/modules/hana/classes/autoform/item/modals.php"
+			],
+			[
+				"serviceartic",
+				"nabytek/application/classes/service/article.php"
+			],
+			[
+				"viewpage",
+				"nabytek/application/views/page/page.tpl"
+			],
+			[
+				"servicehanapa",
+				"nabytek/modules/hana/classes/service/hana/page.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 750.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Workspace/prace/nabytek/kpe.sublime-project"
+			]
+		],
+		"width": 570.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 375.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

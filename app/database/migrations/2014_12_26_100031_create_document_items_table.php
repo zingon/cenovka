@@ -15,14 +15,16 @@ class CreateDocumentItemsTable extends Migration {
 		Schema::create('document_items',function($table){
 			$table->increments('id');
 
-			$table->integer('document_id');
-			$table->integer('item_id');
+			$table->integer('document_id')->unsigned();
+			$table->integer('item_id')->unsigned();
 
 			$table->integer('count');
 			$table->integer('discount');
 			$table->integer('dph');
 
 			$table->timestamps();
+			$table->foreign("document_id")->references("id")->on("documents");
+			$table->foreign("item_id")->references("id")->on("items");
 		});
 	}
 

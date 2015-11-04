@@ -1,0 +1,24 @@
+@import "compass/css3";
+.login-box {
+  background: #fff;
+  border: 1px solid #ddd; 
+  margin: rem-calc(100px 0);
+  padding: rem-calc(50px 20px 20px 20px);
+
+  h1 {
+    text-align: center;
+    font-weight: 700;
+    font-size: rem-calc(50px);
+    padding-bottom: rem-calc(20px);
+  }
+
+  .stack{
+    margin: rem-calc(10px 0 20px 0);
+  }
+  .input-wrapper {
+    margin: 0 0 1rem 0;
+    input {
+      margin:0;
+    }
+  }
+}

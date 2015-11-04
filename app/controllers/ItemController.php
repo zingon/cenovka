@@ -42,7 +42,12 @@ class ItemController extends BaseController {
 	public function index()
 	{
 		$category = Auth::getUser()->categories()->first();
-		return Response::view('items.index',array('category'=>$category->id));
+		if(!$category) {
+			return Response::view('items.index',array('category'=>0));
+		} else {
+			return Response::view('items.index',array('category'=>$category->id));
+		}
+		
 		
 	}
 

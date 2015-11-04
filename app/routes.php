@@ -85,7 +85,8 @@ Route::resource('login', 'SessionController', ['only'=>['create','store']]);
 Route::get('/login',function(){
 	return Redirect::route('login.create');
 });
+Route::resource('user', 'UserController', ['only'=>['create','store']]);
 
-Route::get('/hash-my-password/{password}',function($password){
-	return Hash::make($password);
+Route::get('/register',function() {
+	return Redirect::route('user.create');
 });

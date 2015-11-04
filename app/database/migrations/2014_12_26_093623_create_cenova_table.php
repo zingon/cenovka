@@ -18,8 +18,8 @@ class CreateCenovaTable extends Migration {
 			$table->string('name');
 			$table->string('code');
 
-			$table->integer('dodavatel_id');
-			$table->integer('odberatel_id');
+			$table->integer('dodavatel_id')->unsigned();
+			$table->integer('odberatel_id')->unsigned();
 
 			$table->date('vystaven');
 			$table->date('expire');
@@ -27,6 +27,9 @@ class CreateCenovaTable extends Migration {
 			$table->text('note');
 			$table->softDeletes();
 			$table->timestamps();
+
+			$table->foreign("dodavatel_id")->references("id")->on("contacts");
+			$table->foreign("odberatel_id")->references("id")->on("contacts");
 		});
 	}
 

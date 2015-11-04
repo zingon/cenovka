@@ -14,7 +14,8 @@ class AddColumnCategoryIdToItem extends Migration {
 	{
 		Schema::table('items', function($table)
 		{
-			$table->integer('category_id');
+			$table->integer('category_id')->unsigned();
+			$table->foreign("category_id")->references("id")->on("categories");
 		});
 	}
 
@@ -28,6 +29,7 @@ class AddColumnCategoryIdToItem extends Migration {
 		Schema::table('items', function($table)
 		{
 			$table->dropColumn('category_id');
+			$table->dropForeign("items_category_id_foreign");
 		});
 	}
 

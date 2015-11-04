@@ -9,7 +9,13 @@ class CategoryController extends BaseController
      */
     public function index() {
         $categories = Auth::getUser()->categories;
-        return Response::view('category.index', array('categories' => $categories));
+        if(Request::ajax()) {
+            return Response::json($categories);
+        } else {
+            
+            return Response::view('category.index', array('categories' => $categories));
+        }
+       
     }
     
     /**
@@ -43,10 +49,11 @@ class CategoryController extends BaseController
 
             $save['code']   = isset($last->code)?sprintf("%03s",$last->code+1):sprintf("%03s","1");
             $save['class']  = implode('-', explode(' ', Input::get('name')));
-            
-            $category = Auth::getUser()->categories();
 
+            $category = new Category($save);
+            $category->user()->associate(Auth::getUser());
             if($category->save()){
+                
                 return Redirect::route('item.index')
                     ->with('global','Kategorie byla úspěšně přidána.');
             }

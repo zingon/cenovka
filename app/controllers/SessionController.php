@@ -29,14 +29,15 @@ class SessionController extends BaseController {
 			return Redirect::back()
         		->withErrors($validator);
 		}
-		$email 		= Input::get('email');
-		$password 	= Input::get('password');
+		$email = Input::get("email");
+		$password = Input::get("password");
 		$remember	= (Input::get('remember-me',false))?true:false;
 
 			if(Auth::attempt(array('email' => $email, 'password' => $password),$remember)){
 				return Redirect::route('document.index');
 			} else {
-				return Redirect::back();
+				return Redirect::back()
+					->with("wrong", "Zadaný email/heslo nebyl/o nalezen/o");
 			}
 		}
 

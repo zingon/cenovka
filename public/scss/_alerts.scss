@@ -1,0 +1,12 @@
+.message-box {
+	position:fixed !important;
+	bottom:1rem;
+	right: 1rem;
+}
+.alert-box {
+	@extend .row;
+	margin-top:0.5rem;
+	width: rem-calc(300px);
+	text-align: center;
+	margin-bottom: 0;
+}

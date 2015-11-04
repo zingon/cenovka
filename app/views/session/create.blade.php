@@ -1,19 +1,44 @@
-@extends('layout.login-page')
-
+@extends('layout.main')
 @section('content')
-<div class="container">
-  {{Form::open(array('route'=>'login.store','class'=>'form-signin'))}} 
-    <h2 class="form-signin-heading">Prosím přihlašte se:</h2>
-      {{Form::label('email','Emailová adresa',array("class"=>'sr-only'))}}
-      {{Form::input('email','email','',array('placeholder'=>'Emailová adresa','required','autofocus','class'=>'form-control'))}}
-      {{Form::label('password','Heslo',array("class"=>'sr-only'))}}
-      {{Form::input('password','password','',array('placeholder'=>'Heslo','required','class'=>'form-control'))}}
-        <div class="checkbox">
-          <label>
-            {{Form::checkbox('remember-me','remember-me')}} Zapamatovat si údaje
-          </label>
+<div class="large-3 large-centered columns">
+            <div class="login-box">
+                <div class="row">
+                    <div class="large-12 columns">
+                    <h1>Cenovka</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        {{Form::open(array('route'=>'login.store'))}} 
+                            <div class="row">
+                                <div class="large-12 columns">
+                                <div class="input-wrapper">
+                                	{{Form::input('email','email','',array('placeholder'=>'Emailová adresa','required','autofocus'))}}
+                                    <!--<small class="error">A valid email address is required.</small>-->
+                                </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    {{Form::input('password','password','',array('placeholder'=>'Heslo','required'))}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                <label>{{Form::checkbox('remember-me','remember-me')}} Zapamatovat si údaje</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="large-12 large-centered columns">
+                                    <ul class="stack button-group">
+                                    	<li><button type="submit" class="button expand">Přihlásit se</button></li>
+                                        <li><a href="{{URL::route('user.create')}}" class="button expand">Registrovat se</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        {{Form::close()}}
+                    </div>
+                </div>
+            </div>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-  {{Form::close()}}
-</div>
 @stop
