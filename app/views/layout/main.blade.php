@@ -24,7 +24,16 @@
         </div>
 
         <!--Modalové okno-->
-        <div id="universalModal" class="reveal-modal" data-reveal>
+        <div id="universalSmallModal" class="reveal-modal small" data-reveal>
+            <section>
+                
+            </section>
+            <a class="close-reveal-modal" arial-label="Close">&#215;</a> 
+        </div>
+        <div id="universalLargeModal"  class="reveal-modal large"  data-reveal>
+            <section>
+                
+            </section>
             <a class="close-reveal-modal" arial-label="Close">&#215;</a> 
         </div>
         {{ HTML::script('bower_components/jquery/dist/jquery.min.js')}}

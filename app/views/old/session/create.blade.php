@@ -1,6 +1,6 @@
 @extends('layout.login-page')
 
-@section('content')
+@section('content_basic')
 <div class="container">
   {{Form::open(array('route'=>'login.store','class'=>'form-signin'))}} 
     <h2 class="form-signin-heading">Prosím přihlašte se:</h2>

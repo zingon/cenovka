@@ -1,0 +1,1713 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Re",
+				"Request()	mixed"
+			],
+			[
+				"add",
+				"addClass〔function〕"
+			],
+			[
+				"remove",
+				"removeClass"
+			],
+			[
+				"cate",
+				"categories"
+			],
+			[
+				"Reque",
+				"Request〔class〕"
+			],
+			[
+				"Schema",
+				"Schema::table	Update an existing table"
+			],
+			[
+				"la",
+				"get_actual_language_id〔function〕"
+			],
+			[
+				"product",
+				"product_category_id"
+			],
+			[
+				"ope",
+				"operator"
+			],
+			[
+				"type",
+				"typeof〔keyword〕"
+			],
+			[
+				"price",
+				"priceSection〔variable〕"
+			],
+			[
+				"def",
+				"defaultPrices〔variable〕"
+			],
+			[
+				"get",
+				"getNumericValueFromPrice"
+			],
+			[
+				"chan",
+				"changePrices〔function〕"
+			],
+			[
+				"cena",
+				"cena_s_dph|currency"
+			],
+			[
+				"variant_",
+				"$variant_result〔variable〕"
+			],
+			[
+				"varia",
+				"variants_orm"
+			],
+			[
+				"lan",
+				"language"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
+				"Service_Product",
+				"Service_Product_Category"
+			],
+			[
+				"Service_",
+				"Service_Product	Service_Product"
+			],
+			[
+				"b",
+				"breadcrumbs"
+			],
+			[
+				"image",
+				"$image_settings〔variable〕"
+			],
+			[
+				"new",
+				"new_key"
+			],
+			[
+				"Model_",
+				"Model_Variant	Model_Variant"
+			],
+			[
+				"tax",
+				"tax_id"
+			],
+			[
+				"grou",
+				"$group_orm〔variable〕"
+			],
+			[
+				"chec",
+				"checked"
+			],
+			[
+				"shor",
+				"$short_view〔variable〕"
+			],
+			[
+				"long",
+				"long_output"
+			],
+			[
+				"margin",
+				"margin-top: 〔property〕"
+			],
+			[
+				"op",
+				"option	Tag"
+			],
+			[
+				"lis",
+				"$list_template〔variable〕"
+			],
+			[
+				"data",
+				"data_src"
+			],
+			[
+				"da",
+				"data_orm"
+			],
+			[
+				"var",
+				"var_dump〔function〕"
+			],
+			[
+				"item",
+				"item_id"
+			],
+			[
+				"vari",
+				"variant_groups"
+			],
+			[
+				"variant",
+				"variant_group"
+			],
+			[
+				"Model_v",
+				"Model_Variant_Group	Model_Variant_Group"
+			],
+			[
+				"prepate",
+				"prepare_edit〔function〕"
+			],
+			[
+				"en",
+				"entity_name"
+			],
+			[
+				"Model_Va",
+				"Model_Variant_Group〔class〕"
+			],
+			[
+				"prepa",
+				"prepared_data"
+			],
+			[
+				"sub",
+				"submited"
+			],
+			[
+				"local",
+				"localStorage"
+			],
+			[
+				"chil",
+				"children〔function〕"
+			],
+			[
+				"rem",
+				"remove〔function〕"
+			],
+			[
+				"di",
+				"display: 〔property〕"
+			],
+			[
+				"loca",
+				"localStorage〔variable〕"
+			],
+			[
+				"1",
+				"178"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"remo",
+				"removeClass〔function〕"
+			],
+			[
+				"cart",
+				"cart_form"
+			],
+			[
+				"else",
+				"else	else"
+			],
+			[
+				"sma",
+				"smarty"
+			],
+			[
+				"erro",
+				"errorThrown〔argument〕"
+			],
+			[
+				"fore",
+				"foreach	foreach"
+			],
+			[
+				"border-",
+				"border-radius: 〔property〕"
+			],
+			[
+				"incl",
+				"included"
+			],
+			[
+				"dis",
+				"display: 〔property〕"
+			],
+			[
+				"border",
+				"border-collapse"
+			],
+			[
+				"main",
+				"main_content"
+			],
+			[
+				"nazev",
+				"nazev_seo"
+			],
+			[
+				"sho",
+				"$shopper〔variable〕"
+			],
+			[
+				"total",
+				"total_price"
+			],
+			[
+				"shoper",
+				"shopper_id"
+			],
+			[
+				"_se",
+				"$_SESSION〔variable〕"
+			],
+			[
+				"_SE",
+				"$_SESSION〔variable〕"
+			],
+			[
+				"fun",
+				"fun	Function"
+			],
+			[
+				"clas",
+				"class=〔attribute〕"
+			],
+			[
+				"img",
+				"img_click"
+			],
+			[
+				"array_",
+				"array_values"
+			],
+			[
+				"Service_Prod",
+				"Service_Product_Category〔class〕"
+			],
+			[
+				"array",
+				"array_merge〔function〕"
+			],
+			[
+				"els",
+				"elseif"
+			],
+			[
+				"route",
+				"$route_ids〔variable〕"
+			],
+			[
+				"result",
+				"$result_data〔variable〕"
+			],
+			[
+				"parent",
+				"$parent_id〔variable〕"
+			],
+			[
+				"chld",
+				"child_products"
+			],
+			[
+				"res",
+				"$result_data〔variable〕"
+			],
+			[
+				"category",
+				"category_array"
+			],
+			[
+				"pare",
+				"$parent_id〔variable〕"
+			],
+			[
+				"ch",
+				"$child_products〔variable〕"
+			],
+			[
+				"categor",
+				"$category〔variable〕"
+			],
+			[
+				"parame",
+				"$parameters〔variable〕"
+			],
+			[
+				"return",
+				"return_data"
+			],
+			[
+				"retun",
+				"return_data"
+			],
+			[
+				"catego",
+				"categories_orm"
+			],
+			[
+				"static",
+				"static_content"
+			],
+			[
+				"no",
+				"no_photo"
+			],
+			[
+				"array_pi",
+				"array_push〔function〕"
+			],
+			[
+				"langua",
+				"language_id"
+			],
+			[
+				"get_rand",
+				"get_random_products_by_category〔function〕"
+			],
+			[
+				"retu",
+				"return_data"
+			],
+			[
+				"get_",
+				"get_actual_route〔function〕"
+			],
+			[
+				"find",
+				"find_all"
+			],
+			[
+				"ret",
+				"return_data"
+			],
+			[
+				"ins",
+				"instanceof〔keyword〕"
+			],
+			[
+				"product_cate",
+				"product_category_data"
+			],
+			[
+				"category_",
+				"category_orm"
+			],
+			[
+				"child",
+				"children_orm"
+			],
+			[
+				"defa",
+				"default"
+			],
+			[
+				"rand",
+				"$rand_products〔variable〕"
+			],
+			[
+				"produ",
+				"products"
+			],
+			[
+				"curre",
+				"cena_bez_dph|currency:$language_code"
+			],
+			[
+				"prod",
+				"product_variants_orm"
+			],
+			[
+				"pricv",
+				"$price_table〔variable〕"
+			],
+			[
+				"print",
+				"print_r〔function〕"
+			],
+			[
+				"price_",
+				"price_table"
+			],
+			[
+				"va",
+				"variables_orm〔variable〕"
+			],
+			[
+				"edi",
+				"$editparam_orm〔variable〕"
+			],
+			[
+				"he",
+				"height=\"290"
+			],
+			[
+				"odb",
+				"odborne_informace"
+			],
+			[
+				"cat",
+				"$cat_id〔variable〕"
+			],
+			[
+				"pc_te",
+				"$pc_template_outer〔variable〕"
+			],
+			[
+				"photo",
+				"photo_detail_suffix"
+			],
+			[
+				"under",
+				"undercat"
+			],
+			[
+				"if",
+				"if	if"
+			],
+			[
+				"unde",
+				"$undercategory〔variable〕"
+			],
+			[
+				"foreach",
+				"foreach"
+			],
+			[
+				"contro",
+				"controller=\"navigation"
+			],
+			[
+				"const",
+				"constructor	keyword"
+			],
+			[
+				"imp",
+				"import	keyword"
+			],
+			[
+				"V",
+				"View	alias"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/views/session/create.blade.php",
+			"settings":
+			{
+				"buffer_size": 2155,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/items/index.blade.php",
+			"settings":
+			{
+				"buffer_size": 1115,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/layout/main.blade.php",
+			"settings":
+			{
+				"buffer_size": 1453,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/CategoryController.php",
+			"settings":
+			{
+				"buffer_size": 3167,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/category/edit.blade.php",
+			"settings":
+			{
+				"buffer_size": 562,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/macros.php",
+			"settings":
+			{
+				"buffer_size": 381,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/ItemController.php",
+			"settings":
+			{
+				"buffer_size": 4831,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/Item.php",
+			"settings":
+			{
+				"buffer_size": 318,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/items/new.blade.php",
+			"settings":
+			{
+				"buffer_size": 1513,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/js/app.js",
+			"settings":
+			{
+				"buffer_size": 913,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"CodeFormatter: Format as HTML Syntax"
+			],
+			[
+				"format",
+				"CodeFormatter: Format as HTML Syntax"
+			],
+			[
+				"html",
+				"CodeFormatter: Format as HTML Syntax"
+			],
+			[
+				"tra",
+				"Trailing Spaces: Toggle Trailing Spaces Highlighting"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"code",
+				"CodeFormatter: Format as HTML Syntax"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"bookma",
+				"SublimeBookmarks: Remove A Bookmark"
+			],
+			[
+				"add",
+				"SublimeBookmarks: Add Bookmark"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"space",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"form",
+				"CodeFormatter: Format as HTML Syntax"
+			],
+			[
+				"istal",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 1002.0
+	},
+	"console":
+	{
+		"height": 162.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/ondrej/projects/cenovka/cenovka",
+		"/home/ondrej/projects/cenovka/cenovka/app",
+		"/home/ondrej/projects/cenovka/cenovka/app/controllers",
+		"/home/ondrej/projects/cenovka/cenovka/app/models",
+		"/home/ondrej/projects/cenovka/cenovka/app/views",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/category",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/items",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/layout",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/offer",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/old",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/old/category",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/old/items",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/old/layout",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/old/offer",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/old/user",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/session",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/user",
+		"/home/ondrej/projects/cenovka/cenovka/public",
+		"/home/ondrej/projects/cenovka/cenovka/public/js",
+		"/home/ondrej/projects/cenovka/cenovka/public/scss"
+	],
+	"file_history":
+	[
+		"/home/ondrej/projects/cenovka/cenovka/app/routes.php",
+		"/home/ondrej/projects/cenovka/cenovka/public/scss/_settings.scss",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/category/new.blade.php",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/layout/inner.blade.php",
+		"/home/ondrej/projects/cenovka/cenovka/public/scss/app.scss",
+		"/home/ondrej/projects/cenovka/cenovka/public/js/app.js",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/old/session/create.blade.php",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/layout/inner-onecol.blade.php",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/layout/main.blade.php",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/layout/menu.blade.php",
+		"/home/ondrej/projects/cenovka/cenovka/app/controllers/CategoryController.php",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/old/items/index.blade.php",
+		"/home/ondrej/projects/cenovka/cenovka/public/list.html",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/items/index.blade.php",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/offer/index.blade.php",
+		"/home/ondrej/projects/cenovka/cenovka/app/database/migrations/2015_03_30_153403_add_column_user_id_to_few_tables.php",
+		"/home/ondrej/projects/cenovka/cenovka/app/database/migrations/2014_12_26_093623_create_cenova_table.php",
+		"/home/ondrej/projects/cenovka/cenovka/app/database/migrations/2014_12_26_100031_create_document_items_table.php",
+		"/home/ondrej/projects/cenovka/cenovka/app/database/migrations/2015_01_03_093540_add_column_category_id_to_item.php",
+		"/home/ondrej/projects/cenovka/cenovka/app/database/migrations/2015_11_04_084104_add_indexes_to_tables.php",
+		"/home/ondrej/projects/cenovka/cenovka/app/database/migrations/2015_04_12_192617_create_own_cell_values_table.php",
+		"/home/ondrej/projects/ledeos/.gitignore",
+		"/home/ondrej/projects/ledeos/application/config/database.php",
+		"/home/ondrej/projects/ledeos/media/js/app.js",
+		"/home/ondrej/projects/ledeos/DbChanges.sql",
+		"/home/ondrej/projects/ledeos/application/classes/controller/admin/cz/product/item/edit.php",
+		"/home/ondrej/projects/ledeos/application/classes/service/product.php",
+		"/home/ondrej/projects/ledeos/application/views/product/product_carousel.tpl",
+		"/home/ondrej/projects/ledeos/application/classes/controller/product.php",
+		"/home/ondrej/projects/ledeos/application/views/product/detail.tpl",
+		"/home/ondrej/projects/ledeos/ftpsync.settings",
+		"/home/ondrej/projects/ledeos/modules/hana/classes/service/hana/product.php",
+		"/home/ondrej/projects/ledeos/media/detail.html",
+		"/home/ondrej/projects/ledeos/application/classes/service/variant.php",
+		"/home/ondrej/projects/ledeos/media/.gitignore",
+		"/home/ondrej/projects/ledeos/application/classes/service/banner.php",
+		"/home/ondrej/projects/ledeos/application/classes/controller/admin/cz/product/item/list.php",
+		"/home/ondrej/projects/ledeos/application/classes/service/product/category.php",
+		"/home/ondrej/projects/ledeos/modules/hana/classes/service/hana/file.php",
+		"/home/ondrej/projects/ledeos/application/views/product/subnav.tpl",
+		"/home/ondrej/projects/ledeos/application/views/base_template.tpl",
+		"/home/ondrej/projects/ledeos/application/views/navigation/breadcrumbs.tpl",
+		"/home/ondrej/projects/nabytek/application/views/user/user_registration_popup.tpl",
+		"/home/ondrej/projects/ledeos/modules/hana/classes/hana/navigation.php",
+		"/home/ondrej/projects/ledeos/modules/hana/classes/service/product.php",
+		"/home/ondrej/.config/sublime-text-3/Packages/CodeFormatter/CodeFormatter.sublime-settings",
+		"/home/ondrej/.config/sublime-text-3/Packages/User/CodeFormatter.sublime-settings",
+		"/home/ondrej/projects/ledeos/application/classes/controller/catalog.php",
+		"/home/ondrej/projects/ledeos/application/classes/controller/admin/cz/product/category/list.php",
+		"/home/ondrej/projects/ledeos/modules/hana/classes/service/hana/module.php",
+		"/home/ondrej/projects/ledeos/application/views/banner/slider.tpl",
+		"/home/ondrej/projects/ledeos/media/photos/product/category/gallery/images-1/slide3_1-ad.jpg",
+		"/home/ondrej/projects/ledeos/system/modules/hana/classes/controller/hana/photoedit.php",
+		"/home/ondrej/projects/ledeos/application/classes/model/product.php",
+		"/home/ondrej/projects/ledeos/modules/hana/classes/model/product/category.php",
+		"/home/ondrej/projects/ledeos/application/logs/2015/11/02.php",
+		"/home/ondrej/projects/ledeos/application/classes/controller/banner.php",
+		"/home/ondrej/projects/ledeos/application/classes/controller/admin/cz/product/category/edit.php",
+		"/home/ondrej/projects/ledeos/application/classes/model/product/category/photo.php",
+		"/home/ondrej/projects/ledeos/application/classes/controller/admin/cz/product/category/gallery.php",
+		"/home/ondrej/projects/ledeos/application/classes/model/catalog/category.php",
+		"/etc/modprobe.d/iwlwifi.conf",
+		"/home/ondrej/projects/ledeos/application/views/admin/edit/variant_list.tpl",
+		"/home/ondrej/projects/ledeos/modules/hana/classes/autoform/item/variants.php",
+		"/home/ondrej/projects/ledeos/modules/hana/classes/model/price/categories/variant.php",
+		"/home/ondrej/projects/ledeos/application/classes/controller/admin/cz/article/item/list.php",
+		"/home/ondrej/projects/ledeos/modules/hana/classes/model/price/categories/product.php",
+		"/home/ondrej/projects/ledeos/media/admin/js/admin.js",
+		"/home/ondrej/projects/ledeos/modules/hana/classes/autoform/item/innerpriceeditparam.php",
+		"/home/ondrej/projects/ledeos/application/views/admin/edit/prices_short.tpl",
+		"/home/ondrej/projects/ledeos/modules/hana/classes/orm/language.php",
+		"/home/ondra/Workspace/prace/nabytek/application/classes/controller/admin/cz/product/item/edit.php",
+		"/home/ondra/Workspace/prace/nabytek/application/views/admin/edit/variants_modal.tpl",
+		"/home/ondra/Workspace/prace/nabytek/modules/hana/classes/autoform/item/modals.php",
+		"/home/ondra/Workspace/prace/ledeos/application/views/admin/edit/variant_group_table.tpl",
+		"/home/ondra/Workspace/prace/ledeos/application/views/admin/edit/variant_group_edit.tpl",
+		"/home/ondra/Workspace/prace/ledeos/application/classes/service/variant/price.php",
+		"/home/ondra/Workspace/prace/ledeos/application/classes/model/variant/priceholder.php",
+		"/home/ondra/Workspace/prace/ledeos/application/classes/model/variant.php",
+		"/home/ondra/Workspace/prace/ledeos/application/views/admin/edit/variant_list.tpl",
+		"/home/ondra/Workspace/prace/ledeos/modules/hana/classes/autoform/item/variants.php",
+		"/home/ondra/Workspace/prace/ledeos/modules/hana/classes/autoform/item.php",
+		"/home/ondra/Workspace/prace/ledeos/modules/hana/classes/autoform/item/innerpriceeditparam.php",
+		"/home/ondra/Workspace/prace/ledeos/modules/hana/classes/controller/hana/edit.php",
+		"/home/ondra/Workspace/prace/ledeos/application/classes/controller/admin/cz/product/item/edit.php",
+		"/home/ondra/Workspace/prace/ledeos/application/views/admin/edit/variant_groups_table.php",
+		"/home/ondra/Workspace/prace/ledeos/modules/hana/classes/service/hana/product/price.php",
+		"/home/ondra/Workspace/prace/ledeos/modules/hana/classes/service/product/price.php",
+		"/home/ondra/Workspace/prace/ledeos/application/classes/model/product.php",
+		"/home/ondra/Workspace/prace/ledeos/application/classes/model/order/item/variant.php",
+		"/home/ondra/Workspace/prace/ledeos/DbChanges.sql",
+		"/home/ondra/Workspace/prace/ledeos/modules/hana/classes/autoform/item/textthead.php",
+		"/home/ondra/Workspace/prace/ledeos/application/classes/controller/admin/cz/product/item/list.php",
+		"/home/ondra/Workspace/prace/ledeos/application/classes/model/variant/group.php",
+		"/home/ondra/Workspace/prace/ledeos/application/views/user/user_login_popup.tpl",
+		"/home/ondra/Workspace/prace/ledeos/application/views/user/widget.tpl",
+		"/home/ondra/Workspace/prace/ledeos/application/views/user/user_send_new_password_form.tpl",
+		"/home/ondra/Workspace/prace/ledeos/application/views/user/user_account_branch_list.tpl",
+		"/home/ondra/Workspace/prace/ledeos/media/js/app.js",
+		"/home/ondra/Workspace/prace/ledeos/application/classes/controller/user.php",
+		"/home/ondra/Workspace/prace/ledeos/application/views/user/user_account_index.tpl",
+		"/home/ondra/Workspace/prace/ledeos/system/classes/controller.php",
+		"/home/ondra/Workspace/prace/nabytek/application/views/user/user_send_new_password_form.tpl",
+		"/home/ondra/Workspace/prace/ledeos/application/classes/service/product.php",
+		"/home/ondra/Workspace/prace/nabytek/application/classes/service/product.php",
+		"/home/ondra/Workspace/prace/ledeos/application/views/user/user_registration_popup.tpl",
+		"/home/ondra/Workspace/prace/nabytek/application/config/database.php",
+		"/home/ondra/Workspace/prace/ledeos/application/config/hana.php",
+		"/home/ondra/Workspace/prace/ledeos/modules/purifier/vendor/htmlpurifier/tests/HTMLPurifier/ConfigSchema/Validator/directive/valueAliasesNotAliasSelf.vtest",
+		"/home/ondra/Workspace/prace/ledeos/modules/hana/views/admin/list/base_list.tpl",
+		"/home/ondra/Workspace/prace/ledeos/modules/hana/views/admin/list/product_list.tpl",
+		"/home/ondra/Workspace/prace/ledeos/modules/hana/classes/controller/hana/list.php",
+		"/home/ondra/Workspace/prace/ledeos/application/classes/controller/admin/cz/page/item/list.php",
+		"/home/ondra/Workspace/prace/ledeos/application/classes/controller/admin/cz/page/item/edit.php",
+		"/etc/apache2/sites-enabled/000-default.conf",
+		"/home/ondra/Workspace/prace/ledeos/application/config/database.php",
+		"/home/ondra/Workspace/prace/ledeos/ftpsync.settings",
+		"/etc/hosts",
+		"/home/ondra/Workspace/prace/ledeos/.gitignore",
+		"/home/ondra/Workspace/prace/ledeos/application/views/page/homepage.tpl",
+		"/home/ondra/Workspace/prace/ledeos/media/obecna.html",
+		"/home/ondra/Workspace/prace/ledeos/application/classes/controller/navigation.php",
+		"/home/ondra/Workspace/prace/ledeos/media/.gitignore",
+		"/home/ondra/Workspace/prace/ledeos/application/views/site/language_box.tpl",
+		"/home/ondra/Workspace/prace/ledeos/media/scss/app.scss",
+		"/home/ondra/Workspace/prace/ledeos/application/views/base_template.tpl",
+		"/home/ondra/Workspace/prace/ledeos/media/stylesheets/app.css",
+		"/home/ondra/Workspace/prace/ledeos/application/views/navigation/main.tpl"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 111.0,
+		"where_history":
+		[
+			"/home/ondrej/projects/ledeos",
+			"/home/ondra/Workspace/prace/ledeos",
+			"/home/ondra/Workspace/prace/noventis",
+			"/home/ondra/Workspace/prace/noventis/application/classes/controller",
+			"/home/ondra/Workspace/prace/noventis",
+			"/home/ondra/Workspace/prace/noventis/application",
+			"/home/ondra/Workspace/prace/nabytek/application/classes/controller/admin/cz/replace",
+			"/home/ondra/Workspace/prace/nabytek/application/classes/controller/admin",
+			"/home/ondra/Workspace/prace/nabytek/application/classes/controller/admin/cz",
+			"/home/ondra/Workspace/prace/zoozlin-shop/application"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"table",
+			"'class'=>'form-control',",
+			"		<div class=\"col-sm-10\">",
+			"<div class=\"form-group\">",
+			"(\":\")[",
+			"\n{$",
+			"code",
+			" :",
+			": ",
+			":",
+			"die",
+			"(),\n",
+			"config",
+			"gift",
+			"data_orm",
+			"language",
+			"data_src",
+			"href",
+			"product",
+			"_product_priceholder",
+			"\")->",
+			"  ",
+			"branch",
+			"--.*\\n",
+			"parent_id",
+			"vitamin-d3-400-iu",
+			" <",
+			"\"",
+			"modal",
+			"ActionPopup",
+			"objednavka-payu",
+			"ShoppingSection",
+			"ShopperSection",
+			"ShoppingSection",
+			"AjaxSubmitForm",
+			"google",
+			">\n",
+			" >",
+			"0",
+			"$charset",
+			"order",
+			"branch_id",
+			"order_saved",
+			"top",
+			"ui-dialog",
+			"modal",
+			"get_product_category_by_route_id",
+			"$pc_filters",
+			"ProductListForm",
+			"img_click",
+			"filters-basic",
+			"login",
+			"()",
+			"variant",
+			"product",
+			" $",
+			"random",
+			"media",
+			"svg",
+			"get_random_products_by_category",
+			"[]\">",
+			"}",
+			"  </",
+			" <",
+			"variant_id",
+			"null",
+			"print_r",
+			"var_dump",
+			"}\n",
+			"die",
+			"}\n",
+			"key",
+			"customer",
+			"gift",
+			"variables_orm",
+			"product_orm",
+			"$data",
+			"data",
+			"customer",
+			"tree_mode",
+			"parent_id",
+			"pare",
+			"base_path_to_gallery",
+			"settings_submodule_code",
+			"[$category->id]",
+			"under",
+			"shopper_widget",
+			"minicart",
+			"shopper_wi",
+			"shoper_wi",
+			"   {widget action=\"carousel_widget\" controller=\"product\"}\n",
+			"{widget action=\"carousel_widget\" controller=\"product\"}",
+			"SynchronizeMessage",
+			"Controller_Admin",
+			"MAX_",
+			"PRIVATE_KEY_WEB_PASSWORD"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"",
+			"<div class=\"row\">\\n<div class=\"small-12 columns\">",
+			"variant_group_orm",
+			"variant",
+			"_variant_priceholder",
+			"",
+			"\\\"",
+			"doplnek",
+			"variant",
+			"up_orm",
+			"variables_orm",
+			"variant",
+			"",
+			"Controller_Admin_Cz"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 6,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/views/session/create.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2155,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								759,
+								759
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
+							"is_xml": false,
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/items/index.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1115,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								662,
+								662
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
+							"is_xml": false,
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/views/layout/main.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1453,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1078,
+								1078
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
+							"is_xml": false,
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 54.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/controllers/CategoryController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3167,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2211,
+								2211
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 918.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/views/category/edit.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 562,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								561,
+								561
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
+							"is_xml": false,
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/macros.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 381,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								282,
+								282
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/controllers/ItemController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4831,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1166,
+								1166
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 162.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/models/Item.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 318,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								179,
+								179
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "app/views/items/new.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1513,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1452,
+								1452
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
+							"is_xml": false,
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "public/js/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 913,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								909,
+								909
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
+							"is_xml": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 130.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 148.0
+	},
+	"pinned_build_system": "Packages/TypeScript/TypeScript.sublime-build",
+	"project": "cenovka.sublime-project",
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"data",
+				"application/config/database.php"
+			],
+			[
+				"productde",
+				"application/views/product/detail.tpl"
+			],
+			[
+				"base",
+				"application/views/base_template.tpl"
+			],
+			[
+				"product",
+				"modules/hana/classes/service/hana/product.php"
+			],
+			[
+				"hanafile",
+				"modules/hana/classes/service/hana/file.php"
+			],
+			[
+				"inner",
+				"modules/hana/classes/autoform/item/innerpriceeditparam.php"
+			],
+			[
+				"productedit",
+				"application/classes/controller/admin/cz/product/item/edit.php"
+			],
+			[
+				"product/item/edit",
+				"application/classes/controller/admin/cz/product/item/edit.php"
+			],
+			[
+				"servicehanaproduct",
+				"modules/hana/classes/service/hana/product/price.php"
+			],
+			[
+				"confighana",
+				"modules/purifier/vendor/htmlpurifier/tests/HTMLPurifier/ConfigSchema/Validator/directive/valueAliasesNotAliasSelf.vtest"
+			],
+			[
+				"controllerhanalis",
+				"modules/hana/classes/controller/hana/list.php"
+			],
+			[
+				"user",
+				"application/classes/controller/user.php"
+			],
+			[
+				"main",
+				"application/views/navigation/main.tpl"
+			],
+			[
+				"site",
+				"application/classes/site.php"
+			],
+			[
+				"naviga",
+				"application/classes/controller/navigation.php"
+			],
+			[
+				"carouse",
+				"application/views/product_carousel.tpl"
+			],
+			[
+				"home",
+				"application/views/homepage.tpl"
+			],
+			[
+				"mobile",
+				"media/js/mobile.js"
+			],
+			[
+				"nav",
+				"application/views/nav.tpl"
+			],
+			[
+				"baner",
+				"application/views/banners.tpl"
+			],
+			[
+				"_deta",
+				"media/mobile/scss/_detail.scss"
+			],
+			[
+				"app",
+				"template/scss/app.scss"
+			],
+			[
+				"product_de",
+				"application/views/product_detail.tpl"
+			],
+			[
+				"na",
+				"application/views/nav.tpl"
+			],
+			[
+				"hana",
+				"media/js/hana-default.js"
+			],
+			[
+				"cart",
+				"application/views/cart_detail_table.tpl"
+			],
+			[
+				"base_",
+				"application/views/base_template.tpl"
+			],
+			[
+				"order_sumary",
+				"application/views/order_summary_table.tpl"
+			],
+			[
+				"order_",
+				"application/views/order_confirmation.tpl"
+			],
+			[
+				"order_con",
+				"application/views/order_container.tpl"
+			],
+			[
+				"order",
+				"application/views/order_shipping_payment.tpl"
+			],
+			[
+				"app.s",
+				"template/scss/app.scss"
+			],
+			[
+				"orders",
+				"application/views/order_shipping_payment.tpl"
+			],
+			[
+				"order_pa",
+				"application/views/order_payment.tpl"
+			],
+			[
+				"order_s",
+				"application/views/order_shipping.tpl"
+			],
+			[
+				"orde",
+				"application/views/order_shipping_payment.tpl"
+			],
+			[
+				"orderuser",
+				"application/views/order_unregistered_user.tpl"
+			],
+			[
+				"user_re",
+				"application/views/user_registration.tpl"
+			],
+			[
+				"user_",
+				"application/views/user_login.tpl"
+			],
+			[
+				"cartdeta",
+				"application/views/cart_detail_table.tpl"
+			],
+			[
+				"_car",
+				"template/scss/_cart.scss"
+			],
+			[
+				"subnav",
+				"application/views/subnav.tpl"
+			],
+			[
+				"productca",
+				"application/views/product_category_items.tpl"
+			],
+			[
+				"page",
+				"application/views/page.tpl"
+			],
+			[
+				"",
+				"nabytek/application/config/database.php"
+			],
+			[
+				"homepa",
+				"nabytek/application/views/page/homepage.tpl"
+			],
+			[
+				"servicehanaform",
+				"nabytek/modules/hana/classes/service/hana/forms.php"
+			],
+			[
+				"controllerprodu",
+				"nabytek/application/classes/controller/product.php"
+			],
+			[
+				"autoformmod",
+				"nabytek/modules/hana/classes/autoform/item/modals.php"
+			],
+			[
+				"serviceproduct",
+				"nabytek/modules/hana/classes/service/hana/product.php"
+			],
+			[
+				"serviceproductcate",
+				"nabytek/modules/hana/classes/service/hana/product/category.php"
+			],
+			[
+				"servicecate",
+				"nabytek/modules/hana/classes/service/product/category.php"
+			],
+			[
+				"kaninde",
+				"kancelarskezidle/index.html"
+			],
+			[
+				"idex",
+				"nabytek/index.php"
+			],
+			[
+				"servicehanaprductca",
+				"nabytek/modules/hana/classes/service/hana/product/category.php"
+			],
+			[
+				"productitemedi",
+				"nabytek/application/classes/controller/admin/cz/product/item/edit.php"
+			],
+			[
+				"top",
+				"nabytek/application/views/product/top.tpl"
+			],
+			[
+				"productcate",
+				"nabytek/application/views/product/product_category_items.tpl"
+			],
+			[
+				"kancelarskeinde",
+				"kancelarskezidle/index.html"
+			],
+			[
+				"productsub",
+				"nabytek/application/views/product/subnav.tpl"
+			],
+			[
+				"productdetail",
+				"nabytek/application/views/product/product_detail.tpl"
+			],
+			[
+				"configdata",
+				"nabytek/application/config/database.php"
+			],
+			[
+				"articleedit",
+				"nabytek/application/classes/controller/admin/cz/article/item/edit.php"
+			],
+			[
+				"productitemedit",
+				"nabytek/application/classes/controller/admin/cz/product/item/edit.php"
+			],
+			[
+				"hanaserviceproductcate",
+				"nabytek/modules/hana/classes/service/hana/product/category.php"
+			],
+			[
+				"hanaservicehanaprodu",
+				"nabytek/modules/hana/classes/service/hana/product.php"
+			],
+			[
+				"hanaprodut",
+				"nabytek/modules/hana/classes/service/product.php"
+			],
+			[
+				"hanaproductcate",
+				"nabytek/modules/hana/classes/service/hana/product/category.php"
+			],
+			[
+				"hanaproduct",
+				"nabytek/modules/hana/classes/service/hana/product.php"
+			],
+			[
+				"hanamodule",
+				"nabytek/modules/hana/classes/service/hana/module.php"
+			],
+			[
+				"modals",
+				"nabytek/modules/hana/classes/autoform/item/modals.php"
+			],
+			[
+				"serviceartic",
+				"nabytek/application/classes/service/article.php"
+			],
+			[
+				"viewpage",
+				"nabytek/application/views/page/page.tpl"
+			],
+			[
+				"servicehanapa",
+				"nabytek/modules/hana/classes/service/hana/page.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 750.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/projects/ledeos/ledeos.sublime-project"
+			]
+		],
+		"width": 570.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 514.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+		"max_columns": 2
+	}
+}

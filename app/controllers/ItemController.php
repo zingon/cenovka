@@ -41,11 +41,11 @@ class ItemController extends BaseController {
 	 */
 	public function index()
 	{
-		$category = Auth::getUser()->categories()->first();
-		if(!$category) {
-			return Response::view('items.index',array('category'=>0));
+		if(!Request::ajax()) {
+			return Response::view('items.index');
 		} else {
-			return Response::view('items.index',array('category'=>$category->id));
+			$items = Auth::user()->items()->get();
+			return Response::json($items);
 		}
 		
 		
@@ -78,7 +78,7 @@ class ItemController extends BaseController {
 	{
 		$validator = Validator::make(Input::all(), $this->saveValues());
 		if ($validator->fails()) {
-			return Redirect::route('item.create')
+			return Redirect::back()
                 ->withErrors($validator);
 		} else {
 
@@ -188,8 +188,8 @@ class ItemController extends BaseController {
 	{
 		return array(
 			'name' 		=> 'required|max:255',
-            "price"   	=> 'required|alpha_dash',
-            "buy_price" => '',
+            "price"   	=> 'required|numeric',
+            "buy_price" => 'numeric',
             'note' 		=> 'max:65535',
             'unit'		=> 'required',
 			);

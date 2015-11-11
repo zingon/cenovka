@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('content')
+@section('content_basic')
 <div class="large-3 large-centered columns">
             <div class="login-box">
                 <div class="row">
@@ -14,7 +14,6 @@
                                 <div class="large-12 columns">
                                 <div class="input-wrapper">
                                 	{{Form::input('email','email','',array('placeholder'=>'Emailová adresa','required','autofocus'))}}
-                                    <!--<small class="error">A valid email address is required.</small>-->
                                 </div>
                                 </div>
                             </div>
