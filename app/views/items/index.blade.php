@@ -32,3 +32,7 @@
 	</table>
 </section>
 @stop
+
+@section("script")
+   {{ HTML::script('js/items.js')}}
+@stop

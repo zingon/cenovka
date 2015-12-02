@@ -1,7 +1,7 @@
 <?php
 class CategoryController extends BaseController
 {
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -10,14 +10,14 @@ class CategoryController extends BaseController
     public function index() {
         $categories = Auth::getUser()->categories;
         if(Request::ajax()) {
-            return Response::json($categories);
+            return Response::json(Category::all());
         } else {
-            
+
             return Response::view('category.index', array('categories' => $categories));
         }
-       
+
     }
-    
+
     /**
      * Show the form for creating a new resource.
      *
@@ -28,7 +28,7 @@ class CategoryController extends BaseController
         $code = isset($last->code)?sprintf("%03s",$last->code+1):sprintf("%04s","1");
         return Response::view('category.new',array('code'=> $code));
     }
-    
+
     /**
      * Store a newly created resource in storage.
      *
@@ -53,13 +53,13 @@ class CategoryController extends BaseController
             $category = new Category($save);
             $category->user()->associate(Auth::getUser());
             if($category->save()){
-                
+
                 return Redirect::route('item.index')
                     ->with('global','Kategorie byla úspěšně přidána.');
             }
         }
     }
-    
+
     /**
      * Display the specified resource.
      *
@@ -79,7 +79,7 @@ class CategoryController extends BaseController
         $category = Auth::getUser()->categories;
         return Response::view('category.edit',array('categories'=>$category));
     }
-    
+
     /**
      * Remove the specified resource from storage.
      *

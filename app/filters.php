@@ -11,15 +11,16 @@
 |
 */
 
-App::before(function($request)
-{
+App::before(function ($request) {
+
 	//
+
 });
 
+App::after(function ($request, $response) {
 
-App::after(function($request, $response)
-{
 	//
+
 });
 
 /*
@@ -33,30 +34,24 @@ App::after(function($request, $response)
 |
 */
 
-Route::filter('auth', function()
-{
-	if (Auth::guest())
-	{
-		if (Request::ajax())
-		{
+Route::filter('auth', function () {
+	if (Auth::guest()) {
+		if (Request::ajax()) {
 			return Response::make('Unauthorized', 401);
 		}
-		else
-		{
+		else {
 			return Redirect::guest('login');
 		}
 	}
 });
 
-Route::filter('admin', function()
-{
-	if( !Auth::getUser()->admin){
+Route::filter('admin', function () {
+	if (!Auth::getUser()->admin) {
 		return Response::make('Na to nemáš právo', 401);
 	}
 });
 
-Route::filter('auth.basic', function()
-{
+Route::filter('auth.basic', function () {
 	return Auth::basic();
 });
 
@@ -71,8 +66,7 @@ Route::filter('auth.basic', function()
 |
 */
 
-Route::filter('guest', function()
-{
+Route::filter('guest', function () {
 	if (Auth::check()) return Redirect::to('/');
 });
 
@@ -87,14 +81,16 @@ Route::filter('guest', function()
 |
 */
 
-Route::filter('csrf', function()
-{
-	if (Session::token() !== Input::get('_token'))
-	{
+Route::filter('csrf', function () {
+	if (Request::ajax()) {
+		if(Session::token() !== Request::header('csrftoken')) {
+			throw new Illuminate\Session\TokenMismatchException;
+		}
+	} elseif (Session::token() !== Input::get('_token')) {
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
 
-Route::filter('ajax',function(){
-	if(!Request::ajax()) return Redirect::route('item.index');
+Route::filter('ajax', function () {
+	if (!Request::ajax()) return Redirect::route('item.index');
 });

@@ -8,10 +8,10 @@
         {{HTML::script('bower_components/modernizr/modernizr.js')}}
     </head>
     <body>
-        
-       
+
+
         @yield('content_basic')
-        
+
         <div class="message-box">
         @if (!$errors->isEmpty())
          @foreach ($errors->all() as $key => $value)
@@ -26,18 +26,30 @@
         <!--Modalové okno-->
         <div id="universalSmallModal" class="reveal-modal small" data-reveal>
             <section>
-                
+
             </section>
-            <a class="close-reveal-modal" arial-label="Close">&#215;</a> 
+            <a class="close-reveal-modal" arial-label="Close">&#215;</a>
         </div>
         <div id="universalLargeModal"  class="reveal-modal large"  data-reveal>
             <section>
-                
+
             </section>
-            <a class="close-reveal-modal" arial-label="Close">&#215;</a> 
+            <a class="close-reveal-modal" arial-label="Close">&#215;</a>
         </div>
         {{ HTML::script('bower_components/jquery/dist/jquery.min.js')}}
+        <script type="text/javascript">
+        $.ajaxSetup({ headers: {'csrftoken' : '{{ csrf_token() }}'}})
+        localStorage.categoryUrl = "{{route('category.index')}}";
+        localStorage.ItemsUrl = "{{route('item.index')}}";
+        localStorage.ItemDeleteUrl = "{{route('item.destroy',0)}}";
+        </script>
         {{ HTML::script('bower_components/foundation/js/foundation.min.js')}}
-        {{ HTML::script('js/app.js')}}
+        {{ HTML::script('bower_components/jsrender/jsrender.min.js')}}
+        {{ HTML::script('js/putDelete.js')}}
+        {{ HTML::script('js/templates.js')}}
+        {{ HTML::script('js/loaders.js')}}
+
+        @yield('script')
+
     </body>
 </html>
