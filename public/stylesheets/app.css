@@ -43,6 +43,17 @@ article section {
 article section .button-group {
   @extends .row;
 }
+/* line 15, ../scss/_list.scss */
+article section table th {
+  text-align: center;
+}
+/* line 18, ../scss/_list.scss */
+article section table .delete, article section table .edit {
+  padding: 0.625rem 0.625rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 0;
+}
 
 /* line 1, ../scss/_alerts.scss */
 .message-box {
@@ -3260,6 +3271,75 @@ label.error {
     left: auto;
   }
 }
+/* line 150, ../bower_components/foundation/scss/foundation/components/_pagination.scss */
+ul.pagination {
+  display: block;
+  margin-left: -0.3125rem;
+  min-height: 1.5rem;
+}
+/* line 105, ../bower_components/foundation/scss/foundation/components/_pagination.scss */
+ul.pagination li {
+  color: #222222;
+  font-size: 0.875rem;
+  height: 1.5rem;
+  margin-left: 0.3125rem;
+}
+/* line 111, ../bower_components/foundation/scss/foundation/components/_pagination.scss */
+ul.pagination li a, ul.pagination li button {
+  border-radius: 3px;
+  transition: background-color 300ms ease-out;
+  background: none;
+  color: #999999;
+  display: block;
+  font-size: 1em;
+  font-weight: normal;
+  line-height: inherit;
+  padding: 0.0625rem 0.625rem 0.0625rem;
+}
+/* line 123, ../bower_components/foundation/scss/foundation/components/_pagination.scss */
+ul.pagination li:hover a,
+ul.pagination li a:focus, ul.pagination li:hover button,
+ul.pagination li button:focus {
+  background: #e6e6e6;
+}
+/* line 51, ../bower_components/foundation/scss/foundation/components/_pagination.scss */
+ul.pagination li.unavailable a, ul.pagination li.unavailable button {
+  cursor: default;
+  color: #999999;
+  pointer-events: none;
+}
+/* line 56, ../bower_components/foundation/scss/foundation/components/_pagination.scss */
+ul.pagination li.unavailable:hover a, ul.pagination li.unavailable a:focus, ul.pagination li.unavailable:hover button, ul.pagination li.unavailable button:focus {
+  background: transparent;
+}
+/* line 69, ../bower_components/foundation/scss/foundation/components/_pagination.scss */
+ul.pagination li.current a, ul.pagination li.current button {
+  background: #008CBA;
+  color: #FFFFFF;
+  cursor: default;
+  font-weight: bold;
+}
+/* line 75, ../bower_components/foundation/scss/foundation/components/_pagination.scss */
+ul.pagination li.current a:hover, ul.pagination li.current a:focus, ul.pagination li.current button:hover, ul.pagination li.current button:focus {
+  background: #008CBA;
+}
+/* line 137, ../bower_components/foundation/scss/foundation/components/_pagination.scss */
+ul.pagination li {
+  display: block;
+  float: left;
+}
+
+/* Pagination centred wrapper */
+/* line 155, ../bower_components/foundation/scss/foundation/components/_pagination.scss */
+.pagination-centered {
+  text-align: center;
+}
+/* line 137, ../bower_components/foundation/scss/foundation/components/_pagination.scss */
+.pagination-centered ul.pagination li {
+  display: inline-block;
+  float: none;
+}
+
 /* line 172, ../bower_components/foundation/scss/foundation/components/_reveal.scss */
 .reveal-modal-bg {
   background: #000000;

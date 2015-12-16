@@ -8,9 +8,14 @@ class ContactController extends BaseController {
 	 * @return Response
 	 */
 	public function index()
-	{	
-		$contacts = Auth::getUser()->contacts()->orderBy('created_at','DESC')->paginate(10);
-		return Response::view('contact.index', array('contacts' => $contacts));
+	{
+		if(Request::ajax()){
+			$contacts = Auth::getUser()->contacts()->get();
+			return Response::json($contacts);
+		} else {
+			$contacts = Auth::getUser()->contacts()->get();
+			return Response::view('contact.index', array('contacts' => $contacts));
+		}
 	}
 
 
@@ -21,7 +26,14 @@ class ContactController extends BaseController {
 	 */
 	public function create()
 	{
-		return Response::view('contact.new');
+		$data = new Contact;
+		$title = "Nový kontakt";
+		return Response::view('contact.new',array(
+			'data' => $data,
+			"route" => "contact.store",
+			"method" => "POST",
+			"title" => $title
+			));
 	}
 
 
@@ -62,7 +74,15 @@ class ContactController extends BaseController {
 	 */
 	public function edit($id)
 	{
-		return Response::view('contact.edit',array('contact'=>Auth::getUser()->contacts()->find($id)));
+		$data = Auth::getUser()->contacts()->find($id);
+		$title = "Editovat kontakt";
+		return Response::view('contact.new', array(
+			'data' => $data,
+			"route" => array("contact.update",$id),
+			"method" => "PUT",
+			"title" => $title
+		));
+
 	}
 
 
@@ -119,15 +139,15 @@ class ContactController extends BaseController {
 	private function saveValues(){
 		return array(
 			'name' 			=> 'required|max:255',
-			'firstname' 	=> 'max:80', 
-			'lastname' 		=> 'max:80', 
+			'firstname' 	=> 'max:80',
+			'lastname' 		=> 'max:80',
 			'email'			=> 'max:255|email',
 			'phone'			=> 'max:80',
-			'city' 			=> '', 
-			'zip_code'		=> 'max:6', 
-			'adress'		=> 'max:255', 
-			'ic'			=> '', 
-			'dic'			=> '', 
+			'city' 			=> '',
+			'zip_code'		=> 'max:6',
+			'adress'		=> 'max:255',
+			'ic'			=> '',
+			'dic'			=> '',
 			'note'			=> 'max:65535',
 			'me'			=> '',
 			);

@@ -57,10 +57,6 @@ Route::group(['before' => 'auth'], function () {
 		'uses' => 'ItemController@changePosition',
 		'as' => 'changePosition',
 	));
-	Route::get('/ajax/token', array(
-		'uses' => 'DocumentItemController@getToken',
-		'as' => 'token'
-	));
 
 	Route::get('/export/pdf/{id}', array(
 		'uses' => 'OfferController@exportPdf',

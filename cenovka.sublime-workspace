@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"search",
+				"searchObject"
+			],
+			[
+				"sear",
+				"searchObjects"
+			],
+			[
+				"objec",
+				"objects〔variable〕"
+			],
+			[
+				"for",
+				"for〔keyword〕"
+			],
+			[
+				"el",
+				"elementsToFilter"
+			],
+			[
+				"data",
+				"dataPaginate"
+			],
+			[
+				"filt",
+				"filtered〔variable〕"
+			],
+			[
+				"Reque",
+				"Request::method	Various Request Methods to examine HTTP Requests"
+			],
+			[
 				"side",
 				"sidenav"
 			],
@@ -42,10 +74,6 @@
 			[
 				"cate",
 				"categories"
-			],
-			[
-				"Reque",
-				"Request〔class〕"
 			],
 			[
 				"Schema",
@@ -94,10 +122,6 @@
 			[
 				"lan",
 				"language"
-			],
-			[
-				"for",
-				"foreach	foreach …"
 			],
 			[
 				"Service_Product",
@@ -154,10 +178,6 @@
 			[
 				"lis",
 				"$list_template〔variable〕"
-			],
-			[
-				"data",
-				"data_src"
 			],
 			[
 				"da",
@@ -494,26 +514,6 @@
 			[
 				"under",
 				"undercat"
-			],
-			[
-				"if",
-				"if	if"
-			],
-			[
-				"unde",
-				"$undercategory〔variable〕"
-			],
-			[
-				"foreach",
-				"foreach"
-			],
-			[
-				"contro",
-				"controller=\"navigation"
-			],
-			[
-				"const",
-				"constructor	keyword"
 			]
 		]
 	},
@@ -523,31 +523,31 @@
 			"file": "app/views/layout/main.blade.php",
 			"settings":
 			{
-				"buffer_size": 1909,
+				"buffer_size": 2322,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/layout/inner.blade.php",
+			"file": "public/js/contacts.js",
 			"settings":
 			{
-				"buffer_size": 365,
+				"buffer_size": 507,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/filters.php",
+			"file": "public/js/loaders/global.js",
 			"settings":
 			{
-				"buffer_size": 2573,
+				"buffer_size": 424,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "public/js/templates.js",
+			"file": "app/controllers/ContactController.php",
 			"settings":
 			{
-				"buffer_size": 489,
+				"buffer_size": 3278,
 				"line_ending": "Unix"
 			}
 		},
@@ -555,31 +555,23 @@
 			"file": "public/js/items.js",
 			"settings":
 			{
-				"buffer_size": 648,
+				"buffer_size": 885,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "public/js/loaders.js",
+			"file": "public/js/loaders/contact.js",
 			"settings":
 			{
-				"buffer_size": 1029,
+				"buffer_size": 1068,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/routes.php",
+			"file": "public/js/templates/contact.js",
 			"settings":
 			{
-				"buffer_size": 3056,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/items/index.blade.php",
-			"settings":
-			{
-				"buffer_size": 1177,
+				"buffer_size": 459,
 				"line_ending": "Unix"
 			}
 		}
@@ -597,7 +589,7 @@
 		[
 			[
 				"",
-				"CodeFormatter: Format as Javascript Syntax"
+				"CodeFormatter: Format as HTML Syntax"
 			],
 			[
 				"format",
@@ -683,41 +675,63 @@
 		"/home/ondrej/projects/cenovka/cenovka/app/models",
 		"/home/ondrej/projects/cenovka/cenovka/app/views",
 		"/home/ondrej/projects/cenovka/cenovka/app/views/category",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/contact",
 		"/home/ondrej/projects/cenovka/cenovka/app/views/items",
 		"/home/ondrej/projects/cenovka/cenovka/app/views/layout",
 		"/home/ondrej/projects/cenovka/cenovka/app/views/offer",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/old",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/old/contact",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/old/items",
 		"/home/ondrej/projects/cenovka/cenovka/app/views/session",
 		"/home/ondrej/projects/cenovka/cenovka/app/views/user",
 		"/home/ondrej/projects/cenovka/cenovka/public",
+		"/home/ondrej/projects/cenovka/cenovka/public/bower_components",
 		"/home/ondrej/projects/cenovka/cenovka/public/js",
+		"/home/ondrej/projects/cenovka/cenovka/public/js/loaders",
+		"/home/ondrej/projects/cenovka/cenovka/public/js/templates",
+		"/home/ondrej/projects/cenovka/cenovka/public/old",
 		"/home/ondrej/projects/cenovka/cenovka/public/scss"
 	],
 	"file_history":
 	[
+		"/home/ondrej/projects/cenovka/cenovka/public/js/loaders/item.js",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/contact/index.blade.php",
+		"/home/ondrej/projects/cenovka/cenovka/public/js/templates/item.js",
+		"/home/ondrej/projects/cenovka/cenovka/public/js/simplePagination.js",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/layout/main.blade.php",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/items/new.blade.php",
+		"/home/ondrej/projects/cenovka/cenovka/app/controllers/ContactController.php",
+		"/home/ondrej/projects/cenovka/cenovka/app/controllers/ItemController.php",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/contact/new.blade.php",
+		"/home/ondrej/projects/cenovka/cenovka/public/js/items.js",
+		"/home/ondrej/projects/cenovka/cenovka/public/js/global.js",
+		"/home/ondrej/projects/cenovka/cenovka/public/js/templates/global.js",
+		"/home/ondrej/projects/cenovka/cenovka/app/filters.php",
+		"/home/ondrej/projects/cenovka/cenovka/public/scss/app.scss",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/layout/inner.blade.php",
+		"/home/ondrej/projects/cenovka/cenovka/public/js/loaders/global.js",
+		"/home/ondrej/projects/cenovka/cenovka/app/routes.php",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/items/index.blade.php",
+		"/home/ondrej/projects/cenovka/cenovka/public/js/templates.js",
+		"/home/ondrej/projects/cenovka/cenovka/public/js/loaders.js",
+		"/home/ondrej/projects/cenovka/cenovka/public/scss/_list.scss",
+		"/home/ondrej/projects/cenovka/cenovka/favicon.ico",
+		"/home/ondrej/projects/cenovka/cenovka/app/views/items/edit.blade.php",
 		"/home/ondrej/projects/cenovka/cenovka/public/js/putDelete.js",
 		"/home/ondrej/projects/cenovka/cenovka/app/controllers/CategoryController.php",
-		"/home/ondrej/projects/cenovka/cenovka/public/js/templates.js",
-		"/home/ondrej/projects/cenovka/cenovka/app/routes.php",
 		"/home/ondrej/projects/cenovka/cenovka/public/js/app.js",
 		"/home/ondrej/projects/cenovka/cenovka/public/tsc/items.ts",
 		"/home/ondrej/.config/sublime-text-3/Packages/User/TypeScript.sublime-settings",
-		"/home/ondrej/projects/cenovka/cenovka/app/controllers/ItemController.php",
-		"/home/ondrej/projects/cenovka/cenovka/app/views/layout/main.blade.php",
 		"/home/ondrej/.config/sublime-text-3/Packages/Better TypeScript/TypeScript.sublime-settings",
 		"/home/ondrej/projects/cenovka/cenovka/public/config.js",
-		"/home/ondrej/projects/cenovka/cenovka/public/js/items.js",
 		"/home/ondrej/.local/share/Trash/files/templates.js",
-		"/home/ondrej/projects/cenovka/cenovka/app/views/items/index.blade.php",
 		"/home/ondrej/projects/cenovka/cenovka/public/js/templates/templates.js",
 		"/home/ondrej/projects/cenovka/cenovka/app/views/session/create.blade.php",
 		"/home/ondrej/projects/cenovka/cenovka/app/views/category/edit.blade.php",
 		"/home/ondrej/projects/cenovka/cenovka/app/macros.php",
 		"/home/ondrej/projects/cenovka/cenovka/app/models/Item.php",
-		"/home/ondrej/projects/cenovka/cenovka/app/views/items/new.blade.php",
 		"/home/ondrej/projects/cenovka/cenovka/public/scss/_settings.scss",
 		"/home/ondrej/projects/cenovka/cenovka/app/views/category/new.blade.php",
-		"/home/ondrej/projects/cenovka/cenovka/app/views/layout/inner.blade.php",
-		"/home/ondrej/projects/cenovka/cenovka/public/scss/app.scss",
 		"/home/ondrej/projects/cenovka/cenovka/app/views/old/session/create.blade.php",
 		"/home/ondrej/projects/cenovka/cenovka/app/views/layout/inner-onecol.blade.php",
 		"/home/ondrej/projects/cenovka/cenovka/app/views/layout/menu.blade.php",
@@ -807,21 +821,7 @@
 		"/home/ondra/Workspace/prace/ledeos/application/views/user/widget.tpl",
 		"/home/ondra/Workspace/prace/ledeos/application/views/user/user_send_new_password_form.tpl",
 		"/home/ondra/Workspace/prace/ledeos/application/views/user/user_account_branch_list.tpl",
-		"/home/ondra/Workspace/prace/ledeos/media/js/app.js",
-		"/home/ondra/Workspace/prace/ledeos/application/classes/controller/user.php",
-		"/home/ondra/Workspace/prace/ledeos/application/views/user/user_account_index.tpl",
-		"/home/ondra/Workspace/prace/ledeos/system/classes/controller.php",
-		"/home/ondra/Workspace/prace/nabytek/application/views/user/user_send_new_password_form.tpl",
-		"/home/ondra/Workspace/prace/ledeos/application/classes/service/product.php",
-		"/home/ondra/Workspace/prace/nabytek/application/classes/service/product.php",
-		"/home/ondra/Workspace/prace/ledeos/application/views/user/user_registration_popup.tpl",
-		"/home/ondra/Workspace/prace/nabytek/application/config/database.php",
-		"/home/ondra/Workspace/prace/ledeos/application/config/hana.php",
-		"/home/ondra/Workspace/prace/ledeos/modules/purifier/vendor/htmlpurifier/tests/HTMLPurifier/ConfigSchema/Validator/directive/valueAliasesNotAliasSelf.vtest",
-		"/home/ondra/Workspace/prace/ledeos/modules/hana/views/admin/list/base_list.tpl",
-		"/home/ondra/Workspace/prace/ledeos/modules/hana/views/admin/list/product_list.tpl",
-		"/home/ondra/Workspace/prace/ledeos/modules/hana/classes/controller/hana/list.php",
-		"/home/ondra/Workspace/prace/ledeos/application/classes/controller/admin/cz/page/item/list.php"
+		"/home/ondra/Workspace/prace/ledeos/media/js/app.js"
 	],
 	"find":
 	{
@@ -849,6 +849,31 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"contacts",
+			"Item",
+			"item",
+			"            ",
+			"\\n",
+			"\\{\\{Form::label\\('([a-z_]+)','([a-žA-Ž\\. \\*]+):',array\\('class'=>'col-sm-2'\\)\\)\\}\\}",
+			"\\{\\{Form::([a-z]+)\\('([a-z_]+)','',array\\('class'=>'form-control','placeholder'=>'([a-žA-Ž ,.]+)'\\)\\)\\}\\}",
+			"\\{\\{Form::text\\('([a-z_]+)','',array\\('class'=>'form-control','placeholder'=>'([a-žA-Ž ,.]+)'\\)\\)\\}\\}",
+			"\\{\\{Form::text\\('([a-z]+)','',array\\('class'=>'form-control','placeholder'=>'([a-žA-Ž ,.]+)'\\)\\)\\}\\}",
+			"\\{\\{Form::text\\('([a-z]+)','',array\\('class'=>'form-control','placeholder'=>'([a-žA-Ž ]+)','id'=>'([a-žA-Ž ]+)'\\)\\)\\}\\}",
+			"\\{\\{Form::email\\('([a-z]+)','',array\\('class'=>'form-control','placeholder'=>'([a-žA-Ž ]+)'\\)\\)\\}\\}",
+			"\\{\\{Form::text\\('([a-z]+)','',array\\('class'=>'form-control','placeholder'=>'([a-žA-Ž ]+)'\\)\\)\\}\\}",
+			"\\{\\{Form::text\\('([a-z]+)','',array\\('class'=>'form-control','placeholder'=>'([a-žA-Ž]+)'\\)\\)\\}\\}",
+			"\\{\\{Form::text\\('([a-z]+)','',array\\('class'=>'form-control','placeholder'=>'([a-ž]+)'\\)\\)\\}\\}",
+			"\\{\\{Form::text\\('[a-z]+','',array\\('class'=>'form-control','placeholder'=>'[a-z]+'\\)\\)\\}\\}",
+			"\\{\\{Form::text([a-z'],'',array('class'=>'form-control','placeholder'=>'Název'))\\}\\}",
+			"<div class=\"col-sm-4\">\\n(\\{\\{\\w\\}\\})\\n</div>",
+			"<div class=\"col-sm-4\">",
+			"<div class=\"col-sm-10\">",
+			"<div class=\"form-group\">\\n",
+			"<div class=\"form",
+			"Items",
+			">');",
+			"\\n",
+			"append",
 			"table",
 			"'class'=>'form-control',",
 			"		<div class=\"col-sm-10\">",
@@ -948,10 +973,22 @@
 		],
 		"highlight": true,
 		"in_selection": false,
-		"preserve_case": false,
+		"preserve_case": true,
 		"regex": true,
 		"replace_history":
 		[
+			"Contact",
+			"contact",
+			"",
+			"{{Form::label('$1','$2')}}",
+			"{{Form::label('note','Poznámka:')}}",
+			"\\{\\{Form::text\\('$1',\\$data->$1,array\\('placeholder'=>'$2'\\)\\)\\}\\}",
+			"\\{\\{Form::email\\('$1',\\$data->$1,array\\('placeholder'=>'$2'\\)\\)\\}\\}",
+			"\\{\\{Form::text\\('$1',\\$data->$1,array\\('placeholder'=>'$2'\\)\\)\\}\\}",
+			"\\{\\{Form::text\\('$1','\\$data->$1',array\\('placeholder'=>'$2'\\)\\)\\}\\}",
+			"",
+			"<div class=\"row\">\n	<div class=\"small-12 columns\">\\n",
+			"<div class=\"row\">\n	<div class=\"small-12 columns\">",
 			"",
 			"<div class=\"row\">\\n<div class=\"small-12 columns\">",
 			"variant_group_orm",
@@ -976,7 +1013,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 5,
 			"sheets":
 			[
 				{
@@ -985,55 +1022,84 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1909,
+						"buffer_size": 2322,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1529,
-								1529
+								1906,
+								1906
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
-							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
 							"is_xml": false,
 							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 180.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "app/views/layout/inner.blade.php",
-					"semi_transient": true,
+					"file": "public/js/contacts.js",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 365,
+						"buffer_size": 507,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								194,
-								194
+								425,
+								425
 							]
 						],
 						"settings":
 						{
-							"is_xml": false,
-							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"auto_complete": false,
+							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "public/js/loaders/global.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 424,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1043,20 +1109,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "app/filters.php",
+					"buffer": 3,
+					"file": "app/controllers/ContactController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2573,
+						"buffer_size": 3278,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2348,
-								2348
+								1780,
+								1780
 							]
 						],
 						"settings":
@@ -1067,41 +1133,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1054.0,
+						"translation.y": 1485.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "public/js/templates.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 489,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								413,
-								413
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
-							"is_xml": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 747.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -1110,53 +1145,20 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 648,
+						"buffer_size": 885,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								636,
-								636
+								204,
+								204
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
-							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "public/js/loaders.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1029,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								871,
-								881
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
@@ -1169,65 +1171,63 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "app/routes.php",
+					"buffer": 5,
+					"file": "public/js/loaders/contact.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3056,
+						"buffer_size": 1068,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2346,
-								2346
+								1060,
+								1060
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
-							"is_xml": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 510.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "app/views/items/index.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1177,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1074,
-								1074
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"is_xml": false,
-							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "public/js/templates/contact.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 459,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								453,
+								453
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -1293,6 +1293,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"itemcon",
+				"app/controllers/ItemController.php"
+			],
 			[
 				"data",
 				"application/config/database.php"
@@ -1600,7 +1604,7 @@
 		[
 			[
 				"",
-				"~/projects/ledeos/ledeos.sublime-project"
+				"~/projects/nabytek/kpe.sublime-project"
 			]
 		],
 		"width": 570.0
@@ -1622,7 +1626,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 514.0,
+	"side_bar_width": 224.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

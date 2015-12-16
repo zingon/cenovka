@@ -1,6 +1,11 @@
 @extends('layout.inner')
 @section("submenu")
+<h4>Kategorie</h4>
+<ul class="side-nav">
 	<li class="getContent" data-url="{{route('category.index')}}"><a></a></li>
+</ul>
+	<h4>Vyhledávání</h4>
+	<input type="text" id="search" placeholder="Vyhledávání...">
 @stop
 @section('content')
 <section>
@@ -23,16 +28,25 @@
 				<th>Poznámka</th>
 				<th><span class="fi-pencil"></span></th>
 				<th><span class="fi-trash"></span></th>
-
 			</tr>
 		</thead>
 		<tbody id="items">
-
 		</tbody>
+		<tfoot>
+		<tr>
+			<td colspan="7">
+				<div class="center">
+					<ul class="bottom">
+					</ul>
+				</div>
+			</td>
+		</tr>
+		</tfooter>
 	</table>
 </section>
 @stop
-
 @section("script")
-   {{ HTML::script('js/items.js')}}
+{{ HTML::script('js/items.js')}}
+{{ HTML::script('js/loaders/item.js')}}
+{{ HTML::script('js/templates/item.js')}}
 @stop

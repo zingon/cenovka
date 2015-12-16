@@ -24,6 +24,9 @@
         </div>
 
         <!--Modalové okno-->
+        <div id="modalField">
+
+        </div>
         <div id="universalSmallModal" class="reveal-modal small" data-reveal>
             <section>
 
@@ -38,16 +41,25 @@
         </div>
         {{ HTML::script('bower_components/jquery/dist/jquery.min.js')}}
         <script type="text/javascript">
-        $.ajaxSetup({ headers: {'csrftoken' : '{{ csrf_token() }}'}})
+        $.ajaxSetup({ headers: {'csrftoken' : '{{ csrf_token() }}'}});
+
+        //Položky
         localStorage.categoryUrl = "{{route('category.index')}}";
         localStorage.ItemsUrl = "{{route('item.index')}}";
         localStorage.ItemDeleteUrl = "{{route('item.destroy',0)}}";
+        localStorage.ItemEditUrl = "{{route('item.edit',0)}}";
+
+        //Kontakty
+        localStorage.ContactsUrl = "{{route('contact.index')}}";
+        localStorage.ContactDeleteUrl = "{{route('contact.destroy',0)}}";
+        localStorage.ContactEditUrl = "{{route('contact.edit',0)}}";
         </script>
         {{ HTML::script('bower_components/foundation/js/foundation.min.js')}}
         {{ HTML::script('bower_components/jsrender/jsrender.min.js')}}
         {{ HTML::script('js/putDelete.js')}}
-        {{ HTML::script('js/templates.js')}}
-        {{ HTML::script('js/loaders.js')}}
+        {{ HTML::script('js/global.js')}}
+        {{ HTML::script('js/templates/global.js')}}
+        {{ HTML::script('js/loaders/global.js')}}
 
         @yield('script')
 
