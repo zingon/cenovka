@@ -16,9 +16,9 @@
 		<thead>
 			<tr>
 				<th>Název</th>
-	            <th>Jméno</th>
-	            <th>Adresa</th>
-	            <th>Poznámka</th>
+				<th>Jméno</th>
+				<th>Adresa</th>
+				<th>Poznámka</th>
 				<th><span class="fi-pencil"></span></th>
 				<th><span class="fi-trash"></span></th>
 			</tr>
@@ -26,20 +26,15 @@
 		<tbody id="contacts">
 		</tbody>
 		<tfoot>
-		<tr>
-			<td colspan="7">
-				<div class="center">
-					<ul class="bottom">
-					</ul>
-				</div>
-			</td>
-		</tr>
-		</tfooter>
+		<tr><td colspan="7">
+			<div id="pagination"></div>
+		</td></tr>
+		</tfoot>
 	</table>
+
 </section>
 @stop
 @section("script")
-
 {{ HTML::script('js/contacts.js')}}
 {{ HTML::script('js/loaders/contact.js')}}
 {{ HTML::script('js/templates/contact.js')}}

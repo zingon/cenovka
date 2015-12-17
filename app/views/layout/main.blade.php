@@ -62,6 +62,7 @@
         {{ HTML::script('js/loaders/global.js')}}
 
         @yield('script')
+        {{ HTML::script('js/lib/pagination.js')}}
 
     </body>
 </html>

@@ -3,12 +3,16 @@
 $(document).ready(function() {
 
   window.App.Items = {};
+  window.App.pagination.onPage = 2;
+  window.App.pagination.element = "#pagination";
+  init();
 
-  var items = "#items";
+});
+
+function init() {
+   var items = "#items";
   var sidenav = ".side-nav";
   var search = "#search";
-
-
 
   if (window.location.hash.length > 0) {
     filterItems(items, window.location.hash.split("#")[1]);
@@ -39,5 +43,17 @@ $(document).ready(function() {
         loadItems(items);
       }
   });
+}
 
-});
+
+function reload() {
+  var items = "#items";
+  var search = "#search";
+  if($(search).val().length>0) {
+    loadItems(items,$(search).val());
+  } else if (window.location.hash.length > 0) {
+    loadItems(items, window.location.hash.split("#")[1]*1);
+  } else {
+    loadItems(items,false);
+  }
+}

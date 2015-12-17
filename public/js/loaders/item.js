@@ -5,32 +5,28 @@ function loadCategories(target, callback) {
   });
 }
 
-function loadItems(target) {
-    if(window.App.Items.length>0) {
-      itemTemplate(window.App.Items, target);
-    } else {
+function loadItems(target,param) {
+    if(typeof param == "undefined") param = false;
+    if(!(window.App.Items.length>0)) {
       $.get(localStorage.itemsUrl, function(response) {
-        itemTemplate(response, target);
         window.App.Items = response;
       });
-
     }
+    if(param.length>0 && param && isNaN(param)){
+      itemTemplate(searchItems(window.App.Items, param), target);
+      //itemTemplate(window.App.Items, target);
+    } else if(param.length>0 && param) {
+       itemTemplate(filterItems(window.App.Items, param), target);
+    } else {
+        itemTemplate(window.App.Items, target);
+    }
+
 }
 
-function filterItems(target, categoryId, limit, offset) {
-  if (window.App.Items.length > 0) {
-    var filtered = $.grep(window.App.Items, function(arr, i) {
+function filterItems(data, categoryId) {
+  if (data.length > 0) {
+    return $.grep(data, function(arr, i) {
       return (arr['category_id'] === categoryId);
-    });
-
-    itemTemplate(filtered, target);
-  } else {
-    $.get(localStorage.itemsUrl, function(response) {
-      var filtered = $.grep(response, function(arr, i) {
-        return (arr['category_id'] === categoryId);
-      });
-      window.App.Items = response;
-      itemTemplate(filtered, target);
     });
   }
 }
@@ -50,18 +46,18 @@ function editItem(itemId) {
   ;});
 }
 
-function searchItems(target,string) {
+function searchItems(objects, string) {
   var items = [];
 
-  if (typeof window.App.Items == "object") {
+  if (typeof objects == "object") {
     var elementsToFilter = ["name","note","code","unit","price"];
     //console.log(window.App.Items);
-    $.each(window.App.Items, function(key,value){
+    $.each(objects, function(key,value){
        if(searchObject(value,string,elementsToFilter)){
         console.log("necoo")
         items.push(value);
        }
     });
   }
-  itemTemplate(items, target);
+  return items;
 }

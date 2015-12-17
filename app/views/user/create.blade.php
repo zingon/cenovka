@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('content')
+@section('content_basic')
 <div class="large-3 large-centered columns">
     <div class="login-box">
         <div class="row">
@@ -9,7 +9,7 @@
         </div>
         <div class="row">
             <div class="large-12 columns">
-            	{{Form::open(array('route'=>'user.store'))}} 
+            	{{Form::open(array('route'=>'user.store'))}}
             	<div class="row">
                                 <div class="large-12 columns">
                                 <div class="input-wrapper">

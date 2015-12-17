@@ -35,9 +35,9 @@
 		<tfoot>
 		<tr>
 			<td colspan="7">
-				<div class="center">
-					<ul class="bottom">
-					</ul>
+				<div id="pagination">
+
+
 				</div>
 			</td>
 		</tr>

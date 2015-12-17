@@ -12,6 +12,7 @@ article {
 				@extends .row;
 			}
 			table {
+				margin-bottom:0;
 				th {
 					text-align: center;
 				}
@@ -21,8 +22,10 @@ article {
 					height: rem-calc(40px);
 					margin:0;
 				}
+				tfoot {
+					margin:auto;
+				}
 			}
-
 		}
 
 }

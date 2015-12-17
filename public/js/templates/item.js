@@ -9,6 +9,7 @@ function itemTemplate(data, target) {
 			data[k]["unit"] = unit[0] + "<sup>" + unit[1] + "</sup>";
 		}
 	});
+	data = paginationInit(data,window.App.pagination);
 	$(target).html($.render.itemRow(data));
 }
 //Templates

@@ -1,4 +1,6 @@
 function contactTemplate(data, target) {
+
+	data = paginationInit(data,window.App.pagination);
 	$(target).html($.render.contactRow(data));
 }
 
