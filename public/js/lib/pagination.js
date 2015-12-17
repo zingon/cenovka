@@ -11,9 +11,9 @@ function paginationInit(items, settings) {
 				page: i,
 				active: active
 			});
-			if(active && i == 1) {
+			if (active && i == 1) {
 				first = false;
-			}  else if ( active && i == pageCount) {
+			} else if (active && i == pageCount) {
 				last = false;
 			}
 		};
@@ -22,24 +22,19 @@ function paginationInit(items, settings) {
 			pagination: $.render.paginationItem(pages),
 			last: last,
 		}));
-
-
-
 		$(settings.element + " a").click(function(event) {
 			event.preventDefault();
 			var action = $(this).data("page");
-			if(action ==  "back") {
+			if (action == "back") {
 				settings.page--;
-			} else if(action == "next") {
+			} else if (action == "next") {
 				settings.page++;
 			} else {
-				settings.page = action*1;
+				settings.page = action * 1;
 			}
 			reload();
 		});
-
-		return items.slice(settings.onPage*(settings.page-1),settings.onPage*settings.page);
-
+		return items.slice(settings.onPage * (settings.page - 1), settings.onPage * settings.page);
 	} else {
 		$(settings.element + " .pagination").html("");
 		return items;

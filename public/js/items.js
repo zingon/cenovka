@@ -3,7 +3,7 @@
 $(document).ready(function() {
 
   window.App.Items = {};
-  window.App.pagination.onPage = 2;
+  window.App.pagination.onPage = 20;
   window.App.pagination.element = "#pagination";
   init();
 
@@ -15,7 +15,7 @@ function init() {
   var search = "#search";
 
   if (window.location.hash.length > 0) {
-    filterItems(items, window.location.hash.split("#")[1]);
+    loadItems(items, window.location.hash.split("#")[1]*1);
   } else {
     loadItems(items);
 
@@ -23,7 +23,7 @@ function init() {
 
   loadCategories(sidenav, function(target) {
     $(target + " a").click(function() {
-      filterItems(items, $(this).attr("href").split("#")[1]);
+      loadItems(items, $(this).attr("href").split("#")[1]*1);
     });
   });
 
@@ -34,14 +34,17 @@ function init() {
   $(items).on("click", ".edit", function() {
     editItem($(this).data("id"));
   });
+  $(".categoryReseter").click(function() {
+    window.location.hash = "";
+    loadItems(items);
+  });
 
   $(search).keyup(function() {
-      if($(this).val().length>0) {
-
-        searchItems(items,$(this).val());
-      } else {
-        loadItems(items);
-      }
+    if (window.location.hash.length > 0) {
+      loadItems(items,[window.location.hash.split("#")[1]*1,$(this).val()]);
+    } else {
+      loadItems(items,$(this).val());
+    }
   });
 }
 
@@ -49,11 +52,14 @@ function init() {
 function reload() {
   var items = "#items";
   var search = "#search";
+  var param = [];
   if($(search).val().length>0) {
-    loadItems(items,$(search).val());
-  } else if (window.location.hash.length > 0) {
-    loadItems(items, window.location.hash.split("#")[1]*1);
-  } else {
-    loadItems(items,false);
+    param.push($(search).val());
   }
+  if (window.location.hash.length > 0) {
+    param.push(window.location.hash.split("#")[1]*1);
+  }
+
+  loadItems(items,param);
+
 }
