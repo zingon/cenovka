@@ -34,21 +34,49 @@ article {
 article .row, article .alert-box {
   background: #fff;
 }
-/* line 7, ../scss/_list.scss */
+/* line 6, ../scss/_list.scss */
 article section {
   @extends .row;
   margin: 1.25rem 0 3.125rem 0;
 }
-/* line 11, ../scss/_list.scss */
+/* line 9, ../scss/_list.scss */
 article section .button-group {
   @extends .row;
 }
-/* line 15, ../scss/_list.scss */
+/* line 13, ../scss/_list.scss */
 article section table th {
   text-align: center;
 }
+/* line 15, ../scss/_list.scss */
+article section table th.small {
+  width: 2.5rem;
+}
 /* line 18, ../scss/_list.scss */
-article section table .delete, article section table .edit {
+article section table th.p7 {
+  width: 7%;
+}
+/* line 21, ../scss/_list.scss */
+article section table th.p10 {
+  width: 10%;
+}
+/* line 24, ../scss/_list.scss */
+article section table th.p13 {
+  width: 13%;
+}
+/* line 27, ../scss/_list.scss */
+article section table th.p15 {
+  width: 15%;
+}
+/* line 30, ../scss/_list.scss */
+article section table th.p20 {
+  width: 20%;
+}
+/* line 34, ../scss/_list.scss */
+article section table th.p25 {
+  width: 25%;
+}
+/* line 41, ../scss/_list.scss */
+article section table td .delete, article section table td .edit {
   padding: 0.625rem 0.625rem;
   width: 2.5rem;
   height: 2.5rem;
@@ -68,6 +96,11 @@ article section table .delete, article section table .edit {
   width: 18.75rem;
   text-align: center;
   margin-bottom: 0;
+}
+
+/* line 3, ../scss/_menu.scss */
+nav.top-bar a.alert {
+  background-color: #f04124 !important;
 }
 
 /* line 431, ../bower_components/foundation/scss/foundation/components/_global.scss */

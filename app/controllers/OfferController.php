@@ -2,10 +2,6 @@
 
 class OfferController extends BaseController {
 
-	protected $itemsOnPage = 7;
-	
-
-
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -13,9 +9,13 @@ class OfferController extends BaseController {
 	 */
 	public function index()
 	{
-		$documents = Auth::getUser()->documents()->orderBy('created_at','DESC')->paginate($this->itemsOnPage);
-		
-		return Response::view('offer.index',array('documents'=>$documents));
+		if (!Request::ajax()) {
+			return Response::view('offer.index');
+		} else {
+			$documents = Auth::getUser()->documents()->orderBy('created_at','DESC')->get();
+			return Response::json($items);
+		}
+
 	}
 
 
@@ -26,14 +26,15 @@ class OfferController extends BaseController {
 	 */
 	public function create()
 	{
-		$dodavatel = Auth::getUser()->contacts()->where('me','=',true)->first();
+
+		/*$dodavatel = Auth::getUser()->contacts()->where('me','=',true)->first();
 		$odberatele_native = Auth::getUser()->contacts()->where('me','!=',true)->get();
 		$odberatele = array();
 		Session::put('document',"new");
 		foreach ($odberatele_native as $key => $value) {
 			$odberatele[$value->id] = $value->name;
 		}
-		return Response::view('offer.new', array('dodavatel'=>$dodavatel,'odberatele'=>$odberatele));
+		return Response::view('offer.new', array('dodavatel'=>$dodavatel,'odberatele'=>$odberatele));*/
 	}
 
 
@@ -59,7 +60,7 @@ class OfferController extends BaseController {
 
 			$odberatel = Auth::getUser()->contacts()->find($save['odberatel']);
 			$dodavatel = Auth::getUser()->contacts()->where('me','=',true)->first();
-			
+
 			$last = Auth::getUser()->documents()->orderBy('created_at','desc')->first();
 
 			if(empty($last->code)){
@@ -104,8 +105,8 @@ class OfferController extends BaseController {
 	 		$polozky[$item->id] 				= $item;
 	 		$polozky[$item->id]->priceDiscount 	= $item_price;
 	 		$polozky[$item->id]->count 			= $connection->count;
-	 		$polozky[$item->id]->discount 		= $connection->discount; 
-	 		$polozky[$item->id]->unit 			= explode('^',$item->unit); 
+	 		$polozky[$item->id]->discount 		= $connection->discount;
+	 		$polozky[$item->id]->unit 			= explode('^',$item->unit);
 	 	}
 
 	 	$document->exported_document = View::make('offer.test',array(
@@ -129,7 +130,7 @@ class OfferController extends BaseController {
 	 */
 	public function show($id)
 	{
-	 	$document = Auth::getUser()->documents()->find($id); 
+	 	$document = Auth::getUser()->documents()->find($id);
 	 	/*$total_price=0;
 	 	$polozky = array();
 	 	$dph_kons = $document->dph/100;
@@ -144,8 +145,8 @@ class OfferController extends BaseController {
 	 		$polozky[$item->id] 				= $item;
 	 		$polozky[$item->id]->priceDiscount 	= $item_price;
 	 		$polozky[$item->id]->count 			= $connection->count;
-	 		$polozky[$item->id]->discount 		= $connection->discount; 
-	 		$polozky[$item->id]->unit 			= explode('^',$item->unit); 
+	 		$polozky[$item->id]->discount 		= $connection->discount;
+	 		$polozky[$item->id]->unit 			= explode('^',$item->unit);
 	 	}*/
 	 	return Response::view('offer.show',array('document' => $document));
 	}
@@ -163,14 +164,14 @@ class OfferController extends BaseController {
 		$polozky	= array();
 
 		foreach ($document->items()->withTrashed()->get() as $key => $item) {
-			
+
 			$connection = DocumentItem::right(array($item->id,$document->id))->first();
 			$polozky[$item->id] = $item;
 	 		$polozky[$item->id]->count = $connection->count;
-	 		$polozky[$item->id]->discount = $connection->discount; 
+	 		$polozky[$item->id]->discount = $connection->discount;
 	 		$polozky[$item->id]->con_id = $connection->id;
 
-		} 
+		}
 		Session::forget('document');
 		Session::put('document',$document->id);
 		return Response::view('offer.edit', array(
@@ -231,7 +232,7 @@ class OfferController extends BaseController {
 
 	public function exportPdf($id)
 	{
-		$document = Auth::getUser()->documents()->find($id); 
+		$document = Auth::getUser()->documents()->find($id);
 		$pdf = PDF::loadView('offer.pdf',array('document' => $document));
 		return Response::view('offer.pdf');
 	}

@@ -19,6 +19,7 @@ Route::group(['before' => 'auth'], function () {
 	Route::resource('contact', 'ContactController', ['except' => ['store', 'update', 'destory']]);
 	Route::resource('document', 'OfferController', ['except' => ['store', 'update', 'destory']]);
 	Route::resource('select', 'DocumentItemController', ['only' => ['create', 'edit']]);
+	Route::resource('settings', 'SettingController', ['except' => ['store', 'update', 'destory', 'show']]);
 	Route::group(['before' => 'admin'], function () {
 		Route::resource('user', 'UserController', ['only' => ['index', 'destroy']]);
 	});
@@ -86,3 +87,8 @@ Route::resource('user', 'UserController', ['only' => ['create', 'store']]);
 Route::get('/register', function () {
 	return Redirect::route('user.create');
 });
+
+Route::get('/logout', [
+	'uses' => "SessionController@destroy",
+	'as'=>"session.destroy"
+	]);

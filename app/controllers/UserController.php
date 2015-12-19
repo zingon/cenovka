@@ -50,9 +50,9 @@ class UserController extends BaseController {
 		$user->password = $password;
 
 		if($user->save()) {
-			if(Auth::attempt(array('email'=>$user->email,'password'=>$user->password),false)) {
-				return Redirect::url("/");
-			}
+			Auth::login($user,false);
+			return Redirect::to("/");
+
 		}
 
 	}
@@ -106,7 +106,7 @@ class UserController extends BaseController {
 			$user = User::find($id);
 			$user->destroy($id);
 			return Redirect::route('user.index')
-				->with('global','Uživatel byla úspěšně smazána.');
+				->with('global','Uživatel byl úspěšně smazán.');
 		}
 	}
 

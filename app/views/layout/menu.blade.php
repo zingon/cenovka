@@ -10,12 +10,15 @@
         <section class="top-bar-section">
             <!-- Right Nav Section -->
             <ul class="right">
+                <li><a href="{{ URL::route('settings.index') }}">Nastavení</a></li>
+                <li><a href="{{ URL::route('session.destroy') }}" class="alert">Odhlásit se</a></li>
+
             </ul>
             <!-- Left Nav Section -->
             <ul class="left">
                 @if (!Auth::getUser()->admin)
                     {{-- expr --}}
-                
+
                 <li {{(URL::current()==URL::route('item.index'))?'class="active"':""}}><a href="{{ URL::route('item.index') }}">Ceník</a></li>
                 <li {{(URL::current()==URL::route('contact.index'))?'class="active"':""}}><a href="{{ URL::route('contact.index') }}">Adresář</a></li>
                 <li {{(URL::current()==URL::route('document.index'))?'class="active"':""}}><a href="{{ URL::route('document.index') }}">Dokumenty</a></li>

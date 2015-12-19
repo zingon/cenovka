@@ -1,12 +1,16 @@
-//@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700&subset=latin,cyrillic-ext);
+
+   //@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700&subset=latin,cyrillic-ext);
 @import "settings";
 //@import "foundation";
 @import url(../bower_components/foundation-icon-fonts/foundation-icons.css);
 @import "login";
 @import "list";
 @import "alerts";
+@import "menu";
+
 
 // Or selectively include components
+
  @import
 //   "foundation/components/accordion",
    "foundation/components/alert-boxes",
@@ -43,3 +47,5 @@
    "foundation/components/type",
 //   "foundation/components/offcanvas",
    "foundation/components/visibility";
+
+

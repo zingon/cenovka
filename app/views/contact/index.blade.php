@@ -1,26 +1,29 @@
-@extends('layout.inner')
-@section("submenu")
+@extends('layout.inner-onecol')
+{{--@section("submenu")
 <h4>Vyhledávání</h4>
 <input type="text" id="search" placeholder="Vyhledávání...">
-@stop
+@stop--}}
 @section('content')
 <section>
-	<div class="small-12 columns">
+	<div class="small-12 medium-6 medium-push-6 columns">
 		<ul class="button-group right">
 			<li><a href="{{route('contact.create')}}" class="button success" data-reveal-id="universalLargeModal" data-reveal-ajax="true"><i class="fi-page-add"></i> Nový kontakt</a></li>
 		</ul>
+	</div>
+	<div class="small-12 medium-6 medium-pull-6 columns">
+		<input type="text" id="search" placeholder="Vyhledávání...">
 	</div>
 </section>
 <section>
 	<table class="small-12 columns" id="mainTable">
 		<thead>
 			<tr>
-				<th>Název</th>
-				<th>Jméno</th>
-				<th>Adresa</th>
+				<th class="p15">Název</th>
+				<th class="p15">Jméno</th>
+				<th class="p25">Adresa</th>
 				<th>Poznámka</th>
-				<th><span class="fi-pencil"></span></th>
-				<th><span class="fi-trash"></span></th>
+				<th class="p7"><span class="fi-pencil"></span></th>
+				<th class="p7"><span class="fi-trash"></span></th>
 			</tr>
 		</thead>
 		<tbody id="contacts">

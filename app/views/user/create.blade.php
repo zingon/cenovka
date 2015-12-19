@@ -1,10 +1,15 @@
 @extends('layout.main')
 @section('content_basic')
-<div class="large-3 large-centered columns">
+<div class="small-12 medium-7 large-4 large-centered medium-centered columns">
     <div class="login-box">
         <div class="row">
-            <div class="large-12 columns">
+            <div class="small-12 columns">
                 <h1>Cenovka</h1>
+            </div>
+        </div>
+         <div class="row">
+            <div class="small-12 columns">
+                <h3>Registrace</h3>
             </div>
         </div>
         <div class="row">

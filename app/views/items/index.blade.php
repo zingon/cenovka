@@ -10,6 +10,7 @@
 @stop
 @section('content')
 <section>
+
 	<div class="small-12 columns">
 		<ul class="button-group right">
 			<li><a href="{{route('item.create')}}" class="button success" data-reveal-id="universalLargeModal" data-reveal-ajax="true"><i class="fi-page-add"></i> Nová položka</a></li>
@@ -22,13 +23,13 @@
 	<table class="small-12 columns" id="mainTable">
 		<thead>
 			<tr>
-				<th>Kod</th>
-				<th>Název</th>
-				<th>Cena</th>
-				<th>MJ</th>
+				<th class="p10">Kod</th>
+				<th class="p20">Název</th>
+				<th class="p13">Cena</th>
+				<th class="p7">MJ</th>
 				<th>Poznámka</th>
-				<th><span class="fi-pencil"></span></th>
-				<th><span class="fi-trash"></span></th>
+				<th class="p7"><span class="fi-pencil"></span></th>
+				<th class="p7"><span class="fi-trash"></span></th>
 			</tr>
 		</thead>
 		<tbody id="items">

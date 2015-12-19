@@ -10,7 +10,7 @@ class CategoryController extends BaseController
     public function index() {
         $categories = Auth::getUser()->categories;
         if(Request::ajax()) {
-            return Response::json(Category::all());
+            return Response::json($categories);
         } else {
 
             return Response::view('category.index', array('categories' => $categories));

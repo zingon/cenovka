@@ -1,27 +1,50 @@
 article {
-		@extends .row;
-		.row{
-			background: #fff;
-		}
+    @extends .row;
+    .row {
+        background: #fff;
+    }
+    section {
+        @extends .row;
+        margin: rem-calc(20px 0 50px 0);
+        .button-group {
+            @extends .row;
+        }
+        table {
+            th {
+                text-align: center;
+                &.small {
+                    width: rem-calc(40px);
+                }
+                &.p7 {
+                    width:7%;
+                }
+                &.p10{
+                    width: 10%;
+                }
+                &.p13{
+                    width:13%;
+                }
+                &.p15{
+                    width:15%;
+                }
+                &.p20{
+                    width:20%;
+                }
 
-		section {
-			@extends .row;
-			margin: rem-calc(20px 0 50px 0);
+                &.p25 {
+                    width:25%;
+                }
 
-			.button-group {
-				@extends .row;
-			}
-			table {
-				th {
-					text-align: center;
-				}
-				.delete, .edit{
-					padding: rem-calc(10px 10px);
-					width: rem-calc(40px);
-					height: rem-calc(40px);
-					margin:0;
-				}
-			}
-		}
 
+            }
+            td {
+                .delete, .edit {
+                    padding: rem-calc(10px 10px);
+                    width: rem-calc(40px);
+                    height: rem-calc(40px);
+                    margin: 0;
+                }
+            }
+        }
+    }
 }

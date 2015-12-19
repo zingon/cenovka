@@ -1,0 +1,7 @@
+nav.top-bar {
+	a {
+		&.alert {
+			background-color:  $alert-color !important;
+		}
+	}
+}
