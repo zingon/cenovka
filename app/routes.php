@@ -22,6 +22,7 @@ Route::group(['before' => 'auth'], function () {
 	Route::resource('settings', 'SettingController', ['except' => ['store', 'update', 'destory', 'show']]);
 	Route::group(['before' => 'admin'], function () {
 		Route::resource('user', 'UserController', ['only' => ['index', 'destroy']]);
+		Route::resource('module', 'ModuleController', ['only' => ['create',"edit"]]);
 	});
 	Route::get('/document/{id}/reload', array(
 		'uses' => 'OfferController@reload',
@@ -75,6 +76,8 @@ Route::group(['before' => 'auth'], function () {
 		Route::resource('document', 'OfferController', ['only' => ['store', 'update', 'destroy']]);
 		Route::resource('select', 'DocumentItemController', ['only' => ['store', 'update', 'destroy']]);
 		Route::resource('category', 'CategoryController', ['only' => ['store', 'destroy']]);
+		Route::resource('module', 'ModuleController', ['only' => ['store',"update", 'destroy']]);
+		Route::resource('settings', 'SettingController', ['only' => ['store', 'update', 'destory']]);
 	});
 });
 

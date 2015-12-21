@@ -9,15 +9,11 @@ class SettingController extends BaseController {
 	 */
 	public function index()
 	{
+		$values = Module::with(array("settings.setting_values"=>function($query){
+			$query->where("user_id","=",Auth::getUser()->id);
+		}))->get();
 
-			if(!Request::ajax()){
-				return Response::view("setting.index");
-			} else {
-				$response = array();
-				$values = Auth::getUser()->setting_values()->with('setting')->get();
-				return Response::json($values);
-			}
-
+		return Response::view("setting.index", array("module"=>$values));
 	}
 
 

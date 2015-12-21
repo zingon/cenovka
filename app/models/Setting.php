@@ -2,10 +2,14 @@
 
 class Setting extends Eloquent {
 
-	protected $fillable = array('module','module_name', 'key','key_name');
+	protected $fillable = array('key','name');
 
 	public function setting_values()
 	{
-		return $this->belongsTo('SettingValue');
+		return $this->hasMany('SettingValue');
+	}
+	public function module()
+	{
+		return $this->belongsTo('Module');
 	}
 }
