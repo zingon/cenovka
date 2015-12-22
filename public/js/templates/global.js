@@ -3,7 +3,7 @@ function messageTemplate(data, target) {
 }
 
 function modalTemplate(size, content) {
-	$("#modalField").append($.render.modal({
+	$("#modalField").html($.render.modal({
 		'size': size,
 		'content': content
 	}));

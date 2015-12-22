@@ -14,8 +14,7 @@
 	</div>
 @stop
 @section('content')
-<section>
-<div class="small-12 columns tabs-content">
+<div class="tabs-content">
 	@if(!Auth::getUser()->admin)
 	@foreach ($module as $key => $modul)
 	<div class="content @if($key==0)active @endif" id="{{$modul->key}}">
@@ -28,7 +27,7 @@
 
 	<div class="small-12 columns">
 		<ul class="button-group right">
-		<li><a href="{{route('module.create')}}" class="button success" data-reveal-id="universalLargeModal" data-reveal-ajax="true"><i class="fi-page-add"></i> Nová položka</a></li>
+		<li><a href="{{route('module.create')}}" class="button success" data-reveal-id="universalSmallModal" data-reveal-ajax="true"><i class="fi-page-add"></i> Nový modul</a></li>
 		</ul>
 	</div>
 	</section>
@@ -47,7 +46,7 @@
 					<tr>
 						<td>{{$modul->key}}</td>
 						<td>{{$modul->name}}</td>
-						<td><a href='{{URL::route("module.edit",$modul->id)}}' class="button success" data-reveal-id="universalLargeModal" data-reveal-ajax="true"><i class="fi-pencil"></i></a></td>
+						<td><a href='{{URL::route("module.edit",$modul->id)}}' class="button edit" data-reveal-id="universalSmallModal" data-reveal-ajax="true"><i class="fi-pencil"></i></a></td>
 						<td>{{Form::destroy("module",$modul->id)}}</td>
 					</tr>
 				@endforeach
@@ -56,9 +55,33 @@
 		</section>
 	</div>
 	<div class="content" id="settings">
+		<section>
 
+	<div class="small-12 columns">
+		<ul class="button-group right">
+		<li><a href="{{route('settings.create')}}" class="button success" data-reveal-id="universalSmallModal" data-reveal-ajax="true"><i class="fi-page-add"></i> Nové nastavení</a></li>
+		</ul>
+	</div>
+	</section>
+	<section>
+		<table class="small-12 columns" id="modules">
+			<thead>
+				<tr>
+				<th class="p25"d
+			<tbody>
+				@foreach ($module as $modul)
+				@foreach ($modul->settings as $setting)
+					<tr>
+						<td>{{$setting->key}}</td>
+						<td>{{$setting->name}}</td>
+						<td><a href='{{URL::route("settings.edit",$setting->id)}}' class="button edit" data-reveal-id="universalSmallModal" data-reveal-ajax="true"><i class="fi-pencil"></i></a></td>
+						<td>{{Form::destroy("module",$modul->id)}}</td>
+					</tr>
+				@endforeach
+				@endforeach
+			</tbody>
+		</table>
+		</section>
 	</div>
 @endif
-</div>
-</section>
 @stop

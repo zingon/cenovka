@@ -10,7 +10,6 @@
         <section class="top-bar-section">
             <!-- Right Nav Section -->
             <ul class="right">
-                {{--<li><a href="{{ URL::route('settings.index') }}">Nastavení</a></li>--}}
                 <li><a href="{{ URL::route('session.destroy') }}" class="alert">Odhlásit se</a></li>
 
             </ul>

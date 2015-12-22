@@ -40,10 +40,18 @@ function init() {
   });
 
   $(search).keyup(function() {
-    if (window.location.hash.length > 0) {
-      loadItems(items,[window.location.hash.split("#")[1]*1,$(this).val()]);
+    if($(this).val().length>0){
+      if (window.location.hash.length > 0) {
+        loadItems(items,[window.location.hash.split("#")[1]*1,$(this).val()]);
+      } else {
+        loadItems(items,$(this).val());
+      }
     } else {
-      loadItems(items,$(this).val());
+      if(window.location.hash.length > 0) {
+        loadItems(items,window.location.hash.split("#")[1]*1)
+      } else {
+        loadItems(items);
+      }
     }
   });
 }

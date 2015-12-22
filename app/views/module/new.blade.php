@@ -12,8 +12,8 @@
 	</section>
 	<section>
 		<div class="small-12 columns">
-			{{Form::label('key', 'Klíč')}}
-        	{{Form::text('key',$data->key,array('placeholder'=>'Klíč'))}}
+			{{Form::label('module_key', 'Klíč')}}
+        	{{Form::text('module_key',$data->key,array('placeholder'=>'Klíč'))}}
 		</div>
 	</section>
 	<ul class="button-group right">
