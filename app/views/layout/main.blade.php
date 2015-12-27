@@ -8,8 +8,11 @@
         {{HTML::script('bower_components/modernizr/modernizr.js')}}
     </head>
     <body>
-
-
+        <div class="loader-capsule">
+        <div id="loader">
+            <img src="/img/loader.svg">
+        </div>
+    </div>
         @yield('content_basic')
 
         <div class="message-box">
@@ -40,7 +43,17 @@
         </div>
         {{ HTML::script('bower_components/jquery/dist/jquery.min.js')}}
         <script type="text/javascript">
-        $.ajaxSetup({ headers: {'csrftoken' : '{{ csrf_token() }}'}});
+        $.ajaxSetup({
+            headers: {'csrftoken' : '{{ csrf_token() }}'},
+            beforeSend: function() {
+                $('#loader').show();
+            },
+            complete: function(){
+                $('#loader').hide();
+            },
+            success: function() {}
+        });
+
         localStorage.first_login = {{$first_login}};
 
         //Položky

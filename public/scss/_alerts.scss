@@ -1,12 +1,29 @@
 .message-box {
-	position:fixed !important;
-	bottom:1rem;
-	right: 1rem;
+    position: fixed !important;
+    bottom: 1rem;
+    right: 1rem;
 }
+
 .alert-box {
-	@extend .row;
-	margin-top:0.5rem;
-	width: rem-calc(300px);
-	text-align: center;
-	margin-bottom: 0;
+    @extend .row;
+    margin-top: 0.5rem;
+    width: rem-calc(300px);
+    text-align: center;
+    margin-bottom: 0;
+}
+
+#loader {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-color: #F0F0F3;
+    z-index: 99;
+    img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
 }

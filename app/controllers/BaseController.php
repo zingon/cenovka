@@ -1,7 +1,7 @@
 <?php
 
 class BaseController extends Controller {
-	protected $first_login;
+	protected $first_login = 0;
 	public function __construct()
     {
     	if(!Auth::guest()){
