@@ -10,19 +10,23 @@
         <section class="top-bar-section">
             <!-- Right Nav Section -->
             <ul class="right">
+                <li class="has-dropdown">
+                    <a href="#">Nastavení</a>
+                    <ul class="dropdown">
+                        <li><a href="{{route('get.setting.user', UserSetting::findOrCreate(['user_id'=> Auth::getUser()->id])->id) }}"  data-reveal-id="universalLargeModal" data-reveal-ajax="true">Uživatelské nastavení</a></li>
+                    </ul>
+                </li>
                 <li><a href="{{ URL::route('session.destroy') }}" class="alert">Odhlásit se</a></li>
-
             </ul>
             <!-- Left Nav Section -->
             <ul class="left">
                 @if (!Auth::getUser()->admin)
-                    {{-- expr --}}
-
+                {{-- expr --}}
                 <li {{(URL::current()==URL::route('item.index'))?'class="active"':""}}><a href="{{ URL::route('item.index') }}">Ceník</a></li>
                 <li {{(URL::current()==URL::route('contact.index'))?'class="active"':""}}><a href="{{ URL::route('contact.index') }}">Adresář</a></li>
                 <li {{(URL::current()==URL::route('document.index'))?'class="active"':""}}><a href="{{ URL::route('document.index') }}">Dokumenty</a></li>
                 @else
-                 <li {{(URL::current()==URL::route('user.index'))?'class="active"':""}}><a href="{{ URL::route('user.index') }}">Uživatelé</a></li>
+                <li {{(URL::current()==URL::route('user.index'))?'class="active"':""}}><a href="{{ URL::route('user.index') }}">Uživatelé</a></li>
                 @endif
             </ul>
         </section>

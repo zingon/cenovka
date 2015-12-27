@@ -22,7 +22,7 @@ Route::group(['before' => 'auth'], function () {
 	Route::group(['before' => 'admin'], function () {
 		Route::resource('user', 'UserController', ['only' => ['index', 'destroy']]);
 	});
-	Route::get('/document/{id}/reload', array(
+	/*Route::get('/document/{id}/reload', array(
 		'uses' => 'OfferController@reload',
 		'as' => 'reload'
 	));
@@ -61,11 +61,13 @@ Route::group(['before' => 'auth'], function () {
 	Route::get('/export/pdf/{id}', array(
 		'uses' => 'OfferController@exportPdf',
 		'as' => 'export'
-	));
-
-	Route::group(['before' => 'ajax'], function () {
+	));*/
+	Route::group(['prefix' => 'api','before' => 'ajax'], function()
+	{
 		Route::resource('category', 'CategoryController', ['only' => ['index', 'create', 'show', 'edit']]);
 		Route::resource('contact', 'ContactController', ['only' => ['show']]);
+		Route::get('setting/user/{id?}', array('as' => 'get.setting.user','uses' => 'SettingController@getUserSetting'));
+
 	});
 
 	Route::group(['before' => 'csrf'], function () {
@@ -74,6 +76,7 @@ Route::group(['before' => 'auth'], function () {
 		Route::resource('document', 'OfferController', ['only' => ['store', 'update', 'destroy']]);
 		Route::resource('select', 'DocumentItemController', ['only' => ['store', 'update', 'destroy']]);
 		Route::resource('category', 'CategoryController', ['only' => ['store', 'destroy']]);
+		Route::post('setting/user', array('as' => 'post.setting.user','uses' => 'SettingController@postUserSetting'));
 	});
 });
 
@@ -87,7 +90,4 @@ Route::get('/register', function () {
 	return Redirect::route('user.create');
 });
 
-Route::get('/logout', [
-	'uses' => "SessionController@destroy",
-	'as'=>"session.destroy"
-	]);
+Route::get('/logout', ['uses' => "SessionController@destroy", 'as' => "session.destroy"]);

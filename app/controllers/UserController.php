@@ -110,5 +110,10 @@ class UserController extends BaseController {
 		}
 	}
 
+	public function getSetting($id) {
+		die("NO");
+		return Response::json("JA!!" . $id);
+	}
+
 
 }

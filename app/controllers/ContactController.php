@@ -10,10 +10,10 @@ class ContactController extends BaseController {
 	public function index()
 	{
 		if(Request::ajax()){
-			$contacts = Auth::getUser()->contacts()->get();
+			$contacts = Auth::getUser()->contacts()->where("hidden","=",0)->get();
 			return Response::json($contacts);
 		} else {
-			$contacts = Auth::getUser()->contacts()->get();
+			$contacts = Auth::getUser()->contacts()->where("hidden","=",0)->get();
 			return Response::view('contact.index', array('contacts' => $contacts));
 		}
 	}
@@ -55,15 +55,16 @@ class ContactController extends BaseController {
         	foreach ($this->saveValues() as $key => $value) {
 				$save[$key] = Input::get($key);
 			}
-			$save['me'] = (Input::get('me')!=null)?1:0;
 
 			$contact = new Contact((array)$save);
+			$instance = Auth::getUser()->contacts();
+				if($instance->save($contact)){
 
-			if(Auth::getUser()->contacts()->save($contact)){
-				return Redirect::route('contact.index')
-					->with('global','Položka byla úspěšně přidána.');
-			}
-        }
+					return Redirect::route('contact.index')
+						->with('global','Položka byla úspěšně přidána.');
+				}
+        	}
+
 	}
 
 	/**
@@ -123,6 +124,7 @@ class ContactController extends BaseController {
 	{
 		return Response::ajax(getContactsBy($ic));
 	}
+
 	/**
 	 * Remove the specified resource from storage.
 	 *
@@ -149,7 +151,7 @@ class ContactController extends BaseController {
 			'ic'			=> '',
 			'dic'			=> '',
 			'note'			=> 'max:65535',
-			'me'			=> '',
+			'hidden'			=> '',
 			);
 	}
 }

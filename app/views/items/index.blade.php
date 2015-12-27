@@ -14,8 +14,8 @@
 	<div class="small-12 columns">
 		<ul class="button-group right">
 			<li><a href="{{route('item.create')}}" class="button success" data-reveal-id="universalLargeModal" data-reveal-ajax="true"><i class="fi-page-add"></i> Nová položka</a></li>
-			<li><a href="{{route('category.create')}}" class="button" data-reveal-id="universalSmallModal" data-reveal-ajax="true"><i class="fi-page-add"></i> Nová kategorie</a></li>
-			<li><a href="{{route('category.edit')}}" class="button" data-reveal-id="universalLargeModal" data-reveal-ajax="true"><i class="fi-page-edit"></i> Editovat kategorie</a></li>
+			<li><a href="{{route('api.category.create')}}" class="button" data-reveal-id="universalSmallModal" data-reveal-ajax="true"><i class="fi-page-add"></i> Nová kategorie</a></li>
+			<li><a href="{{route('api.category.edit')}}" class="button" data-reveal-id="universalLargeModal" data-reveal-ajax="true"><i class="fi-page-edit"></i> Editovat kategorie</a></li>
 		</ul>
 	</div>
 </section>

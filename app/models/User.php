@@ -35,8 +35,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public function contacts() {
 		return $this->hasMany('Contact');
 	}
-	public function setting_values() {
-		return $this->hasMany("SettingValue");
+	public function user_setting() {
+		return $this->hasOne("UserSetting","user_id","id");
 	}
 
 

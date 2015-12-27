@@ -22,7 +22,7 @@
             @endforeach
         @endif
         </div>
-
+        {{$first_login}}
         <!--Modalové okno-->
         <div id="modalField">
 
@@ -43,16 +43,22 @@
         <script type="text/javascript">
         $.ajaxSetup({ headers: {'csrftoken' : '{{ csrf_token() }}'}});
 
+        localStorage.first_login = {{$first_login}};
+
         //Položky
-        localStorage.categoryUrl = "{{route('category.index')}}";
+        localStorage.categoryUrl = "{{route('api.category.index')}}";
         localStorage.ItemsUrl = "{{route('item.index')}}";
         localStorage.ItemDeleteUrl = "{{route('item.destroy',0)}}";
         localStorage.ItemEditUrl = "{{route('item.edit',0)}}";
 
         //Kontakty
         localStorage.ContactsUrl = "{{route('contact.index')}}";
+        localStorage.ContactCreateUrl = "{{route('contact.create')}}";
         localStorage.ContactDeleteUrl = "{{route('contact.destroy',0)}}";
         localStorage.ContactEditUrl = "{{route('contact.edit',0)}}";
+
+        //Nastavení
+        localStorage.SettingUserUrl = "{{route('get.setting.user')}}";
         </script>
         {{ HTML::script('bower_components/foundation/js/foundation.min.js')}}
         {{ HTML::script('bower_components/jsrender/jsrender.min.js')}}

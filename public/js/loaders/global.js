@@ -19,3 +19,11 @@ function message(data) {
   messageTemplate(data.messages, target);
   $(document).foundation('alert', 'reflow');
 }
+
+function setMeIn() {
+  $.get(localStorage.SettingUserUrl,function(data) {
+    modalTemplate("large",data);
+    var modal = $("#modal");
+    modal.find("input[name=hidden]").val(1);
+  });
+}

@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="small-12 columns">
+	<div class="small-12 columns title">
 		<h4>{{$title}}</h4>
 	</div>
 </div>
@@ -65,5 +65,6 @@
 <ul class="button-group right">
 	<li><button type="submit" class="button success">Uložit</button></li>
 </ul>
+{{Form::hidden("hidden",0)}}
 {{Form::close()}}
 <a class="close-reveal-modal" arial-label="Close">&#215;</a>
