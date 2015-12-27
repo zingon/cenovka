@@ -22,7 +22,6 @@
             @endforeach
         @endif
         </div>
-        {{$first_login}}
         <!--Modalové okno-->
         <div id="modalField">
 
@@ -42,7 +41,6 @@
         {{ HTML::script('bower_components/jquery/dist/jquery.min.js')}}
         <script type="text/javascript">
         $.ajaxSetup({ headers: {'csrftoken' : '{{ csrf_token() }}'}});
-
         localStorage.first_login = {{$first_login}};
 
         //Položky
