@@ -1,10 +1,12 @@
 @extends('layout.inner')
 @section("submenu")
-<h4>Kategorie</h4>
-<ul class="side-nav">
-
-</ul>
+	<!-- Kategorie -->
+	<h4>Kategorie</h4>
+	<ul class="side-nav"></ul>
 	<button type="button" class="expand categoryReseter">Zobrazit všechny položky</button>
+
+
+	<!-- Vyhledávání -->
 	<h4>Vyhledávání</h4>
 	<input type="text" id="search" placeholder="Vyhledávání...">
 @stop
