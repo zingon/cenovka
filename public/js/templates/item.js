@@ -15,4 +15,4 @@ function itemTemplate(data, target) {
 }
 //Templates
 $.templates('categoryRow', '<li><a href="#{{:id}}">{{:name}}</a></li>');
-$.templates('itemRow', '<tr><td>{{:code}}</td><td>{{:name}}</td><td>{{:price}}</td><td>{{:unit}}</td><td>{{:note}}</td><td><button class="edit button" data-id="{{:id}}"><i class="fi-pencil"></i></button></td><td><button class="delete button alert" data-id="{{:id}}"><i class="fi-trash"></i></button></td></tr>');
+$.templates('itemRow', '<tr data-id="{{:id}}"><td class="p10">{{:code}}</td><td class="p20">{{:name}}</td><td class="p13">{{:price}}</td><td class="p7">{{:unit}}</td><td class="p36">{{:note}}</td><td class="p7"><button class="edit button" data-id="{{:id}}"><i class="fi-pencil"></i></button></td><td class="p7"><button class="delete button alert" data-id="{{:id}}"><i class="fi-trash"></i></button></td></tr>');

@@ -42,12 +42,12 @@
 				<th class="p20">Název</th>
 				<th class="p13">Cena</th>
 				<th class="p7">MJ</th>
-				<th>Poznámka</th>
+				<th class="p36">Poznámka</th>
 				<th class="p7"><span class="fi-pencil"></span></th>
 				<th class="p7"><span class="fi-trash"></span></th>
 			</tr>
 		</thead>
-		<tbody id="items">
+		<tbody id="items" class="sortable">
 		</tbody>
 		<tfoot>
 		<tr>

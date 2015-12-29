@@ -73,6 +73,7 @@
         </script>
         {{ HTML::script('bower_components/foundation/js/foundation.min.js')}}
         {{ HTML::script('bower_components/jsrender/jsrender.min.js')}}
+        {{ HTML::script('bower_components/jquery-ui/jquery-ui.min.js')}}
         {{ HTML::script('js/putDelete.js')}}
         {{ HTML::script('js/global.js')}}
         {{ HTML::script('js/templates/global.js')}}
