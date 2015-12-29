@@ -10,6 +10,7 @@ function itemTemplate(data, target) {
 		}
 	});
 	data = paginationInit(data,window.App.pagination);
+	data = sortMy(data, window.App.ItemSort);
 	$(target).html($.render.itemRow(data));
 }
 //Templates

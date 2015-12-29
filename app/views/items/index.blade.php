@@ -5,6 +5,19 @@
 	<ul class="side-nav"></ul>
 	<button type="button" class="expand categoryReseter">Zobrazit všechny položky</button>
 
+	<!-- Řazení -->
+	<h4>Řadit dle:</h4>
+	<label>
+	<select id="sort">
+		<option value="poradi:asc:num">Vlastního pořadí</option>
+		<option value="code:desc">Kódu - Sestupně</option>
+		<option value="code:asc">Kódu - Vzestupně</option>
+		<option value="name:desc">Názvu - Sestupně</option>
+		<option value="name:asc">Názvu - Vzestupně</option>
+		<option value="price:desc:num">Ceny - Sestupně</option>
+		<option value="price:asc:num">Ceny - Vzestupně</option>
+	</select>
+	</label>
 
 	<!-- Vyhledávání -->
 	<h4>Vyhledávání</h4>

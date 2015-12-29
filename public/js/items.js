@@ -3,6 +3,7 @@
 $(document).ready(function() {
 
   window.App.Items = {};
+  window.App.ItemSort = "poradi:asc";
   window.App.pagination.onPage = 20;
   window.App.pagination.element = "#pagination";
   init();
@@ -10,9 +11,10 @@ $(document).ready(function() {
 });
 
 function init() {
-   var items = "#items";
+  var items = "#items";
   var sidenav = ".side-nav";
   var search = "#search";
+  var sort = "#sort";
 
   if (window.location.hash.length > 0) {
     loadItems(items, window.location.hash.split("#")[1]*1);
@@ -34,11 +36,15 @@ function init() {
   $(items).on("click", ".edit", function() {
     editItem($(this).data("id"));
   });
+
+
   $(".categoryReseter").click(function() {
     window.location.hash = "";
     loadItems(items);
   });
 
+
+  /* Vyhledávání*/
   $(search).keyup(function() {
     if($(this).val().length>0){
       if (window.location.hash.length > 0) {
@@ -54,6 +60,14 @@ function init() {
       }
     }
   });
+
+
+  $(sort).change(function() {
+    window.App.ItemSort = $(this).val();
+    reload();
+  });
+
+
 }
 
 
