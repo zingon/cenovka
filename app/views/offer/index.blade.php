@@ -1,5 +1,4 @@
 @extends('layout.inner-onecol')
-
 @section('content')
 <section>
     <div class="small-12 columns">
@@ -9,49 +8,38 @@
     </div>
 </section>
 <section>
-
-        <table id="mainTable" class="large-12 columns">
-            <thead>
-                <tr>
-                    <th>Kod</th>
-                    <th>Název</th>
-                    <th>Odběratel</th>
-                    <th>Počet položek</th>
-                    <th>Datum vystavení</th>
-                    <th>Datum konce platnosti</th>
-                    <th><span class="fi-pencil"></span></th>
-                    <th><span class="fi-trash"></span></th>
-                </tr>
-            </thead>
-            <tbody>
-                {{--@foreach($documents as $document)
-                <tr>
-                    <td>{{$document->code}}</td>
-                    <td><a href="{{URL::route('document.show',array($document->id))}}">{{$document->name}}</a></td>
-                    <td>{{$document->odberatel()->removed()->name}}</td>
-                    <td>{{$document->items()->count()}}</td>
-                    <td>{{$document->vystaven}}</td>
-                    <td>{{$document->expire}}</td>
-                    <td><a href='{{URL::route("document.edit",$document->id)}}' class="glyphicon glyphicon-pencil btn btn-primary modalLink"></a></td>
-                    <td>{{Form::destroy('document',$document->id)}}</td>
-                </tr>
-                @endforeach--}}
-            </tbody>
-            <tfoot>
+    <table id="mainTable" class="large-12 columns">
+        <thead>
             <tr>
-                <td colspan='8' style="text-align: center">
-                    {{--$documents->links()--}}
-                </td>
+                <th class="p8">Kod</th>
+                <th class="p20">Název</th>
+                <th class="p20">Odběratel</th>
+                <th class="p8">Počet položek</th>
+                <th class="p15">Datum vystavení</th>
+                <th class="p15">Datum konce platnosti</th>
+                <th class="p7"><span class="fi-pencil"></span></th>
+                <th class="p7"><span class="fi-trash"></span></th>
             </tr>
-            </tfoot>
-        </table>
+        </thead>
+        <tbody id="documents">
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="8">
+                <div id="pagination"></div>
+            </td>
+        </tr>
+        </tfoot>
+    </table>
 </section>
 @stop
-
 @section("script")
-    <script type="text/javascript">
-    $(document).ready(function() {
-        $('#loader').hide();
-    });
-    </script>
+{{ HTML::script('js/document.js')}}
+{{ HTML::script('js/loaders/document.js')}}
+{{ HTML::script('js/templates/documnet.js')}}
+<script type="text/javascript">
+$(document).ready(function() {
+$('#loader').hide();
+});
+</script>
 @stop
