@@ -75,12 +75,21 @@ article section table th.p20 {
 article section table th.p25 {
   width: 25%;
 }
-/* line 41, ../scss/_list.scss */
+/* line 37, ../scss/_list.scss */
+article section table th.p36 {
+  width: 36%;
+}
+/* line 43, ../scss/_list.scss */
 article section table td .delete, article section table td .edit {
   padding: 0.625rem 0.625rem;
   width: 2.5rem;
   height: 2.5rem;
   margin: 0;
+}
+/* line 50, ../scss/_list.scss */
+article section table .ui-sortable-helper {
+  background-color: white;
+  display: table;
 }
 
 /* line 1, ../scss/_alerts.scss */

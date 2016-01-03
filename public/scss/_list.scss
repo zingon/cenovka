@@ -34,7 +34,9 @@ article {
                 &.p25 {
                     width:25%;
                 }
-
+                &.p36 {
+                    width:36%;
+                }
 
             }
             td {
@@ -44,6 +46,10 @@ article {
                     height: rem-calc(40px);
                     margin: 0;
                 }
+            }
+            .ui-sortable-helper {
+                background-color: white;
+                display: table;
             }
         }
     }

@@ -21,9 +21,50 @@ function message(data) {
 }
 
 function setMeIn() {
-  $.get(localStorage.SettingUserUrl,function(data) {
-    modalTemplate("large",data);
+  $.get(localStorage.SettingUserUrl, function(data) {
+    modalTemplate("large", data);
     var modal = $("#modal");
     modal.find("input[name=hidden]").val(1);
   });
+}
+
+function sortMy(data, by) {
+  var sortes = by.split(":");
+  data.sort(function(a, b) {
+    if (sortes[1] == "asc") {
+      var f,s;
+      if(sortes[2] == "num"){
+        f = 1*a[sortes[0]];
+        s = 1*b[sortes[0]];
+      } else {
+        f = a[sortes[0]];
+        s = b[sortes[0]];
+      }
+      if (f > s) {
+        return 1;
+      } else if (f < s) {
+        return -1;
+      } else {
+        return 0;
+      }
+
+    } else {
+      var f,s;
+      if(sortes[2] == "num"){
+        f = 1*a[sortes[0]];
+        s = 1*b[sortes[0]];
+      } else {
+        f = a[sortes[0]];
+        s = b[sortes[0]];
+      }
+      if (f > s) {
+        return -1;
+      } else if (f < s) {
+        return 1;
+      } else {
+        return 0;
+      }
+    }
+  });
+  return data;
 }

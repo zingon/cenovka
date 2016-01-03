@@ -4,6 +4,8 @@ class ItemController extends BaseController
 
 	/**
 	 * Change position of ordered items
+	 *
+	 * TODO: Předělat z řazení v kategoriich na žazení ve všech předmětech
 	 */
 	public function changePosition() {
 		$category_id = Input::get('category');
@@ -47,7 +49,7 @@ class ItemController extends BaseController
 			return Response::view('items.index');
 		}
 		else {
-			$items = Auth::user()->items()->get();
+			$items = Auth::user()->items()->orderBy('poradi', 'asc')->get();
 			return Response::json($items);
 		}
 	}
@@ -104,8 +106,8 @@ class ItemController extends BaseController
 				$code = sprintf("%04s", ($last->code + 1));
 			}
 
-			$last = $category->items()->orderBy('poradi', 'desc')->first();
-			 // nevíš postavení záznam na frontendu
+			$last = Auth::getUser()->items()->orderBy('poradi', 'desc')->first();
+
 
 			$save['code'] = $code . "/" . $category->code;
 			$save['poradi'] = empty($last->poradi) ? 1 : $last->poradi + 1;
