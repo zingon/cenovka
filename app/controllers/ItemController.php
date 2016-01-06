@@ -4,8 +4,6 @@ class ItemController extends BaseController
 
 	/**
 	 * Change position of ordered items
-	 *
-	 * TODO: Předělat z řazení v kategoriich na žazení ve všech předmětech
 	 */
 	public function changePosition() {
 		$category_id = Input::get('category');

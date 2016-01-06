@@ -1,7 +1,7 @@
 function loadCategories(target, callback) {
   $.get(localStorage.categoryUrl, function(response) {
     categoryTemplate(response, target);
-    return callback(target);
+    return callback(target, response);
   });
 }
 

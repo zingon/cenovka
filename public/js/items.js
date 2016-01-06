@@ -19,13 +19,15 @@ function init() {
   */
   if (window.location.hash.length > 0) {
     loadItems(items, window.location.hash.split("#")[1] * 1);
-  } else {
-    loadItems(items);
   }
   /**
     Načtení kategorii
   */
-  loadCategories(sidenav, function(target) {
+  loadCategories(sidenav, function(target, data) {
+    if(!(window.location.hash.length > 0)) {
+      loadItems(items, data[0].id*1);
+      window.location.hash = data[0].id;
+    }
     $(target + " a").click(function() {
       loadItems(items, $(this).attr("href").split("#")[1] * 1);
     });

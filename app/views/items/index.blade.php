@@ -3,7 +3,6 @@
 	<!-- Kategorie -->
 	<h4>Kategorie</h4>
 	<ul class="side-nav"></ul>
-	<button type="button" class="expand categoryReseter">Zobrazit všechny položky</button>
 
 	<!-- Řazení -->
 	<h4>Řadit dle:</h4>
