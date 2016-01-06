@@ -3,6 +3,7 @@
 $(document).ready(function() {
   window.App.Items = {};
   window.App.ItemSort = "poradi:asc";
+  window.App.UserSort = true;
   window.App.pagination.onPage = 20;
   window.App.pagination.element = "#pagination";
   init();
@@ -44,13 +45,7 @@ function init() {
   $(items).on("click", ".edit", function() {
     editItem($(this).data("id"));
   });
-  /**
-    Resetování kategorii
-  */
-  $(".categoryReseter").click(function() {
-    window.location.hash = "";
-    loadItems(items);
-  });
+
   /**
     Vyhledávání
   */
@@ -74,11 +69,18 @@ function init() {
   */
   $(sort).change(function() {
     window.App.ItemSort = $(this).val();
+
+    if($(sort +" option[value='"+$(this).val()+"']").data("user-sort")) {
+      $(".sortable").sortable( "enable" );
+    } else {
+      $(".sortable").sortable( "disable" );
+    }
     reload();
   });
   /**
     Řazení tažením
   */
+
     $(".sortable").sortable({
       helper: function(e, tr) {
         var $originals = tr.children();
@@ -98,8 +100,7 @@ function init() {
     }
     });
     $(".sortable").disableSelection();
-
-}
+  }
 
 function reload() {
   var items = "#items";

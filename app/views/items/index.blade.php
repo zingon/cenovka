@@ -8,13 +8,13 @@
 	<h4>Řadit dle:</h4>
 	<label>
 	<select id="sort">
-		<option value="poradi:asc:num">Vlastního pořadí</option>
-		<option value="code:desc">Kódu - Sestupně</option>
-		<option value="code:asc">Kódu - Vzestupně</option>
-		<option value="name:desc">Názvu - Sestupně</option>
-		<option value="name:asc">Názvu - Vzestupně</option>
-		<option value="price:desc:num">Ceny - Sestupně</option>
-		<option value="price:asc:num">Ceny - Vzestupně</option>
+		<option value="poradi:asc:num" data-user-sort="true">Vlastního pořadí</option>
+		<option value="code:desc" data-user-sort="false">Kódu - Sestupně</option>
+		<option value="code:asc" data-user-sort="false">Kódu - Vzestupně</option>
+		<option value="name:desc" data-user-sort="false">Názvu - Sestupně</option>
+		<option value="name:asc" data-user-sort="false">Názvu - Vzestupně</option>
+		<option value="price:desc:num" data-user-sort="false">Ceny - Sestupně</option>
+		<option value="price:asc:num" data-user-sort="false">Ceny - Vzestupně</option>
 	</select>
 	</label>
 
