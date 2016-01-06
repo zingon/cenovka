@@ -79,7 +79,6 @@ function init() {
   /**
     Řazení tažením
   */
-  if (window.location.hash.length <= 0) {
     $(".sortable").sortable({
       helper: function(e, tr) {
         var $originals = tr.children();
@@ -90,12 +89,16 @@ function init() {
         });
         return $helper;
       },
-      update: function(e, ui) {
-        console.log($(ui.item[0]).index(), $(ui.item).data("id"));
-      }
+      stop: function(event, ui){
+        $.post(localStorage.ItemChangePosition,({"id": ui.item.data("id"),"to": ui.item.index(),'category':(window.location.hash.split("#")[1] * 1)})).success(function() {
+          window.App.Items = {};
+        reload();
+        });
+
+    }
     });
     $(".sortable").disableSelection();
-  }
+
 }
 
 function reload() {
