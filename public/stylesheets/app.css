@@ -1,4 +1,5 @@
 @import url(../bower_components/foundation-icon-fonts/foundation-icons.css);
+@import url(../bower_components/foundation-datepicker/css/foundation-datepicker.css);
 /* line 2, ../scss/_login.scss */
 .login-box {
   background: #fff;
@@ -56,37 +57,41 @@ article section table th.p7 {
   width: 7%;
 }
 /* line 21, ../scss/_list.scss */
+article section table th.p8 {
+  width: 7%;
+}
+/* line 24, ../scss/_list.scss */
 article section table th.p10 {
   width: 10%;
 }
-/* line 24, ../scss/_list.scss */
+/* line 27, ../scss/_list.scss */
 article section table th.p13 {
   width: 13%;
 }
-/* line 27, ../scss/_list.scss */
+/* line 30, ../scss/_list.scss */
 article section table th.p15 {
   width: 15%;
 }
-/* line 30, ../scss/_list.scss */
+/* line 33, ../scss/_list.scss */
 article section table th.p20 {
   width: 20%;
 }
-/* line 34, ../scss/_list.scss */
+/* line 37, ../scss/_list.scss */
 article section table th.p25 {
   width: 25%;
 }
-/* line 37, ../scss/_list.scss */
+/* line 40, ../scss/_list.scss */
 article section table th.p36 {
   width: 36%;
 }
-/* line 43, ../scss/_list.scss */
+/* line 46, ../scss/_list.scss */
 article section table td .delete, article section table td .edit {
   padding: 0.625rem 0.625rem;
   width: 2.5rem;
   height: 2.5rem;
   margin: 0;
 }
-/* line 50, ../scss/_list.scss */
+/* line 53, ../scss/_list.scss */
 article section table .ui-sortable-helper {
   background-color: white;
   display: table;

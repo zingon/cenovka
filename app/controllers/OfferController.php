@@ -33,8 +33,21 @@ class OfferController extends BaseController {
 		Session::put('document',"new");
 		foreach ($odberatele_native as $key => $value) {
 			$odberatele[$value->id] = $value->name;
-		}
-		return Response::view('offer.new', array('dodavatel'=>$dodavatel,'odberatele'=>$odberatele));*/
+		}*/
+		$title = "Nová nabídka";
+		$edit = 0;
+		$data = new Document;
+		$dodavatel = Auth::getUser()->user_setting()->first();
+		$odberatele = Auth::getUser()->contacts()->get();
+		return Response::view('offer.new', array(
+			"title"=>$title,
+			"edit"=>$edit,
+			"route" => "document.store",
+			"method" => "POST",
+			"data" => $data,
+			"dodavatel" => $dodavatel,
+			"odberatele" => $odberatele
+			));
 	}
 
 

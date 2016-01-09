@@ -76,6 +76,8 @@
         localStorage.SettingUserUrl = "{{route('get.setting.user')}}";
 
         </script>
+        {{ HTML::script('bower_components/foundation-datepicker/js/foundation-datepicker.js')}}
+        {{ HTML::script('bower_components/foundation-datepicker/js/locales/foundation-datepicker.cs.js"></script>')}}
         {{ HTML::script('bower_components/foundation/js/foundation.min.js')}}
         {{ HTML::script('bower_components/jsrender/jsrender.min.js')}}
         {{ HTML::script('bower_components/jquery-ui/jquery-ui.min.js')}}
