@@ -52,12 +52,12 @@ Route::group(['before' => 'auth'], function () {
 				break;
 			}
 		}
-	});
+	});*/
 	Route::post('/item/poradi/', array(
 		'uses' => 'ItemController@changePosition',
 		'as' => 'changePosition',
 	));
-
+	/*
 	Route::get('/export/pdf/{id}', array(
 		'uses' => 'OfferController@exportPdf',
 		'as' => 'export'

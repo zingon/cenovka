@@ -61,6 +61,7 @@
         localStorage.ItemsUrl = "{{route('item.index')}}";
         localStorage.ItemDeleteUrl = "{{route('item.destroy',0)}}";
         localStorage.ItemEditUrl = "{{route('item.edit',0)}}";
+        localStorage.ItemChangePosition = "{{route('changePosition')}}";
 
         //Kontakty
         localStorage.ContactsUrl = "{{route('contact.index')}}";
@@ -73,6 +74,7 @@
 
         //Nastavení
         localStorage.SettingUserUrl = "{{route('get.setting.user')}}";
+
         </script>
         {{ HTML::script('bower_components/foundation/js/foundation.min.js')}}
         {{ HTML::script('bower_components/jsrender/jsrender.min.js')}}

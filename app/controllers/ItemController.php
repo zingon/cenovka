@@ -4,39 +4,33 @@ class ItemController extends BaseController
 
 	/**
 	 * Change position of ordered items
-	 *
-	 * TODO: Předělat z řazení v kategoriich na žazení ve všech předmětech
 	 */
 	public function changePosition() {
 		$category_id = Input::get('category');
 		$items_raw = Auth::getUser()->items()->where('category_id', "=", $category_id);
 
 		$items_count = $items_raw->count();
-		$from = $items_count - Input::get('from');
-		$to = $items_count - Input::get('to');
 
-		$from_item = $items_raw->where('poradi', '=', $from)->first();
-		$from_item_id = $from_item->id;
-		$from = $from_item->poradi;
+		$item = Auth::getUser()->items()->find(Input::get("id"));
 
-		$items_raw = Auth::getUser()->items()->where('category_id', "=", $category_id);
-		if ($from < $to) {
-			$items_betwen = $items_raw->where('poradi', '<=', $to)->where('poradi', '>', $from)->get();
+		$start_pos = $item->poradi;
+		$end_pos = Input::get("to")+1;
 
-			foreach ($items_betwen as $item) {
-				$item->decrement('poradi');
+		if($start_pos > $end_pos) {
+			$items_to_change = Auth::getUser()->items()->where('category_id', "=", $category_id)->where("poradi",">=",$end_pos)->where("poradi","<",$start_pos)->get();
+			foreach ($items_to_change as $item_to_change) {
+				$item_to_change->increment('poradi');
+			}
+		} else if($end_pos> $start_pos) {
+			$items_to_change = Auth::getUser()->items()->where('category_id', "=", $category_id)->where("poradi","<=",$end_pos)->where("poradi",">",$start_pos)->get();
+			foreach ($items_to_change as $item_to_change) {
+				$item_to_change->decrement('poradi');
 			}
 		}
-		elseif ($from > $to) {
-			$items_betwen = $items_raw->where('poradi', '>=', $to)->where('poradi', '<', $from)->get();
-			foreach ($items_betwen as $item) {
-				$item->increment('poradi');
-			}
-		}
+		$item->poradi = $end_pos;
 
-		Auth::getUser()->items()->find($from_item_id)->update(array(
-			'poradi' => $to
-		));
+		$item->save();
+
 	}
 
 	/**
@@ -105,8 +99,8 @@ class ItemController extends BaseController
 			else {
 				$code = sprintf("%04s", ($last->code + 1));
 			}
-
-			$last = Auth::getUser()->items()->orderBy('poradi', 'desc')->first();
+			$category = Auth::getUser()->categories()->find(Input::get('category'));
+			$last = $category->items()->orderBy('poradi', 'desc')->first();
 
 
 			$save['code'] = $code . "/" . $category->code;

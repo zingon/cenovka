@@ -3,6 +3,7 @@
 $(document).ready(function() {
   window.App.Items = {};
   window.App.ItemSort = "poradi:asc";
+  window.App.UserSort = true;
   window.App.pagination.onPage = 20;
   window.App.pagination.element = "#pagination";
   init();
@@ -19,13 +20,15 @@ function init() {
   */
   if (window.location.hash.length > 0) {
     loadItems(items, window.location.hash.split("#")[1] * 1);
-  } else {
-    loadItems(items);
   }
   /**
     Načtení kategorii
   */
-  loadCategories(sidenav, function(target) {
+  loadCategories(sidenav, function(target, data) {
+    if(!(window.location.hash.length > 0)) {
+      loadItems(items, data[0].id*1);
+      window.location.hash = data[0].id;
+    }
     $(target + " a").click(function() {
       loadItems(items, $(this).attr("href").split("#")[1] * 1);
     });
@@ -42,13 +45,7 @@ function init() {
   $(items).on("click", ".edit", function() {
     editItem($(this).data("id"));
   });
-  /**
-    Resetování kategorii
-  */
-  $(".categoryReseter").click(function() {
-    window.location.hash = "";
-    loadItems(items);
-  });
+
   /**
     Vyhledávání
   */
@@ -72,12 +69,18 @@ function init() {
   */
   $(sort).change(function() {
     window.App.ItemSort = $(this).val();
+
+    if($(sort +" option[value='"+$(this).val()+"']").data("user-sort")) {
+      $(".sortable").sortable( "enable" );
+    } else {
+      $(".sortable").sortable( "disable" );
+    }
     reload();
   });
   /**
     Řazení tažením
   */
-  if (window.location.hash.length <= 0) {
+
     $(".sortable").sortable({
       helper: function(e, tr) {
         var $originals = tr.children();
@@ -88,13 +91,16 @@ function init() {
         });
         return $helper;
       },
-      update: function(e, ui) {
-        console.log($(ui.item[0]).index(), $(ui.item).data("id"));
-      }
+      stop: function(event, ui){
+        $.post(localStorage.ItemChangePosition,({"id": ui.item.data("id"),"to": ui.item.index(),'category':(window.location.hash.split("#")[1] * 1)})).success(function() {
+          window.App.Items = {};
+        reload();
+        });
+
+    }
     });
     $(".sortable").disableSelection();
   }
-}
 
 function reload() {
   var items = "#items";

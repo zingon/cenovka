@@ -1,2 +1,4 @@
 /.phpintel
 /public/.sass-cache
+/app/storage/
+/*.sublime-*
