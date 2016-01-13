@@ -66,3 +66,33 @@
 		</div>
 	</div>
 </section>
+
+<script>
+$(document).ready(function() {
+	var nowTemp = new Date();
+	var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(),nowTemp.getDate(),0,0,0,0);
+	var vystaven = $("#vystaven").fdatepicker({
+		language: 'cz',
+		format: 'dd.mm.yyyy',
+		onRender: function(date) {
+			return date.valueOf() < now.valueOf() ? 'disabled':'';
+		}
+	}).on('changeDate',function(ev) {
+		if(ev.date.valueOf()>expire.date.valueOf()) {
+			var newDate = new Date(ev.date);
+			newDate.setDate(newDate.getDate+1);
+			expire.update(newDate);
+		}
+		vystaven.hide();
+	})
+	var expire = $("#expire").fdatepicker({
+		language: 'cz',
+		format: 'dd.mm.yyyy',
+		onRender: function(date) {
+			return date.valueOf() <= vystaven.date.valueOf() ? 'disabled':'';
+		}
+	}).on('changeDate',function(ev) {
+		expire.hide()
+	})
+});
+</script>

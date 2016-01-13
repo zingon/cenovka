@@ -5,7 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
          <title>Cenová nabídka</title>
         {{HTML::style('stylesheets/app.css')}}
+
         {{HTML::script('bower_components/modernizr/modernizr.js')}}
+        {{ HTML::script('bower_components/jquery/dist/jquery.min.js')}}
+        {{ HTML::script('bower_components/foundation-datepicker/js/foundation-datepicker.js')}}
+        {{ HTML::script('bower_components/foundation-datepicker/js/locales/foundation-datepicker.cs.js')}}
+        {{ HTML::script('bower_components/foundation/js/foundation.min.js')}}
+        {{ HTML::script('bower_components/jsrender/jsrender.min.js')}}
+        {{ HTML::script('bower_components/jquery-ui/jquery-ui.min.js')}}
     </head>
     <body>
         <div class="loader-capsule">
@@ -41,7 +48,7 @@
             </section>
             <a class="close-reveal-modal" arial-label="Close">&#215;</a>
         </div>
-        {{ HTML::script('bower_components/jquery/dist/jquery.min.js')}}
+
         <script type="text/javascript">
         $.ajaxSetup({
             headers: {'csrftoken' : '{{ csrf_token() }}'},
@@ -76,11 +83,7 @@
         localStorage.SettingUserUrl = "{{route('get.setting.user')}}";
 
         </script>
-        {{ HTML::script('bower_components/foundation-datepicker/js/foundation-datepicker.js')}}
-        {{ HTML::script('bower_components/foundation-datepicker/js/locales/foundation-datepicker.cs.js"></script>')}}
-        {{ HTML::script('bower_components/foundation/js/foundation.min.js')}}
-        {{ HTML::script('bower_components/jsrender/jsrender.min.js')}}
-        {{ HTML::script('bower_components/jquery-ui/jquery-ui.min.js')}}
+
         {{ HTML::script('js/putDelete.js')}}
         {{ HTML::script('js/global.js')}}
         {{ HTML::script('js/templates/global.js')}}

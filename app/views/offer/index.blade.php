@@ -36,10 +36,5 @@
 @section("script")
 {{ HTML::script('js/document.js')}}
 {{ HTML::script('js/loaders/document.js')}}
-{{ HTML::script('js/templates/documnet.js')}}
-<script type="text/javascript">
-$(document).ready(function() {
-$('#loader').hide();
-});
-</script>
+{{ HTML::script('js/templates/document.js')}}
 @stop

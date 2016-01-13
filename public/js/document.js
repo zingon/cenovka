@@ -7,11 +7,6 @@ $(document).ready(function() {
 });
 
 function init() {
-	$(".reveal-modal").on("load",".date",function(){
-		$('.date').fdatepicker({
-		  		language: 'cs'
-			});
-	});
 
 	reload();
 
