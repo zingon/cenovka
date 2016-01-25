@@ -10,6 +10,18 @@ function init() {
 
 	reload();
 
+	$(document).on("click", "button.next", function() {
+		var id = $(this).parent().parent().parent().parent().attr("id");
+		var form = $(this).parent().parent().parent().parent();
+		if(form.data("edit")){
+			$.put(form.attr("action"),form.serialize());
+		} else {
+			$.post(form.attr("action"),form.serialize());
+
+		}
+
+		changeTab($(this).data("open"));
+	});
 }
 
 function reload() {

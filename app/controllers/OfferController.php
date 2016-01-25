@@ -13,7 +13,7 @@ class OfferController extends BaseController {
 			return Response::view('offer.index');
 		} else {
 			$documents = Auth::getUser()->documents()->orderBy('created_at','DESC')->get();
-			return Response::json($items);
+			return Response::json($documents);
 		}
 
 	}
