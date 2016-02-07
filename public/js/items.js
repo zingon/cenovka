@@ -25,7 +25,7 @@ function init() {
     Načtení kategorii
   */
   loadCategories(sidenav, function(target, data) {
-    if(!(window.location.hash.length > 0)) {
+    if(!(window.location.hash.length > 0) && data.length>0) {
       loadItems(items, data[0].id*1);
       window.location.hash = data[0].id;
     }

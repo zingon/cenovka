@@ -2,18 +2,18 @@
 use Illuminate\Database\Eloquent\SoftDeletingTrait;
 
 class Document extends Eloquent {
-	
+
 	use SoftDeletingTrait;
 
 	protected $fillable = array('code', 'name', 'vystaven', 'expire','note','odberatel_id','dodavatel_id', 'dph','exported_document','last_update');
 	protected $dates = ['deleted_at'];
 
-	public function dodavatel() {
-        return $this->belongsTo('Contact','dodavatel_id');
-    }
 
     public function odberatel() {
-    	return $this->belongsTo('Contact','odberatel_id');
+    	return $this->belongsTo('Contact','odberatel_id','id');
+    }
+    public function user() {
+        return $this->belongsTo("User",'user_id');
     }
 
     public function items() {

@@ -9,7 +9,7 @@ class Contact extends Eloquent {
 	protected $dates = ['deleted_at'];
 
 	public function documents() {
-        return $this->hasMany('Document','dodatavel_id');
+        return $this->hasMany('Document','odberatel_id');
     }
 
      public function scopeRemoved($query) {

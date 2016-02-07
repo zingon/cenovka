@@ -61,7 +61,7 @@
             success: function() {}
         });
 
-        localStorage.first_login = {{$first_login}};
+        localStorage.first_login = ('{{$first_login}}'.lenght>0)?true:false;
 
         //Položky
         localStorage.categoryUrl = "{{route('api.category.index')}}";

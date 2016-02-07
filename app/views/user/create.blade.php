@@ -52,3 +52,8 @@
     </div>
 </div>
 @stop
+@section('script')
+    <script type="text/javascript">
+        $('#loader').hide();
+    </script>
+@stop

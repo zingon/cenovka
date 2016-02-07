@@ -64,17 +64,17 @@ class OfferController extends BaseController {
 
 		if($validator->fails()){
 
-			return Response::json(array('type'=>'danger','m'=>$validator->messages()));
+			return Response::json(array('type'=>'danger','messages'=>$validator->messages()));
 		} else {
 
 			$save = array();
 			foreach ($this->saveValues() as $key => $value) {
 				$save[$key] 	= Input::get($key);
 			}
-			$save['odberatel'] = Input::get('odberatel');
+			$odberatel_id = Input::get('odberatel');
 
-			$odberatel = Auth::getUser()->contacts()->find($save['odberatel']);
-			$dodavatel = Auth::getUser()->contacts()->where('me','=',true)->first();
+			$odberatel = Auth::getUser()->contacts()->find($odberatel_id);
+
 
 			$last = Auth::getUser()->documents()->orderBy('created_at','desc')->first();
 
@@ -88,17 +88,24 @@ class OfferController extends BaseController {
 					$code = sprintf("%04s",($last_code[0]+1)) ."/".date('Y',time());
 				}
 			}
-
+			$vystaven = new DateTime($save["vystaven"]);
+			$expire = new DateTime($save["expire"]);
 			$save = array_add($save,'code',$code);
-
+			$save["vystaven"] = $vystaven->format("Y-m-d");
+			$save["expire"] = $expire->format("Y-m-d");
 			$document = new Document($save);
-			$document->odberatel()->associate($odberatel);
-			$document->dodavatel()->associate($dodavatel);
 
-			if(Auth::getUser()->documents()->save($document)){
-				Session::forget('document');
-				Session::put('document',$document->id);
-				return Response::json(array('type'=>'success','m'=>'Dokument byl úspěšně přidán.','document'=>$document->id));
+			$document->odberatel()->associate($odberatel);
+			$document->user()->associate(Auth::getUser());
+
+
+
+			if($document->save());{
+
+					Session::forget('document');
+					Session::put('document',$document->id);
+					return Response::json(array('type'=>'success','m'=>'Dokument byl úspěšně přidán.','document'=>$document->id));
+
 			}
 		}
 	}
@@ -256,8 +263,8 @@ class OfferController extends BaseController {
 	{
 		return array(
 				'name' 		=> 'required|max:255',
-				'vystaven' 	=> 'required|date_format:Y-m-d',
-				'expire' 	=> 'required|date_format:Y-m-d',
+				'vystaven' 	=> 'required|date_format:d.m.Y',
+				'expire' 	=> 'required|date_format:d.m.Y',
 				'note' 		=> 'max:65535',
 				'dph' 		=> 'required|numeric|in:21,15,0',
 			);

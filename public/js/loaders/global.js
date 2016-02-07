@@ -20,6 +20,12 @@ function message(data) {
   $(document).foundation('alert', 'reflow');
 }
 
+function inputError(input, text) {
+  input.addClass("error");
+  input.parent().find("small.error").remove();
+  inputErrorTemplate(text,input.parent());
+}
+
 function setMeIn() {
   $.get(localStorage.SettingUserUrl, function(data) {
     modalTemplate("large", data);

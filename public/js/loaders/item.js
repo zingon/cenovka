@@ -10,7 +10,12 @@ function loadItems(target, param) {
   if (!(window.App.Items.length > 0)) {
     $.get(localStorage.itemsUrl, function(response) {
       window.App.Items = response;
-      loadItems(target, param);
+      if(response.length>0) {
+        loadItems(target, param);
+      } else {
+        $("#loader").hide();
+      }
+
     });
   } else {
     if (param.length > 0 || param) {
