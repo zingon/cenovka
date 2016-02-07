@@ -12,7 +12,7 @@ class OfferController extends BaseController {
 		if (!Request::ajax()) {
 			return Response::view('offer.index');
 		} else {
-			$documents = Auth::getUser()->documents()->orderBy('created_at','DESC')->get();
+			$documents = Auth::getUser()->documents()->with("odberatel","user","user.user_setting","items_conection")->orderBy('created_at','DESC')->get();
 			return Response::json($documents);
 		}
 

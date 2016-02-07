@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	window.App.documnet = {};
+	window.App.document = {};
   	window.App.pagination.onPage = 20;
   	window.App.pagination.element = "#pagination";
 
@@ -13,7 +13,7 @@ function init() {
 	$(document).on("click", "button.next", function() {
 		var id = $(this).parent().parent().parent().parent().attr("id");
 		var form = $(this).parent().parent().parent();
-		console.log(form);
+		var parentThis = $(this);
 		if(form.data("edit")){
 			$.put(form.attr("action"),form.serialize());
 		} else {
@@ -25,7 +25,7 @@ function init() {
 						inputError(input,v);
 					});
 				} else {
-					changeTab($(this).data("open"));
+					changeTab(parentThis.data("open"));
 				}
 			});
 

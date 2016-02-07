@@ -2,12 +2,6 @@
 
 class DocumentItemController extends BaseController {
 
-
-	
-	public function getToken(){
-		return csrf_token();
-	}
-
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -19,16 +13,16 @@ class DocumentItemController extends BaseController {
 			$items = Auth::user()->items()->with('category')->get();
 		} else {
 		$document = Auth::user()->documents()->find(Session::get('document'));
-		
+
 		if($document->items()->count()!=0&&Session::has('document')){
-			
+
 			$keys = array();
-			
+
 			foreach ($document->items as $value) {
 				$keys[] = $value->id;
 			}
 			$items = Auth::user()->items()->whereNotIn('id',$keys)->get();
-		
+
 		} else {
 			$items = Auth::user()->items()->all();
 		}
@@ -82,8 +76,8 @@ class DocumentItemController extends BaseController {
 		 		$polozky[$item->id] 				= $item;
 		 		$polozky[$item->id]->priceDiscount 	= $item_price;
 		 		$polozky[$item->id]->count 			= $connection->count;
-		 		$polozky[$item->id]->discount 		= $connection->discount; 
-		 		$polozky[$item->id]->unit 			= explode('^',$item->unit); 
+		 		$polozky[$item->id]->discount 		= $connection->discount;
+		 		$polozky[$item->id]->unit 			= explode('^',$item->unit);
 			}
 			$view = View::make('offer.export',array(
 	 		'document' => $document,
@@ -125,7 +119,7 @@ class DocumentItemController extends BaseController {
 			}
 
 			foreach ($count as $key => $count) {
-				$documentItem = DocumentItem::right(array($key,$id))->first();	
+				$documentItem = DocumentItem::right(array($key,$id))->first();
 				$documentItem->count	= $count;
 				$documentItem->discount	= $discount[$key];
 
@@ -153,7 +147,7 @@ class DocumentItemController extends BaseController {
 			'selected' 	=> 'array',
 			'count' 	=> 'array',
 			'discount' 	=> 'array'
-			);	
+			);
 	}
 
 
