@@ -69,7 +69,7 @@
 			</div>
 			{{Form::close()}}
 		</div>
-		<div id="items">
+		<div id="items" data-url="{{route('select.create')}}">
 
 		</div>
 		<div id="editItems">

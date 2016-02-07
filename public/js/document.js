@@ -1,6 +1,7 @@
 $(document).ready(function() {
-	window.App.document = {};
-  	window.App.pagination.onPage = 20;
+	window.App.Documents = {};
+	window.App.Items = {};
+  	window.App.pagination.onPage = 10;
   	window.App.pagination.element = "#pagination";
 
   	init();
@@ -25,7 +26,11 @@ function init() {
 						inputError(input,v);
 					});
 				} else {
-					changeTab(parentThis.data("open"));
+
+					changeTab(parentThis.data("open"),function(res) {
+						insertItems(res,"#itemsSpace","#items");
+					});
+
 				}
 			});
 
@@ -39,4 +44,5 @@ function reload() {
 	var documnets = "#documents";
 
 	loadDocuments(documents);
+	loadItems();
 }

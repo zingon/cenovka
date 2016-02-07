@@ -9,14 +9,13 @@ function itemTemplate(data, target) {
 }
 //Templates
 $.templates('categoryRow', '<li><a href="#{{:id}}">{{:name}}</a></li>');
-$.templates('itemRow', '<tr data-id="{{:id}}"><td class="p10">{{:code}}</td><td class="p20">{{:name}}</td><td class="p13">{{:price}}</td><td class="p7">{{unitParser:unit}}</td><td class="p36">{{:note}}</td><td class="p7"><button class="edit button" data-id="{{:id}}"><i class="fi-pencil"></i></button></td><td class="p7"><button class="delete button alert" data-id="{{:id}}"><i class="fi-trash"></i></button></td></tr>');
-
-$.views.converters("unitParser", function(val) {
-	var unit = val.split("^");
-	if (unit.length > 1) {
-		return unit[0] + "<sup>" + unit[1] + "</sup>"
-	} else {
-		return val;
-	}
-
-});
+$.templates('itemRow',(
+	'<tr data-id="{{:id}}">'+
+		'<td class="p10">{{:code}}</td>'+
+		'<td class="p20">{{:name}}</td>'+
+		'<td class="p13">{{:price}}</td>'+
+		'<td class="p7">{{unitParser:unit}}</td>'+
+		'<td class="p36">{{:note}}</td>'+
+		'<td class="p7"><button class="edit button" data-id="{{:id}}"><i class="fi-pencil"></i></button></td>'+
+		'<td class="p7"><button class="delete button alert" data-id="{{:id}}"><i class="fi-trash"></i></button></td>'+
+	'</tr>'));

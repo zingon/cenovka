@@ -9,25 +9,33 @@ class DocumentItemController extends BaseController {
 	 */
 	public function create()
 	{
-		if(Session::get('document')=='new'){
-			$items = Auth::user()->items()->with('category')->get();
-		} else {
-		$document = Auth::user()->documents()->find(Session::get('document'));
+		$data = new DocumentItem;
+		$title = "Nová spojení";
+		return Response::view('offer.connection.items_form', array(
+			'data' => $data,
+			"route" => "item.store",
+			"method" => "POST",
+			"title" => $title
+		));
+		// if(Session::get('document')=='new'){
+		// 	$items = Auth::user()->items()->with('category')->get();
+		// } else {
+		// $document = Auth::user()->documents()->find(Session::get('document'));
 
-		if($document->items()->count()!=0&&Session::has('document')){
+		// if($document->items()->count()!=0&&Session::has('document')){
 
-			$keys = array();
+		// 	$keys = array();
 
-			foreach ($document->items as $value) {
-				$keys[] = $value->id;
-			}
-			$items = Auth::user()->items()->whereNotIn('id',$keys)->get();
+		// 	foreach ($document->items as $value) {
+		// 		$keys[] = $value->id;
+		// 	}
+		// 	$items = Auth::user()->items()->whereNotIn('id',$keys)->get();
 
-		} else {
-			$items = Auth::user()->items()->all();
-		}
-		}
-		return Response::view('offer.connection.new', array('items'=>$items));
+		// } else {
+		// 	$items = Auth::user()->items()->all();
+		// }
+		// }
+		// return Response::view('offer.connection.new', array('items'=>$items));
 	}
 
 

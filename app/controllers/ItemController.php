@@ -43,7 +43,7 @@ class ItemController extends BaseController
 			return Response::view('items.index');
 		}
 		else {
-			$items = Auth::user()->items()->orderBy('poradi', 'asc')->get();
+			$items = Auth::user()->items()->with("category")->orderBy('poradi', 'asc')->get();
 			return Response::json($items);
 		}
 	}
