@@ -56,10 +56,11 @@ function init() {
 	});
 	$("body").on("click","#sendItems", function() {
 		var form = $(this).closest("form");
-		$.post(form.attr("action"),JSON.stringify(window.App.Items),function() {
-			//window.location.href = "/";
+		$.post(form.attr("action"),{data:JSON.stringify(window.App.Items)},function(res) {
+			var url = res.url;
+			console.log(url);
+			window.location.href = url;
 		});
-		console.log(form.attr("action"));
 	});
 
 

@@ -32,3 +32,20 @@ function loadItems() {
 function insertItems(html, targetHtml, target) {
 	itemConnectionTemplate(html,targetHtml,target,window.App.Items);
 }
+
+function deleteDocument(documents, documentId) {
+  var url = localStorage.DocumentDeleteUrl.replace("0", documentId);
+  $.delete(url, {
+    id: documentId
+  }, function(response) {
+    loadItems(documents);
+    message(response);
+  });
+}
+
+function editDocument( documentId ) {
+  var url = localStorage.DocumentEditUrl.replace("0", documentId);
+   $.get(url,function(response){
+    modalTemplate("large",response);
+  ;});
+}

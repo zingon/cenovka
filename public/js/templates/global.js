@@ -25,11 +25,6 @@ $.views.converters("date", function(val) {
   return date.getDate()+"."+(date.getMonth()+1)+"."+date.getFullYear()
 });
 
-//Vypíše buď délku(velikost) prvku nebo nulu
-$.views.converters("lengthArray", function(val) {
-  return (val)?val.length:0;
-});
-
 //Parser pro jednotky s horním indexem
 $.views.converters("unitParser", function(val) {
 	var unit = val.split("^");

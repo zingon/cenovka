@@ -46,62 +46,40 @@ class DocumentItemController extends BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make((object)Input::json(),$this->saveValues());
+
+		$validator = Validator::make(Input::all(),$this->saveValues());
 
 		if($validator->fails()){
-			return Redirect::route('select.create')
+			return Redirect::route('document.index')
                 ->withErrors($validator);
 
 		} else {
 
 			foreach ($this->saveValues() as $key => $value) {
-				$$key 	= Input::get($key);
+				$$key 	= json_decode(Input::get($key));
 			}
 			$document = Document::find(Session::get('document'));
-			foreach ($selected as $key => $value) {
-				$item = Item::find($key);
-				$new = new DocumentItem(array(
-					'count' 	=> $count[$item->id],
-					'discount' 	=> $discount[$item->id],
-					));
-				$new->item()->associate($item);
-				$new->document()->associate($document);
-				$new->save();
+
+			foreach ($data as $key => $item) {
+				if(!empty($item->used) && $item->used) {
+					$item_db = Item::find($item->id);
+					$new = new DocumentItem(array(
+					'count' 	=> $item->count,
+			 		'discount' 	=> $item->discount
+						));
+					try {
+						$new->item()->associate($item_db);
+						$new->document()->associate($document);
+						$new->save();
+					} catch (Exception $e) {
+						dd($e);
+					}
+
+
+				}
 			}
-
-			if(empty($document->exported_document)){
-
-			$total_price=0;
-		 	$polozky = array();
-		 	$dph_kons = $document->dph/100;
-
-			foreach ($document->items()->withTrashed()->get() as $key => $item) {
-				$connection = DocumentItem::right(array($item->id,$document->id))->first();
-	 			$item_price = ($item->price * $connection->count) - (($item->price/100*$connection->discount)*$connection->count);
-	 			$total_price += round($item_price,2);
-
-
-		 		$polozky[$item->id] 				= $item;
-		 		$polozky[$item->id]->priceDiscount 	= $item_price;
-		 		$polozky[$item->id]->count 			= $connection->count;
-		 		$polozky[$item->id]->discount 		= $connection->discount;
-		 		$polozky[$item->id]->unit 			= explode('^',$item->unit);
-			}
-			$view = View::make('offer.export',array(
-	 		'document' => $document,
-	 		'polozky' => $polozky,
-	 		'total_price' => $total_price,
-	 		'dph_kons'	=> $dph_kons,
-	 		));
-			$date = new DateTime();
-	 		$document->exported_document = $view;
-	 		$document->last_update = $date->getTimestamp();
-	 		if($document->save()){
-	 			return Redirect::route('document.index',array(Session::get('document')));
-	 		}
-	 	} else {
-	 		return Redirect::route('document.index',array(Session::get('document')));
-		}
+			Session::forget('document');
+			return Response::json(array("url"=>URL::route('document.show',$document->id)));
 	 	}
 	}
 
@@ -114,27 +92,27 @@ class DocumentItemController extends BaseController {
 	 */
 	public function update($id)
 	{
-		$validator = Validator::make(Input::all(),$this->saveValues());
+		// $validator = Validator::make(Input::all(),$this->saveValues());
 
-		if($validator->fails()){
-			return Redirect::route('select.edit')
-                ->withErrors($validator);
+		// if($validator->fails()){
+		// 	return Redirect::route('select.edit')
+  //               ->withErrors($validator);
 
-		} else {
+		// } else {
 
-			foreach ($this->saveValues() as $key => $value) {
-				$$key 	= Input::get($key);
-			}
+		// 	foreach ($this->saveValues() as $key => $value) {
+		// 		$$key 	= Input::get($key);
+		// 	}
 
-			foreach ($count as $key => $count) {
-				$documentItem = DocumentItem::right(array($key,$id))->first();
-				$documentItem->count	= $count;
-				$documentItem->discount	= $discount[$key];
+		// 	foreach ($count as $key => $count) {
+		// 		$documentItem = DocumentItem::right(array($key,$id))->first();
+		// 		$documentItem->count	= $count;
+		// 		$documentItem->discount	= $discount[$key];
 
-				$documentItem->save();
-			}
-			return Redirect::route('document.index');
-	 	}
+		// 		$documentItem->save();
+		// 	}
+		// 	return Redirect::route('document.index');
+	 // 	}
 	}
 	/**
 	 * Remove the specified resource from storage.
@@ -152,10 +130,7 @@ class DocumentItemController extends BaseController {
 
 	private function saveValues(){
 		return array(
-			'id' 		=> 'integer',
-			'used' 		=> 'boolean',
-			'count' 	=> 'integer',
-			'discount'	=> "integer"
+			'data' 		=> 'string',
 			);
 	}
 

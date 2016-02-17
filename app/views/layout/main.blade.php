@@ -77,7 +77,10 @@
         localStorage.ContactEditUrl = "{{route('contact.edit',0)}}";
 
         //Nabídky
-        localStorage.DocumentUrl = "{{ route('document.index') }}"
+        localStorage.DocumentUrl = "{{ route('document.index') }}";
+        localStorage.DocumentShowUrl = "{{ route('document.show',0) }}";
+        localStorage.DocumentEditUrl = "{{ route('document.edit',0) }}";
+        localStorage.DocumentDeleteUrl = "{{ route('document.destroy',0) }}";
 
         //Nastavení
         localStorage.SettingUserUrl = "{{route('get.setting.user')}}";

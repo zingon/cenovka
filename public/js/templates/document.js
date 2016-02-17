@@ -13,9 +13,9 @@ function itemConnectionTemplate(html,targetHtml, target,data) {
 $.templates("documentRow", (
 	'<tr>'+
 		'<td>{{:code}}</td>'+
-		'<td>{{:name}}</td>'+
+		'<td><a href="{{showDocument:id}}">{{:name}}</a></td>'+
 		'<td>{{:odberatel.name}}</td>'+
-		'<td>{{lengthArray:item_conection}}</td>'+
+		'<td>{{:items_conection.length}}</td>'+
 		'<td>{{date:vystaven}}</td>'+
 		'<td>{{date:expire}}</td>'+
 		'<td class="p7"><button class="edit button" data-id="{{:id}}"><i class="fi-pencil"></i></button></td>'+
@@ -33,3 +33,7 @@ $.templates("itemConnectionRow", (
             '<td class="p15"><input type="number" class="discount" name="discount[{{:id}}" value="0" step="0.01" data-index="{{:#getIndex()}}"></td>'+
         '</tr>'
 	));
+
+$.views.converters("showDocument", function(val) {
+	return localStorage.DocumentShowUrl.replace("0", val);
+});
