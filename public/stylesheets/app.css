@@ -52,49 +52,58 @@ article section table th {
 article section table th.small {
   width: 2.5rem;
 }
-/* line 18, ../scss/_list.scss */
-article section table th.p7 {
-  width: 7%;
-}
-/* line 21, ../scss/_list.scss */
-article section table th.p8 {
-  width: 7%;
-}
-/* line 24, ../scss/_list.scss */
-article section table th.p10 {
-  width: 10%;
-}
-/* line 27, ../scss/_list.scss */
-article section table th.p13 {
-  width: 13%;
-}
-/* line 30, ../scss/_list.scss */
-article section table th.p15 {
-  width: 15%;
-}
-/* line 33, ../scss/_list.scss */
-article section table th.p20 {
-  width: 20%;
-}
-/* line 37, ../scss/_list.scss */
-article section table th.p25 {
-  width: 25%;
-}
-/* line 40, ../scss/_list.scss */
-article section table th.p36 {
-  width: 36%;
-}
-/* line 46, ../scss/_list.scss */
+/* line 22, ../scss/_list.scss */
 article section table td .delete, article section table td .edit {
   padding: 0.625rem 0.625rem;
   width: 2.5rem;
   height: 2.5rem;
   margin: 0;
 }
-/* line 53, ../scss/_list.scss */
+/* line 29, ../scss/_list.scss */
 article section table .ui-sortable-helper {
   background-color: white;
   display: table;
+}
+
+/* line 37, ../scss/_list.scss */
+ul.pagination {
+  display: block;
+  margin-left: -0.3125rem;
+  min-height: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* line 45, ../scss/_list.scss */
+td.p7, th.p7 {
+  width: 7%;
+}
+/* line 48, ../scss/_list.scss */
+td.p8, th.p8 {
+  width: 7%;
+}
+/* line 51, ../scss/_list.scss */
+td.p10, th.p10 {
+  width: 10%;
+}
+/* line 54, ../scss/_list.scss */
+td.p13, th.p13 {
+  width: 13%;
+}
+/* line 57, ../scss/_list.scss */
+td.p15, th.p15 {
+  width: 15%;
+}
+/* line 60, ../scss/_list.scss */
+td.p20, th.p20 {
+  width: 20%;
+}
+/* line 63, ../scss/_list.scss */
+td.p25, th.p25 {
+  width: 25%;
+}
+/* line 66, ../scss/_list.scss */
+td.p36, th.p36 {
+  width: 36%;
 }
 
 /* line 1, ../scss/_alerts.scss */

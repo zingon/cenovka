@@ -21,4 +21,9 @@
         </tr>
         </tfoot>
     </table>
+    <div class="row">
+        <div class="small-12 columns">
+            <button type="button" id="sendItems">Uložit</button>
+        </div>
+    </div>
 {{Form::close()}}

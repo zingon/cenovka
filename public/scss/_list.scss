@@ -15,31 +15,7 @@ article {
                 &.small {
                     width: rem-calc(40px);
                 }
-                &.p7 {
-                    width:7%;
-                }
-                &.p8 {
-                    width:7%;
-                }
-                &.p10{
-                    width: 10%;
-                }
-                &.p13{
-                    width:13%;
-                }
-                &.p15{
-                    width:15%;
-                }
-                &.p20{
-                    width:20%;
-                }
 
-                &.p25 {
-                    width:25%;
-                }
-                &.p36 {
-                    width:36%;
-                }
 
             }
             td {
@@ -55,5 +31,39 @@ article {
                 display: table;
             }
         }
+    }
+}
+
+ul.pagination {
+    display: block;
+    margin-left: -0.3125rem;
+    min-height: 1.5rem;
+    margin-top: 1rem;
+}
+
+td,th {
+    &.p7 {
+        width:7%;
+    }
+    &.p8 {
+        width:7%;
+    }
+    &.p10{
+        width: 10%;
+    }
+    &.p13{
+        width:13%;
+    }
+    &.p15{
+        width:15%;
+    }
+    &.p20{
+        width:20%;
+    }
+    &.p25 {
+        width:25%;
+    }
+    &.p36 {
+        width:36%;
     }
 }

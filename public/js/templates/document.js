@@ -25,11 +25,11 @@ $.templates("documentRow", (
 
 $.templates("itemConnectionRow", (
 		'<tr {{if note }}data-tooltip aria-haspopup="true" class="has-tip" title="{{:note}}"{{/if}}>'+
-        	'<td class="col-md-1"><input type="checkbox" name="selected[{{:id}}]" value="{{:id}}"></td>'+
-            '<td class="col-md-2">{{:code}}</td>'+
-            '<td class="col-md-3">{{:name}}</td>'+
-            '<td class="col-md-2">{{:price}}</td>'+
-            '<td class="col-md-2"><input type="number" name="count[{{:id}}]" value="1" patern="^\\$?(([1-9](\\d*|\\d{0,2}(,\\d{3})*))|0)(\\.\\d{1,2})?$"></td>'+
-            '<td class="col-md-2"><input type="number" name="discount[{{:id}}" value="0" patern="^\\$?(([1-9](\\d*|\\d{0,2}(,\\d{3})*))|0)(\\.\\d{1,2})?$"></td>'+
+        	'<td class="p7"><input type="checkbox" class="selected" name="selected[{{:id}}]" value="{{:id}}" data-index="{{:#getIndex()}}"></td>'+
+            '<td class="p7">{{:code}}</td>'+
+            '<td>{{:name}}</td>'+
+            '<td class="p20">{{:price}}</td>'+
+            '<td class="p15"><input type="number" class="count" name="count[{{:id}}]" value="1" step="0.01" data-index="{{:#getIndex()}}"></td>'+
+            '<td class="p15"><input type="number" class="discount" name="discount[{{:id}}" value="0" step="0.01" data-index="{{:#getIndex()}}"></td>'+
         '</tr>'
 	));

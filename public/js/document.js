@@ -38,6 +38,31 @@ function init() {
 
 
 	});
+	$("body").on("change", ".selected", function() {
+		if($(this).is(':checked')){
+			var row = $(this).parent().parent();
+			window.App.Items[$(this).data("index")*1].used = true;
+			window.App.Items[$(this).data("index")*1].count = row.find(".count").val();
+			window.App.Items[$(this).data("index")*1].discount = row.find(".discount").val();
+			$("body").on("change",".count",function() {
+				window.App.Items[$(this).data("index")*1].count = $(this).val();
+			});
+			$("body").on("change",".discount",function() {
+				window.App.Items[$(this).data("index")*1].discount = $(this).val();
+			});
+		} else {
+			window.App.Items[$(this).data("index")*1].used = false;
+		}
+	});
+	$("body").on("click","#sendItems", function() {
+		var form = $(this).closest("form");
+		$.post(form.attr("action"),JSON.stringify(window.App.Items),function() {
+			//window.location.href = "/";
+		});
+		console.log(form.attr("action"));
+	});
+
+
 }
 
 function reload() {

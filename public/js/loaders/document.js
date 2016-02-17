@@ -1,8 +1,12 @@
 function loadDocuments(target) {
-	$.get(localStorage.DocumentUrl,function(response) {
-		documentTemplate(target,response);
-		window.App.Documents = response;
-	});
+	if(window.App.Documents.length>0) {
+		documentTemplate(target,window.App.Documents);
+	} else {
+		$.get(localStorage.DocumentUrl,function(response) {
+			documentTemplate(target,response);
+			window.App.Documents = response;
+		});
+	}
 }
 
 function changeTab(open,getfunction) {
@@ -13,9 +17,9 @@ function changeTab(open,getfunction) {
 	$("#"+open).show();
 	var url =$("#"+open).data("url");
 	if(url.length>0) {
-		$.get(url,function(response) {
+		$.get(url, function(response){
 			getfunction(response);
-		})
+		});
 	}
 }
 

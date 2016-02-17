@@ -41,4 +41,4 @@ function paginationInit(items, settings) {
 	}
 }
 $.templates('paginationItem', '<li class="{{if active}}current{{/if}}"><a href="#" data-page="{{:page}}">{{:page}}</a></li>');
-$.templates('pagination', '<ul class="pagination"><li class="arrow {{if !first}}unavailable{{/if}}"><a href="#" data-page="back">&laquo;</a></li>{{:pagination}}<li class="arrow {{if !last}}unavailable{{/if}}"><a href="#" data-page="next">&raquo;</a></li></ul>')
+	$.templates('pagination', '<div class="pagination-centered"><ul class="pagination"><li class="arrow {{if !first}}unavailable{{/if}}"><a href="#" data-page="back">&laquo;</a></li>{{:pagination}}<li class="arrow {{if !last}}unavailable{{/if}}"><a href="#" data-page="next">&raquo;</a></li></ul></div>')

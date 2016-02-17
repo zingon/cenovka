@@ -46,7 +46,7 @@ class DocumentItemController extends BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make(Input::all(),$this->saveValues());
+		$validator = Validator::make((object)Input::json(),$this->saveValues());
 
 		if($validator->fails()){
 			return Redirect::route('select.create')
@@ -152,9 +152,10 @@ class DocumentItemController extends BaseController {
 
 	private function saveValues(){
 		return array(
-			'selected' 	=> 'array',
-			'count' 	=> 'array',
-			'discount' 	=> 'array'
+			'id' 		=> 'integer',
+			'used' 		=> 'boolean',
+			'count' 	=> 'integer',
+			'discount'	=> "integer"
 			);
 	}
 
