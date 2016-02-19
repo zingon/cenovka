@@ -88,11 +88,15 @@ class OfferController extends BaseController {
 					$code = sprintf("%04s",($last_code[0]+1)) ."/".date('Y',time());
 				}
 			}
-			$vystaven = new DateTime($save["vystaven"]);
-			$expire = new DateTime($save["expire"]);
-			$save = array_add($save,'code',$code);
-			$save["vystaven"] = $vystaven->format("Y-m-d");
+
+			$expire = DateTime::createFromFormat('d.m.Y', $expire);
 			$save["expire"] = $expire->format("Y-m-d");
+
+			$vystaven = DateTime::createFromFormat('d.m.Y', $vystaven);
+			$save["vystaven"] = $vystaven->format("Y-m-d");
+
+			$save = array_add($save,'code',$code);
+
 			$document = new Document($save);
 
 			$document->odberatel()->associate($odberatel);
@@ -182,24 +186,40 @@ class OfferController extends BaseController {
 	 */
 	public function edit($id)
 	{
-		$document 	= Auth::getUser()->documents()->find($id);
-		$polozky	= array();
+		$data = Auth::getUser()->documents()->find($id);
+		$title = "Editace nabídky - " . $data->code;
+		$edit = 1;
 
-		foreach ($document->items()->withTrashed()->get() as $key => $item) {
-
-			$connection = DocumentItem::right(array($item->id,$document->id))->first();
-			$polozky[$item->id] = $item;
-	 		$polozky[$item->id]->count = $connection->count;
-	 		$polozky[$item->id]->discount = $connection->discount;
-	 		$polozky[$item->id]->con_id = $connection->id;
-
+		$dodavatel = Auth::getUser()->user_setting()->first();
+		$odberatele_full = Auth::getUser()->contacts()->get();
+		$odberatele = array();
+		foreach ($odberatele_full as $key => $value) {
+			$odberatele[$value->id] = $value->name;
 		}
+
 		Session::forget('document');
-		Session::put('document',$document->id);
-		return Response::view('offer.edit', array(
-			'document'		=>$document,
-			'items'		=>$polozky
+		Session::put('document',$data->id);
+
+		return Response::view('offer.new', array(
+			"title"=>$title,
+			"edit"=>$edit,
+			"route" => array("document.update",$data->id),
+			"method" => "PUT",
+			"data" => $data,
+			"dodavatel" => $dodavatel,
+			"odberatele" => $odberatele
 			));
+
+
+		// foreach ($document->items()->withTrashed()->get() as $key => $item) {
+
+		// 	$connection = DocumentItem::right(array($item->id,$document->id))->first();
+		// 	$polozky[$item->id] = $item;
+	 // 		$polozky[$item->id]->count = $connection->count;
+	 // 		$polozky[$item->id]->discount = $connection->discount;
+	 // 		$polozky[$item->id]->con_id = $connection->id;
+
+		// }
 	}
 
 
@@ -211,6 +231,7 @@ class OfferController extends BaseController {
 	 */
 	public function update($id)
 	{
+		//dd(Input::all());
 		$validator = Validator::make(Input::all(),$this->saveValues());
 
 		if($validator->fails()){
@@ -224,13 +245,28 @@ class OfferController extends BaseController {
 			}
 
 			$document = Auth::getUser()->documents()->find($id);
+			$expire = DateTime::createFromFormat('d.m.Y', $expire);
+			$expire = $expire->format("Y-m-d");
+			$vystaven = DateTime::createFromFormat('d.m.Y', $vystaven);
+			$vystaven = $vystaven->format("Y-m-d");
 			foreach ($this->saveValues() as $key => $value) {
 				$document->$key = $$key;
 			}
 
 			if($document->save()){
 				Session::forget('document');
-				return Redirect::route('document.index');
+				if(Request::ajax()) {
+					return Response::json(array(
+						"messages" => array(
+							array(
+								"type" => "success",
+								"text" => "Položka byla úspěšně uložena."
+							)
+						)
+					));
+				} else {
+					return Redirect::route('document.index');
+				}
 			}
 
 		}
@@ -245,18 +281,23 @@ class OfferController extends BaseController {
 	 */
 	public function destroy($id)
 	{
-		Session::forget('document');
-		Auth::getUser()->documents()->destroy($id);
-		return Redirect::back()
-			->with('global','Položka byla úspěšně smazána.');
 
-	}
+		//Session::forget('document');
+		 Auth::getUser()->documents()->where("id", "=", $id)->delete();
+		 if (Request::ajax()) {
+			return Response::json(array(
+				"messages" => array(
+					array(
+						"type" => "warning",
+						"text" => "Položka byla úspěšně smazána."
+					)
+				)
+			));
+		}
+		else {
+			return Redirect::route('item.index')->with('global', 'Položka byla úspěšně smazána.');
+		}
 
-	public function exportPdf($id)
-	{
-		$document = Auth::getUser()->documents()->find($id);
-		$pdf = PDF::loadView('offer.pdf',array('document' => $document));
-		return Response::view('offer.pdf');
 	}
 
 	private function saveValues()

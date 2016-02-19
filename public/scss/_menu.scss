@@ -5,3 +5,29 @@ nav.top-bar {
 		}
 	}
 }
+
+#tabNav {
+
+	ul {
+		padding-bottom:0;
+		margin-bottom: rem-calc(15);
+		li {
+			padding: 0;
+			text-align: center;
+			color:black !important;
+			line-height:2.4rem;
+			vertical-align: middle;
+			&.active {
+				border: solid #cccccc 1px;
+				border-bottom:none;
+				background-color:#eeeeee;
+			}
+			&:not(.active) {
+				border-bottom: solid #cccccc 1px;
+			}
+		}
+	}
+}
+.side-nav li.active > a:first-child:not(.button) {
+	color:black !important;
+	}

@@ -3,20 +3,22 @@
 		<h4>{{$title}}</h4>
 	</div>
 </div>
-<section>
-	<div class="small-12 medium-4 large-3 columns">
-		<ul class="side-nav">
+<section id="tabNav">
+	<div class="small-12 columns">
+		<ul class="side-nav row">
 			@if ($edit)
-				<li><a href="#" data-open="offer">Vytvoření nabídky</a></li>
-				<li><a href="#" data-open="items">Přidání položek do nabídky</a></li>
-				<li><a href="#" data-open="editItems">Editace položek</a></li>
+				<li class="small-4 columns active offer"><a href="#" data-open="offer">Úprava nabídky</a></li>
+				<li class="small-4 columns items"><a href="#" data-open="items">Přidání položek do nabídky</a></li>
+				<li class="small-4 columns editItems"><a href="#" data-open="editItems">Editace položek</a></li>
 			@else
-				<li><span>Vytvoření nabídky</span></li>
-				<li><span>Přidání položek do nabídky</span></li>
+				<li class="small-6 columns active offer"><span>Vytvoření nabídky</span></li>
+				<li class="small-6 columns items"><span>Přidání položek do nabídky</span></li>
 			@endif
 		</ul>
 	</div>
-	<div class="small-12 medium-8 large-9 columns">
+</section>
+<section>
+	<div class="small-12 columns">
 		<div id="offer">
 			{{Form::open(array('route'=>$route, "method"=>$method,"data-edit"=>$edit))}}
 			<div class="row">
@@ -40,12 +42,12 @@
 
 				<div class="small-6 columns">
 					{{Form::label('vystaven','Vystaven:')}}
-					{{Form::text('vystaven', $data->vystaven, array('class'=>'date vystaven'));}}
+					{{Form::text('vystaven', date_format(date_create($data->vystaven), 'd.m.Y'), array('class'=>'date vystaven'));}}
 				</div>
 
 				<div class="small-6 columns">
 					{{Form::label('expire','Konec platnosti nabídky')}}
-					{{Form::text('expire', $data->expire, array('class'=>'date expire'));}}
+					{{Form::text('expire',  date_format(date_create($data->expire), 'd.m.Y'), array('class'=>'date expire'));}}
 				</div>
 			</div>
 			<div class="row">
@@ -64,7 +66,11 @@
 			</div>
 			<div class="row">
 				<div class="small-12 columns">
+					@if (!$edit)
 					<button type="button" class="next right" data-open="items">Další krok</button>
+					@else
+					<button type="button" class="saveDoc right">Uložit</button>
+					@endif
 				</div>
 			</div>
 			{{Form::close()}}
@@ -72,12 +78,11 @@
 		<div id="items" data-url="{{route('select.create')}}">
 
 		</div>
-		<div id="editItems">
+		<div id="editItems" data-url="{{route('select.edit',$data->id)}}">
 
 		</div>
 	</div>
 </section>
-
 <script>
 $(document).ready(function() {
 	var nowTemp = new Date();

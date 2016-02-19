@@ -9,15 +9,18 @@ function loadDocuments(target) {
 	}
 }
 
-function changeTab(open,getfunction) {
+function changeTab(open,getfunction,data) {
+	if(typeof data == "undefined") data={};
 	var parts = ["items","offer","editItems"];
 	parts.forEach(function(v, k) {
 		$("#"+ v).hide();
+		$("li."+v).removeClass("active");
 	});
 	$("#"+open).show();
+	$("li."+open).addClass("active");
 	var url =$("#"+open).data("url");
 	if(url.length>0) {
-		$.get(url, function(response){
+		$.get(url,data, function(response){
 			getfunction(response);
 		});
 	}
@@ -33,19 +36,26 @@ function insertItems(html, targetHtml, target) {
 	itemConnectionTemplate(html,targetHtml,target,window.App.Items);
 }
 
-function deleteDocument(documents, documentId) {
+function deleteDocument(documentId) {
   var url = localStorage.DocumentDeleteUrl.replace("0", documentId);
   $.delete(url, {
     id: documentId
   }, function(response) {
-    loadItems(documents);
+  	window.App.Documents = {};
+    reload();
     message(response);
   });
 }
 
-function editDocument( documentId ) {
+function editDocument( documentId, callback) {
   var url = localStorage.DocumentEditUrl.replace("0", documentId);
-   $.get(url,function(response){
-    modalTemplate("large",response);
-  ;});
+  $('#universalLargeModal').foundation('reveal', 'open', {
+	    url: url,
+	    success: function(data) {
+	        callback();
+	    },
+	    error: function() {
+	        console.log('failed loading modal');
+	    }
+	});
 }

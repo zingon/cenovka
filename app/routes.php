@@ -22,46 +22,12 @@ Route::group(['before' => 'auth'], function () {
 	Route::group(['before' => 'admin'], function () {
 		Route::resource('user', 'UserController', ['only' => ['index', 'destroy']]);
 	});
-	/*Route::get('/document/{id}/reload', array(
-		'uses' => 'OfferController@reload',
-		'as' => 'reload'
-	));
-	Route::get('/items/serad', function () {
-		$i = 1;
-		$categories = Category::all();
-		foreach ($categories as $category) {
-			$i = 1;
-			foreach ($category->items()->orderBy('poradi')->get() as $item) {
-				$item->poradi = $i;
-				if ($item->save()) {
-					$i++;
-				}
-				else {
-					break;
-				}
-			}
-		}
-		$i = 1;
-		$items = Item::where('category_id', '=', 0)->orderBy('poradi')->get();
-		foreach ($items as $item) {
-			$item->poradi = $i;
-			if ($item->save()) {
-				$i++;
-			}
-			else {
-				break;
-			}
-		}
-	});*/
+
 	Route::post('/item/poradi/', array(
 		'uses' => 'ItemController@changePosition',
 		'as' => 'changePosition',
 	));
-	/*
-	Route::get('/export/pdf/{id}', array(
-		'uses' => 'OfferController@exportPdf',
-		'as' => 'export'
-	));*/
+
 	Route::group(['prefix' => 'api','before' => 'ajax'], function()
 	{
 		Route::resource('category', 'CategoryController', ['only' => ['index', 'create', 'show', 'edit']]);

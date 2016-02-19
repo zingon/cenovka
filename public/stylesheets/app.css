@@ -144,6 +144,35 @@ nav.top-bar a.alert {
   background-color: #f04124 !important;
 }
 
+/* line 11, ../scss/_menu.scss */
+#tabNav ul {
+  padding-bottom: 0;
+  margin-bottom: 0.9375rem;
+}
+/* line 14, ../scss/_menu.scss */
+#tabNav ul li {
+  padding: 0;
+  text-align: center;
+  color: black !important;
+  line-height: 2.4rem;
+  vertical-align: middle;
+}
+/* line 20, ../scss/_menu.scss */
+#tabNav ul li.active {
+  border: solid #cccccc 1px;
+  border-bottom: none;
+  background-color: #eeeeee;
+}
+/* line 25, ../scss/_menu.scss */
+#tabNav ul li:not(.active) {
+  border-bottom: solid #cccccc 1px;
+}
+
+/* line 31, ../scss/_menu.scss */
+.side-nav li.active > a:first-child:not(.button) {
+  color: black !important;
+}
+
 /* line 431, ../bower_components/foundation/scss/foundation/components/_global.scss */
 meta.foundation-version {
   font-family: "/5.5.3/";

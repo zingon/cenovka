@@ -79,6 +79,7 @@
         //Nabídky
         localStorage.DocumentUrl = "{{ route('document.index') }}";
         localStorage.DocumentShowUrl = "{{ route('document.show',0) }}";
+        localStorage.DocumentCreateUrl = "{{ route('document.create') }}";
         localStorage.DocumentEditUrl = "{{ route('document.edit',0) }}";
         localStorage.DocumentDeleteUrl = "{{ route('document.destroy',0) }}";
 
