@@ -1,0 +1,201 @@
+/* line 1, ../scss/print.scss */
+body {
+  font-family: DejaVu Sans, sans-serif;
+  font-size: 10px;
+}
+
+/* line 6, ../scss/print.scss */
+.r {
+  text-align: right;
+}
+
+/* line 9, ../scss/print.scss */
+table.container {
+  width: 100%;
+}
+
+/* line 12, ../scss/print.scss */
+table.body {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* line 16, ../scss/print.scss */
+table.body thead tr {
+  font-size: 0.9em;
+}
+
+/* line 19, ../scss/print.scss */
+table.body thead h1 {
+  font-size: 1.2em;
+  padding: 0;
+  margin: 0;
+  padding-top: 0.7em;
+  padding-bottom: 0.7em;
+  padding-left: 0.2em;
+}
+
+/* line 27, ../scss/print.scss */
+.border {
+  border: 1px solid black;
+}
+
+/* line 30, ../scss/print.scss */
+table.body .left {
+  float: left;
+}
+
+/* line 33, ../scss/print.scss */
+table.body .right {
+  float: right;
+}
+
+/* line 36, ../scss/print.scss */
+table.body .center {
+  text-align: center;
+}
+
+/* line 39, ../scss/print.scss */
+table.body tbody {
+  border: 1px solid black;
+  border-bottom: none;
+}
+
+/* line 43, ../scss/print.scss */
+table.body tfoot {
+  line-height: 2em;
+  font-size: 0.8em;
+  border: 1px solid black;
+  border-top: none;
+}
+
+/* line 49, ../scss/print.scss */
+table.body tfoot td {
+  padding-left: 1em;
+  height: 5em;
+  vertical-align: bottom;
+}
+
+/* line 54, ../scss/print.scss */
+table.body .half {
+  width: 50%;
+}
+
+/* line 57, ../scss/print.scss */
+table.body .quater {
+  width: 25%;
+}
+
+/* line 60, ../scss/print.scss */
+table, tr, td {
+  border-collapse: collapse;
+}
+
+/* line 63, ../scss/print.scss */
+td.blank {
+  border: none;
+}
+
+/* line 66, ../scss/print.scss */
+table.body .r-b-none {
+  border-right: none;
+}
+
+/* line 69, ../scss/print.scss */
+table.body .l-b-none {
+  border-left: none;
+}
+
+/* line 72, ../scss/print.scss */
+#contacts td {
+  font-size: 0.9em;
+  vertical-align: top;
+  padding-top: 1em;
+}
+
+/* line 77, ../scss/print.scss */
+#contacts small {
+  margin-left: 1.5em;
+}
+
+/* line 80, ../scss/print.scss */
+#contacts p {
+  margin-left: 2em;
+}
+
+/* line 83, ../scss/print.scss */
+#contacts p > i {
+  font-size: 0.9em;
+}
+
+/* line 86, ../scss/print.scss */
+table.body .full {
+  width: 100%;
+  padding: 0 1em;
+}
+
+/* line 91, ../scss/print.scss */
+#dates td {
+  font-size: 0.9em;
+  padding: 0.6em;
+  padding-left: 1em;
+}
+
+/* line 96, ../scss/print.scss */
+#items table {
+  width: 100%;
+  height: auto;
+  font-size: 0.9em;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+/* line 105, ../scss/print.scss */
+#items table th {
+  text-align: left;
+  font-size: 1em;
+}
+
+/* line 109, ../scss/print.scss */
+#items table tbody {
+  border: none;
+  margin: 0;
+}
+
+/* line 113, ../scss/print.scss */
+#items table tbody tr {
+  line-height: 1.7em;
+}
+
+/* line 117, ../scss/print.scss */
+#items table td {
+  vertical-align: top;
+}
+
+/* line 120, ../scss/print.scss */
+#endPrice td {
+  padding-bottom: 1em;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+/* line 127, ../scss/print.scss */
+#signature {
+  vertical-align: top;
+  height: 8em;
+  font-size: 0.9em;
+}
+
+/* line 133, ../scss/print.scss */
+#signature .sign {
+  margin-bottom: 2em;
+  padding-left: 1em;
+}
+
+/* line 137, ../scss/print.scss */
+#signature .stamp {
+  margin-bottom: 4em;
+}

@@ -5,7 +5,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width"/>
     <style type="text/css">
-
+    body {
+      font-family: DejaVu Sans, sans-serif;
+      font-size: 10px;
+    }
     .r {
       text-align: right;
     }
@@ -13,19 +16,21 @@
     width:100%;
     }
     table.body {
-    width:650px;
+    width:100%;
+    border-collapse: collapse;
     }
     table.body thead tr{
-    height: 2.7em;
     font-size: 0.9em;
     }
     table.body thead h1{
-    font-size: 1.1em ;
+    font-size: 1.2em ;
     padding: 0;
     margin: 0;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
     padding-left: 0.2em;
     }
-    table.body .border {
+    .border {
     border:1px solid black;
     }
     table.body .left {
@@ -101,9 +106,11 @@
     padding:0;
     margin:0;
     margin-bottom: 1em;
+    margin-top: 1em;
     }
     #items table th {
       text-align: left;
+      font-size: 1em;
     }
     #items table tbody {
       border: none;
@@ -117,7 +124,8 @@
       vertical-align: top;
     }
     #endPrice td {
-      line-height: 2.3em;
+      padding-bottom: 1em;
+      padding-top: 1em;
       padding-left: 1em;
       padding-right: 1em;
     }
@@ -152,7 +160,7 @@
                   <h1>Cenová nabídka</h1>
                 </td>
                 <td class="quater border l-b-none center">
-                  číslo: 20150001
+                  číslo: 2015/0001
                 </td>
               </tr>
             </thead>
@@ -184,12 +192,16 @@
                   </p>
                 </td>
               </tr>
-              <tr id="dates" class="border">
-                <td class="half">Datum vystavení: 24.4.2034</td>
-                <td class="half" colspan="2"><strong>Datum konce platnosti:</strong> 24.4.2035</td>
+              <tr id="dates">
+
+
+                       <td class="half" style="border-bottom:1px solid black;border-top:1px solid black;">Datum vystavení: 24.4.2034</td>
+                        <td class="half" style="border-bottom:1px solid black;border-top:1px solid black;" colspan="2"><strong>Datum konce platnosti:</strong> 24.4.2035</td>
+
+
               </tr>
               <tr id="items" class="border">
-                <td class="full" colspan="3">
+                <td class="full" colspan="3"  style="border-bottom:1px solid black">
                   <table>
                     <thead>
                       <tr>

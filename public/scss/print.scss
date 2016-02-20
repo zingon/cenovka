@@ -1,0 +1,139 @@
+body {
+      font-family: DejaVu Sans, sans-serif;
+      font-size: 10px;
+    }
+
+    .r {
+      text-align: right;
+    }
+    table.container {
+    width:100%;
+    }
+    table.body {
+    width:100%;
+    border-collapse: collapse;
+    }
+    table.body thead tr{
+    font-size: 0.9em;
+    }
+    table.body thead h1{
+    font-size: 1.2em ;
+    padding: 0;
+    margin: 0;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    padding-left: 0.2em;
+    }
+    .border {
+    border:1px solid black;
+    }
+    table.body .left {
+    float:left;
+    }
+    table.body .right {
+    float:right;
+    }
+    table.body .center {
+    text-align: center;
+    }
+    table.body tbody {
+    border: 1px solid black;
+    border-bottom: none;
+    }
+    table.body tfoot {
+      line-height: 2em;
+      font-size: 0.8em;
+      border: 1px solid black;
+      border-top: none;
+    }
+    table.body tfoot td {
+      padding-left:1em;
+      height: 5em;
+      vertical-align: bottom;
+    }
+    table.body .half {
+    width: 50%;
+    }
+    table.body .quater {
+    width: 25%;
+    }
+    table,tr,td {
+    border-collapse: collapse;
+    }
+    td.blank {
+    border: none;
+    }
+    table.body .r-b-none {
+    border-right: none;
+    }
+    table.body .l-b-none {
+    border-left: none;
+    }
+    #contacts td {
+      font-size: 0.9em;
+    vertical-align: top;
+    padding-top: 1em;
+    }
+    #contacts small{
+    margin-left: 1.5em;
+    }
+    #contacts p{
+    margin-left: 2em;
+    }
+    #contacts p>i{
+    font-size: 0.9em;
+    }
+    table.body .full {
+    width:100%;
+    padding:0 1em;
+    }
+
+    #dates td {
+      font-size: 0.9em;
+      padding: 0.6em;
+      padding-left: 1em;
+    }
+    #items table {
+    width: 100%;
+    height: auto;
+    font-size: 0.9em;
+    padding:0;
+    margin:0;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    }
+    #items table th {
+      text-align: left;
+      font-size: 1em;
+    }
+    #items table tbody {
+      border: none;
+      margin: 0;
+    }
+    #items table tbody tr {
+      line-height: 1.7em;
+    }
+
+    #items table td {
+      vertical-align: top;
+    }
+    #endPrice td {
+      padding-bottom: 1em;
+      padding-top: 1em;
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+
+    #signature {
+      vertical-align: top;
+      height:8em;
+      font-size: 0.9em;
+    }
+
+    #signature .sign {
+      margin-bottom: 2em;
+      padding-left:1em;
+    }
+    #signature .stamp {
+      margin-bottom: 4em;
+    }

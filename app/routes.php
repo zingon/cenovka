@@ -27,7 +27,15 @@ Route::group(['before' => 'auth'], function () {
 		'uses' => 'ItemController@changePosition',
 		'as' => 'changePosition',
 	));
+	Route::get("/test/pdf", function() {
+		$view = View::make('offer.documentPrint');
+		//$view = mb_convert_encoding($view, 'HTML-ENTITIES', 'UTF-8');
+		return PDF::load($view, 'A4', 'portrait')->download('my_pdf');
+	});
+	Route::get("/test/doc", function() {
 
+		return Response::view('offer.show');
+	});
 	Route::group(['prefix' => 'api','before' => 'ajax'], function()
 	{
 		Route::resource('category', 'CategoryController', ['only' => ['index', 'create', 'show', 'edit']]);

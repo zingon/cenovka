@@ -123,8 +123,8 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 		'Yangqi\Htmldom\HtmldomServiceProvider',
-		'Barryvdh\DomPDF\ServiceProvider',
-
+		//'Barryvdh\DomPDF\ServiceProvider',
+		'Thujohn\Pdf\PdfServiceProvider',
 	),
 
 	/*
@@ -177,7 +177,8 @@ return array(
 		'Mail'              => 'Illuminate\Support\Facades\Mail',
 		'Paginator'         => 'Illuminate\Support\Facades\Paginator',
 		'Password'          => 'Illuminate\Support\Facades\Password',
-		'PDF' 				=> 'Barryvdh\DomPDF\Facade',
+		//'PDF' 				=> 'Barryvdh\DomPDF\Facade',
+		'PDF' 				=> 'Thujohn\Pdf\PdfFacade',
 		'Queue'             => 'Illuminate\Support\Facades\Queue',
 		'Redirect'          => 'Illuminate\Support\Facades\Redirect',
 		'Redis'             => 'Illuminate\Support\Facades\Redis',
