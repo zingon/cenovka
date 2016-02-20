@@ -83,6 +83,10 @@
         localStorage.DocumentEditUrl = "{{ route('document.edit',0) }}";
         localStorage.DocumentDeleteUrl = "{{ route('document.destroy',0) }}";
 
+        // Spojení nabídky s položkamy
+        localStorage.SelectEdit = "{{ route('select.edit',0)}}"
+        localStorage.SelectDeleteUrl = "{{ route('select.destroy',0)}}"
+
         //Nastavení
         localStorage.SettingUserUrl = "{{route('get.setting.user')}}";
 

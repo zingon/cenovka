@@ -1,5 +1,9 @@
 $(document).ready(function() {
 	window.App.Documents = {};
+	window.App.Edit = {}
+	window.App.Edit.documentId = 0;
+	window.App.Edit.itemCategoryId = 0;
+	window.App.Edit.selected = {};
 	window.App.Items = {};
   	window.App.pagination.onPage = 10;
   	window.App.pagination.element = "#pagination";
@@ -30,31 +34,58 @@ function init() {
 	$("body").on("change", ".selected", function() {
 		if($(this).is(':checked')){
 			var row = $(this).parent().parent();
-			window.App.Items[$(this).data("index")*1].used = true;
-			window.App.Items[$(this).data("index")*1].count = row.find(".count").val();
-			window.App.Items[$(this).data("index")*1].discount = row.find(".discount").val();
-			$("body").on("change",".count",function() {
-				window.App.Items[$(this).data("index")*1].count = $(this).val();
-			});
-			$("body").on("change",".discount",function() {
-				window.App.Items[$(this).data("index")*1].discount = $(this).val();
-			});
+			var selected = window.App.Edit.selected[$(this).data("index")*1];
+			if(typeof selected == "undefined") {
+				selected = findItemById(window.App.Items,$(this).data("index")*1);
+				selected.id = $(this).data("index")*1;
+			}
+
+			selected.used = true;
+			selected.count = row.find(".count").val();
+			selected.discount = row.find(".discount").val();
+			window.App.Edit.selected[$(this).data("index")*1] = selected;
+
+
 		} else {
-			window.App.Items[$(this).data("index")*1].used = false;
+			window.App.Edit.selected[$(this).data("index")*1] = {};
 		}
+	});
+
+	$("body").on("change",".count",function() {
+		window.App.Edit.selected[$(this).data("index")*1].count = $(this).val();
+	});
+
+	$("body").on("change",".discount",function() {
+		window.App.Edit.selected[$(this).data("index")*1].discount = $(this).val();
 	});
 
 	//Odeslání dat o přidaných předmětech do backendu
 	$("body").on("click","#sendItems", function() {
 		var form = $(this).closest("form");
-		$.post(form.attr("action"),{data:JSON.stringify(window.App.Items)},function(res) {
-			var url = res.url;
-			window.location.href = url;
+		$.post(form.attr("action"),{data:JSON.stringify(window.App.Edit.selected),document_id:window.App.Edit.documentId},function(res) {
+			message(res);
+			window.App.Documents = {}
+ 			reload();
+			$('#universalLargeModal').foundation('reveal', 'close');
 		});
+	});
+
+	$("body").on("click","#updateItems", function() {
+		var form = $(this).closest("form");
+		$.put(form.attr("action"),{data:JSON.stringify(window.App.Edit.selected),document_id:window.App.Edit.documentId},function(res) {
+			message(res);
+
+			$('#universalLargeModal').foundation('reveal', 'close');
+		});
+	});
+
+	$("body").on("click","#removeItemConnection",function() {
+		removeSelectedItem($(this).data("id"));
 	});
 
 	//Editace dokumentu
 	$("body").on("click","button.edit", function() {
+		window.App.Edit.documentId = $(this).data("id");
 		editDocument($(this).data("id"),onModalEdit);
 	});
 
@@ -90,10 +121,28 @@ function reload() {
 function onModalEdit() {
 	$("body").on("click","#tabNav li a", function() {
 		var open = $(this).data("open");
-		changeTab(open,function(res) {
+		if($(this).data("open") == "editItems") {
+			changeTab(open,function(res) {
+				getSelectedItems(window.App.Edit.documentId,function(selectedItems) {
+					selectedItems.forEach(function(v, k) {
+						var selected = {};
+						selected.id = v.id;
+						selected.count = v.count;
+						selected.discount = v.discount;
+						window.App.Edit.selected[v.id] = selected;
+					});
+					insertItems(res,"#itemsSpace","#"+open,selectedItems,1);
+				})
+			},{edit:1});
+		} else {
+			changeTab(open,function(res) {
+				getSelectedItems(window.App.Edit.documentId,function(selectedItems) {
+					var unSelectedItems = diffItems(window.App.Items, selectedItems);
+					insertItems(res,"#itemsSpace","#"+open,unSelectedItems);
+				})
+			});
+		}
 
-			insertItems(res,"#itemsSpace","#"+open);
-		},{edit: 1});
 	});
 }
 function onModalCreate() {
@@ -111,7 +160,7 @@ function onModalCreate() {
 						inputError(input,v);
 					});
 				} else {
-
+					window.App.Edit.documentId = res.document;
 					changeTab(parentThis.data("open"),function(res) {
 						insertItems(res,"#itemsSpace","#items");
 					},{});
@@ -124,3 +173,6 @@ function onModalCreate() {
 
 	});
 }
+
+
+

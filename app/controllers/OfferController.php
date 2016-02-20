@@ -88,6 +88,7 @@ class OfferController extends BaseController {
 					$code = sprintf("%04s",($last_code[0]+1)) ."/".date('Y',time());
 				}
 			}
+			$expire = Input::get("expire");$vystaven = Input::get("expire");
 
 			$expire = DateTime::createFromFormat('d.m.Y', $expire);
 			$save["expire"] = $expire->format("Y-m-d");

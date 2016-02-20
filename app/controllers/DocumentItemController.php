@@ -9,33 +9,13 @@ class DocumentItemController extends BaseController {
 	 */
 	public function create()
 	{
-		$data = new DocumentItem;
-		$title = "Nová spojení";
+
 		return Response::view('offer.connection.items_form', array(
-			'data' => $data,
-			"route" => "item.store",
+
+			"route" => "select.store",
 			"method" => "POST",
-			"title" => $title
+			"edit" =>0
 		));
-		// if(Session::get('document')=='new'){
-		// 	$items = Auth::user()->items()->with('category')->get();
-		// } else {
-		// $document = Auth::user()->documents()->find(Session::get('document'));
-
-		// if($document->items()->count()!=0&&Session::has('document')){
-
-		// 	$keys = array();
-
-		// 	foreach ($document->items as $value) {
-		// 		$keys[] = $value->id;
-		// 	}
-		// 	$items = Auth::user()->items()->whereNotIn('id',$keys)->get();
-
-		// } else {
-		// 	$items = Auth::user()->items()->all();
-		// }
-		// }
-		// return Response::view('offer.connection.new', array('items'=>$items));
 	}
 
 
@@ -58,7 +38,8 @@ class DocumentItemController extends BaseController {
 			foreach ($this->saveValues() as $key => $value) {
 				$$key 	= json_decode(Input::get($key));
 			}
-			$document = Document::find(Session::get('document'));
+			$document_id = isset($document_id)?$document_id:Session::get('document');
+			$document = Document::find($document_id);
 
 			foreach ($data as $key => $item) {
 				if(!empty($item->used) && $item->used) {
@@ -79,12 +60,38 @@ class DocumentItemController extends BaseController {
 				}
 			}
 			Session::forget('document');
-			return Response::json(array("url"=>URL::route('document.show',$document->id)));
+			return Response::json(array(
+						"messages" => array(
+							array(
+								"type" => "success",
+								"text" => "Dokument byl úspěšně uložen."
+							)
+						)
+					));
 	 	}
 	}
-
-
 	/**
+	 *	Post selected items by AJAX
+	 *
+	 * @param int $id Document id
+	 * @return Response
+	 *
+	 */
+	public function edit($id) {
+		if(Input::get("edit",0)) {
+			return Response::view('offer.connection.items_form', array(
+				"edit" => 1,
+				"route" => array("select.update",$id),
+				"method" => "PUT",
+			));
+		} else {
+			$document = Auth::getUser()->documents()->find($id);
+			$items = $document->items_conection()->with("item")->get();
+			return Response::json($items);
+		}
+
+	}
+ 	/**
 	 * Update the specified resource in storage.
 	 *
 	 * @param  int  $id
@@ -92,27 +99,37 @@ class DocumentItemController extends BaseController {
 	 */
 	public function update($id)
 	{
-		// $validator = Validator::make(Input::all(),$this->saveValues());
+		 $validator = Validator::make(Input::all(),$this->saveValues());
 
-		// if($validator->fails()){
-		// 	return Redirect::route('select.edit')
-  //               ->withErrors($validator);
+		 if($validator->fails()){
+		 	return Response::json(array('type'=>'danger','messages'=>$validator->messages()));
 
-		// } else {
+		 } else {
 
-		// 	foreach ($this->saveValues() as $key => $value) {
-		// 		$$key 	= Input::get($key);
-		// 	}
+		 	foreach ($this->saveValues() as $key => $value) {
+		 		$$key 	= json_decode(Input::get($key));
+		 	}
+		 	foreach ($data as $key => $item) {
 
-		// 	foreach ($count as $key => $count) {
-		// 		$documentItem = DocumentItem::right(array($key,$id))->first();
-		// 		$documentItem->count	= $count;
-		// 		$documentItem->discount	= $discount[$key];
+		 		$documentItem = DocumentItem::find($item->id);
+		 		if($id == $documentItem->document->id) {
+		 			$documentItem->count	= $item->count;
+					$documentItem->discount	= $item->discount;
 
-		// 		$documentItem->save();
-		// 	}
-		// 	return Redirect::route('document.index');
-	 // 	}
+					$documentItem->save();
+		 		}
+
+		 	}
+		 	return Response::json(array(
+						"messages" => array(
+							array(
+								"type" => "success",
+								"text" => "Dokument byl úspěšně uložen."
+							)
+						)
+					));
+		 }
+
 	}
 	/**
 	 * Remove the specified resource from storage.
@@ -123,14 +140,22 @@ class DocumentItemController extends BaseController {
 	public function destroy($id)
 	{
 		//$id = Input::get('id');
-	 	$item = DocumentItem::where('item_id','=',$id)->first();
+	 	$item = DocumentItem::where('id','=',$id)->first();
 	 	$item->delete();
-	 	return Redirect::back()->with('warning','Položka byla úspěšně smazána !');
+	 	return Response::json(array(
+						"messages" => array(
+							array(
+								"type" => "success",
+								"text" => "Položka byla úspěšně smazána."
+							)
+						)
+					));
 	}
 
 	private function saveValues(){
 		return array(
-			'data' 		=> 'string',
+			'data' 			=> 'string',
+			'document_id'	=> 'integer',
 			);
 	}
 

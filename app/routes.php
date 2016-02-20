@@ -40,9 +40,9 @@ Route::group(['before' => 'auth'], function () {
 		Route::resource('item', 'ItemController', ['only' => ['store', 'update', 'destroy']]);
 		Route::resource('contact', 'ContactController', ['only' => ['store', 'update', 'destroy']]);
 		Route::resource('document', 'OfferController', ['only' => ['store', 'update', 'destroy']]);
-		Route::resource('select', 'DocumentItemController', ['only' => ['store', 'update', 'destroy']]);
 		Route::resource('category', 'CategoryController', ['only' => ['store', 'destroy']]);
 		Route::post('setting/user', array('as' => 'post.setting.user','uses' => 'SettingController@postUserSetting'));
+		Route::resource('select', 'DocumentItemController', ['only' => ['store', 'update', 'destroy']]);
 	});
 });
 
