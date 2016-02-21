@@ -28,9 +28,11 @@ Route::group(['before' => 'auth'], function () {
 		'as' => 'changePosition',
 	));
 	Route::get("/test/pdf", function() {
-		$view = View::make('offer.documentPrint');
-		//$view = mb_convert_encoding($view, 'HTML-ENTITIES', 'UTF-8');
-		return PDF::load($view, 'A4', 'portrait')->download('my_pdf');
+		$view = View::make('offer.document');
+		$view = mb_convert_encoding($view, 'HTML-ENTITIES', 'UTF-8');
+		$pdf = App::make('dompdf');
+		$pdf->loadHTML($view);
+		return $pdf->download('temp.pdf');//PDF::load($view, 'A4', 'portrait')->download('my_pdf');
 	});
 	Route::get("/test/doc", function() {
 
