@@ -19,6 +19,7 @@ Route::group(['before' => 'auth'], function () {
 	Route::resource('contact', 'ContactController', ['except' => ['store', 'update', 'destory']]);
 	Route::resource('document', 'OfferController', ['except' => ['store', 'update', 'destory']]);
 	Route::resource('select', 'DocumentItemController', ['only' => ['create', 'edit']]);
+	Route::resource('export', 'ExportDocumentController', ['only' => ['show']]);
 	Route::group(['before' => 'admin'], function () {
 		Route::resource('user', 'UserController', ['only' => ['index', 'destroy']]);
 	});

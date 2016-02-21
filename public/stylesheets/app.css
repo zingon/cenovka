@@ -173,6 +173,13 @@ nav.top-bar a.alert {
   color: black !important;
 }
 
+/* line 1, ../scss/_document.scss */
+iframe.document {
+  width: 100%;
+  border: none;
+  margin-bottom: 3rem;
+}
+
 /* line 431, ../bower_components/foundation/scss/foundation/components/_global.scss */
 meta.foundation-version {
   font-family: "/5.5.3/";

@@ -21,7 +21,8 @@ class ExportDocumentController extends \BaseController {
 	 */
 	public function show($id)
 	{
-
+		$html = View::make('offer.document');
+		return Response::make($html);
 	}
 
 

@@ -119,34 +119,34 @@ class OfferController extends BaseController {
 	{
 		$document = Auth::getUser()->documents()->find($id);
 		$total_price=0;
-	 	$polozky = array();
-	 	$dph_kons = $document->dph/100;
+		$polozky = array();
+		$dph_kons = $document->dph/100;
 
-	 	foreach ($document->items()->withTrashed()->get() as $key => $item) {
+		foreach ($document->items()->withTrashed()->get() as $key => $item) {
 
-	 		$connection = DocumentItem::right(array($item->id,$document->id))->first();
-	 		$item_price = ($item->price * $connection->count) - (($item->price/100*$connection->discount)*$connection->count);
-	 		$total_price += round($item_price,2);
+			$connection = DocumentItem::right(array($item->id,$document->id))->first();
+			$item_price = ($item->price * $connection->count) - (($item->price/100*$connection->discount)*$connection->count);
+			$total_price += round($item_price,2);
 
 
-	 		$polozky[$item->id] 				= $item;
-	 		$polozky[$item->id]->priceDiscount 	= $item_price;
-	 		$polozky[$item->id]->count 			= $connection->count;
-	 		$polozky[$item->id]->discount 		= $connection->discount;
-	 		$polozky[$item->id]->unit 			= explode('^',$item->unit);
-	 	}
+			$polozky[$item->id] 				= $item;
+			$polozky[$item->id]->priceDiscount 	= $item_price;
+			$polozky[$item->id]->count 			= $connection->count;
+			$polozky[$item->id]->discount 		= $connection->discount;
+			$polozky[$item->id]->unit 			= explode('^',$item->unit);
+		}
 
-	 	$document->exported_document = View::make('offer.test',array(
-	 		'document' => $document,
-	 		'polozky' => $polozky,
-	 		'total_price' => $total_price,
-	 		'dph_kons'	=> $dph_kons,
-	 		));
-	 	$date = new DateTime();
-	 	$document->last_update = $date;
-	 	if($document->save()){
-	 		return Redirect::route('document.show',array($document->id));
-	 	}
+		$document->exported_document = View::make('offer.test',array(
+			'document' => $document,
+			'polozky' => $polozky,
+			'total_price' => $total_price,
+			'dph_kons'	=> $dph_kons,
+			));
+		$date = new DateTime();
+		$document->last_update = $date;
+		if($document->save()){
+			return Redirect::route('document.show',array($document->id));
+		}
 	}
 
 	/**
@@ -157,25 +157,43 @@ class OfferController extends BaseController {
 	 */
 	public function show($id)
 	{
-	 	$document = Auth::getUser()->documents()->find($id);
-	 	/*$total_price=0;
-	 	$polozky = array();
-	 	$dph_kons = $document->dph/100;
+		//$document = Auth::getUser()->documents()->find($id);
+		/*$total_price=0;
+		$polozky = array();
+		$dph_kons = $document->dph/100;
 
-	 	foreach ($document->items()->withTrashed()->get() as $key => $item) {
+		foreach ($document->items()->withTrashed()->get() as $key => $item) {
 
-	 		$connection = DocumentItem::right(array($item->id,$document->id))->first();
-	 		$item_price = ($item->price * $connection->count) - (($item->price/100*$connection->discount)*$connection->count);
-	 		$total_price += round($item_price,2);
+			$connection = DocumentItem::right(array($item->id,$document->id))->first();
+			$item_price = ($item->price * $connection->count) - (($item->price/100*$connection->discount)*$connection->count);
+			$total_price += round($item_price,2);
 
 
-	 		$polozky[$item->id] 				= $item;
-	 		$polozky[$item->id]->priceDiscount 	= $item_price;
-	 		$polozky[$item->id]->count 			= $connection->count;
-	 		$polozky[$item->id]->discount 		= $connection->discount;
-	 		$polozky[$item->id]->unit 			= explode('^',$item->unit);
-	 	}*/
-	 	return Response::view('offer.show',array('document' => $document));
+			$polozky[$item->id] 				= $item;
+			$polozky[$item->id]->priceDiscount 	= $item_price;
+			$polozky[$item->id]->count 			= $connection->count;
+			$polozky[$item->id]->discount 		= $connection->discount;
+			$polozky[$item->id]->unit 			= explode('^',$item->unit);
+		}*/
+		if(Request::ajax()){
+
+			$document = Auth::getUser()->documents()->with("odberatel","items_conection","items_conection.item","user.user_setting","user")->find($id);
+			$document->total_price = 0;
+			$dph_kons = $document->dph/100;
+			foreach ($document->items_conection as $key => $item) {
+				$price_discount = (($item->item->price/100)*(100-$item->discount));
+				$price_tax = $price_discount+$price_discount*$dph_kons;
+				$document->items_conection[$key]->with_tax_one = number_format($price_tax,2,","," ");
+				$document->items_conection[$key]->with_tax_all = number_format($price_tax*$item->count,2,","," ");
+				$document->items_conection[$key]->without_tax_one = number_format($price_discount,2,","," ");
+				$document->items_conection[$key]->without_tax_all = number_format($price_discount*$item->count,2,","," ");
+				$document->total_price += $price_tax*$item->count;
+			}
+			$document->total_price =number_format($document->total_price,2,","," ");
+			return Response::json($document);
+		}else {
+			return Response::view('offer.show',array("id"=>$id));
+		}
 	}
 
 
@@ -237,7 +255,7 @@ class OfferController extends BaseController {
 
 		if($validator->fails()){
 			return Redirect::route('document.index')
-        		->withErrors($validator);
+				->withErrors($validator);
 
 		} else {
 

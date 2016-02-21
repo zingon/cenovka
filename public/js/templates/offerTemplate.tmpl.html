@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width"/>
+	<style type="text/css">
+  body {font-family: DejaVu Sans, sans-serif;font-size: 14px; } table table{margin-top: 0; padding-top: 0} .r {text-align: right; } table.container { width:100%; } table.body { width:100%; border-collapse: collapse; } table.body thead tr{ font-size: 0.9rem; } table.body thead h1{ font-size: 1.2rem ; padding: 0; margin: 0; padding-top: 0.7rem; padding-bottom: 0.7rem; padding-left: 0.2rem; } .border { border:1px solid black; } table.body .left { float:left; } table.body .right { float:right; } table.body .center { text-align: center; } table.body tbody { border: 1px solid black; border-bottom: none; } table.body tfoot {line-height: 2rem;font-size: 0.8rem;border: 1px solid black;border-top: none; } table.body tfoot td {padding-left:1rem;height: 5rem;vertical-align: bottom; } table.body .half { width: 50%; } table.body .quater { width: 25%; } table,tr,td { border-collapse: collapse; } td.blank { border: none; } table.body .r-b-none { border-right: none; } table.body .l-b-none { border-left: none; } #contacts td {font-size: 0.9rem; vertical-align: top; padding-top: 1rem; } #contacts small{ margin-left: 1.5rem; } #contacts p{ margin-left: 2rem; } #contacts p>i{ font-size: 0.9rem; } table.body .full { width:100%; padding:0 0rem; } #dates td {font-size: 0.9rem;padding: 0.6rem;padding-left: 1rem; } #items table { width: 100%; height: auto; font-size: 0.9rem; padding:0; margin:0; margin-bottom: 1rem; margin-top: 1rem; } #items table thead tr {line-height: 2.5rem} #items table th {text-align: left;font-size: 0.7rem;line-height: 1rem;vertical-align: middle; padding:0 0.5rem;} #items table tbody {border: none;margin: 0; } #items table tbody tr {line-height: 1.3rem; font-size: 0.7rem; padding-top:0.3rem;} #items table tbody td { padding-top:0.3rem; } @media print {#items table th {  font-size: 1.2rem;  line-height: 1.3rem;}#items table tbody tr {  line-height: 1rem;} } #items table td {vertical-align: top; } #endPrice td {font-size: 0.9rem;padding-bottom: 1rem;padding-top: 1rem;padding-left: 1rem;padding-right: 1rem; } #signature {vertical-align: top;height:8rem;font-size: 0.9rem; } #signature .sign {margin-bottom: 2rem;padding-left:1rem; } #signature .stamp {margin-bottom: 4rem; }
+	</style>
+  </head>
+  <body>
+	<table class="container">
+	  <tr>
+		<td>
+		  <center>
+		  <table class="body">
+			<thead>
+			  <tr>
+				<td class="half"></td>
+				<td class="quater border r-b-none center">
+				  <h1>Cenová nabídka</h1>
+				</td>
+				<td class="quater border l-b-none center">
+				  číslo: {{:code}}
+				</td>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr id="contacts">
+				<td class="half">
+				  <small>Dodavatel</small>
+				  <p>
+				  <strong>{{:user.user_setting.name}}</strong><br />
+				  {{if user.user_setting.name != (user.user_setting.firstname+" "+user.user_setting.lastname) }}{{:user.user_setting.firstname}} {{:user.user_setting.lastname}}<br />{{/if}}
+				 {{if user.user_setting.adress}} {{:user.user_setting.adress}}<br />{{/if}}
+				  {{if user.user_setting.city||user.user_setting.zip_code}} {{:user.user_setting.city}}{{if user.user_setting.city&&user.user_setting.zip_code}}, {{/if}}{{:user.user_setting.zip_code}} <br />{{/if}}
+				  <br />
+				  {{if user.user_setting.ic}}IČ: {{:user.user_setting.ic}}<br />{{/if}}
+				  {{if user.user_setting.dic}}DIČ: {{:user.user_setting.dic}}<br />{{/if}}
+				  </p>
+				</td>
+				<td class="half" colspan="2">
+				  <small>Odběratel</small>
+				  <p>
+				  <strong>{{:odberatel.name}}</strong><br />
+				  {{if odberatel.name != (odberatel.firstname+" "+odberatel.lastname) }}{{:odberatel.firstname}} {{:odberatel.lastname}}<br />{{/if}}
+				 {{if odberatel.adress}} {{:odberatel.adress}}<br />{{/if}}
+				  {{if odberatel.city||odberatel.zip_code}} {{:odberatel.city}}{{if odberatel.city&&odberatel.zip_code}}, {{/if}}{{:odberatel.zip_code}} <br />{{/if}}
+				  <br />
+				  {{if odberatel.ic}}IČ: {{:odberatel.ic}}<br />{{/if}}
+				  {{if odberatel.dic}}DIČ: {{:odberatel.dic}}<br />{{/if}}
+				  </p>
+				</td>
+			  </tr>
+			  <tr id="dates">
+
+
+					   <td class="half" style="border-bottom:1px solid black;border-top:1px solid black;">Datum vystavení: {{date:vystaven}}</td>
+						<td class="half" style="border-bottom:1px solid black;border-top:1px solid black;" colspan="2"><strong>Datum konce platnosti:</strong> {{date:expire}}</td>
+
+
+			  </tr>
+			  <tr id="items" class="border">
+				<td class="full" colspan="3"  style="border-bottom:1px solid black">
+				  <table style="margin-top: 0">
+					<thead style="border-bottom:1px solid black">
+					  <tr>
+						<th style="width:7%; border-right:1px solid black">Kód</th>
+						<th style="width:15%; border-right:1px solid black">Název</th>
+						<th style="width:6%; border-right:1px solid black">Sleva</th>
+						<th style="width:17%; border-right:1px solid black">Cena za ks bez DPH</th>
+						<th style="width:17%; border-right:1px solid black">Cena za ks s DPH</th>
+						<th style="width:4%; border-right:1px solid black">Ks</th>
+						<th style="width:17%; border-right:1px solid black" class="r">Cena celkem bez DPH</th>
+						<th style="width:17%" class="r">Cena celkem s DPH</th>
+					  </tr>
+					</thead>
+					<tbody>
+					{{for items_conection}}
+					<tr>
+                      <td>{{:item.code}}</td>
+                      <td>{{:item.name}}</td>
+                      <td style="text-align: center">{{:discount}} %</td>
+                      <td class="r">{{:without_tax_one}} Kč</td>
+                      <td class="r">{{:with_tax_one}} Kč</td>
+                      <td style="text-align: center">{{:count}}</td>
+                      <td class="r">{{:without_tax_all}} Kč</td>
+                      <td class="r">{{:with_tax_all}} Kč</td>
+                    </tr>
+					{{/for}}
+
+					</tbody>
+				  </table>
+				</td>
+			  </tr>
+			  <tr id="endPrice">
+				<td class="half"></td>
+				<td class="quater border r-b-none"><strong>Celkem k úhradě: </strong></td>
+				<td class="quater border l-b-none r"><strong>{{:total_price}} Kč</strong></td>
+			  </tr>
+			   <tr id="signature">
+				<td class="half"><p class="sign">Podpis:</p></td>
+				 <td class="half" colspan="2"><p class="stamp">Razítko:</p></td>
+			  </tr>
+			</tbody>
+			<tfoot>
+			  <tr>
+				<td colspan="3">Vyřizuje: <strong>{{:user.user_setting.firstname}} {{:user.user_setting.lastname}}</strong>, Telefon: {{:user.user_setting.phone}}</td>
+			  </tr>
+			</tfoot>
+		  </table>
+		  </center>
+		</td>
+	  </tr>
+	</table>
+  </body>
+</html>

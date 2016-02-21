@@ -5,188 +5,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width"/>
     <style type="text/css">
-    body {
-      font-family: DejaVu Sans, sans-serif;
-         font-size: 10px;
-    }
-   /* line 1, ../scss/document.scss */
-/* line 1, ../scss/document.scss */
-#document {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  font-family: DejaVu Sans, sans-serif;
-  font-size: 10px;
-}
-/* line 7, ../scss/document.scss */
-#document .r {
-  text-align: right;
-}
-/* line 11, ../scss/document.scss */
-#document .border {
-  border: 1px solid black;
-}
-/* line 15, ../scss/document.scss */
-#document table {
-  margin: 0;
-  padding: 0;
-}
-/* line 18, ../scss/document.scss */
-#document table td {
-  background-color: #FFFFFF;
-}
-/* line 21, ../scss/document.scss */
-#document table.body {
-  width: 100%;
-  border-collapse: collapse;
-}
-/* line 25, ../scss/document.scss */
-#document table.body thead tr {
-  padding: 0;
-  margin: 0;
-}
-/* line 29, ../scss/document.scss */
-#document table.body thead h1 {
-  font-size: 14px;
-  padding: 0;
-  margin: 0;
-}
-/* line 35, ../scss/document.scss */
-#document table.body tbody {
-  border: 1px solid black;
-  border-bottom: none;
-}
-/* line 40, ../scss/document.scss */
-#document table.body tbody tr#contacts td {
-  vertical-align: top;
-  padding-top: 1rem;
-}
-/* line 44, ../scss/document.scss */
-#document table.body tbody tr#contacts small {
-  margin-left: 1.5rem;
-  font-size: 9px;
-}
-/* line 48, ../scss/document.scss */
-#document table.body tbody tr#contacts p {
-  margin-left: 2.5rem;
-}
-/* line 55, ../scss/document.scss */
-#document table.body tbody tr#dates td {
-  padding: 0.6rem;
-  padding-left: 1rem;
-}
-/* line 61, ../scss/document.scss */
-#document table.body tbody tr#items table {
-  width: 100%;
-  height: auto;
-  padding: 0;
-  margin: 0;
-  margin-bottom: 1rem;
-}
-/* line 68, ../scss/document.scss */
-#document table.body tbody tr#items table th {
-  text-align: left;
-}
-/* line 71, ../scss/document.scss */
-#document table.body tbody tr#items table tbody {
-  border: none;
-  margin: 0;
-}
-/* line 74, ../scss/document.scss */
-#document table.body tbody tr#items table tbody tr {
-  line-height: 1.7rem;
-}
-/* line 78, ../scss/document.scss */
-#document table.body tbody tr#items table td {
-  vertical-align: top;
-}
-/* line 84, ../scss/document.scss */
-#document table.body tbody tr#endPrice td {
-  padding-bottom: 1rem;
-  padding-top: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-/* line 91, ../scss/document.scss */
-#document table.body tbody tr#signature {
-  vertical-align: top;
-  height: 8rem;
-}
-/* line 94, ../scss/document.scss */
-#document table.body tbody tr#signature .sign {
-  margin-bottom: 2rem;
-  padding-left: 1rem;
-}
-/* line 98, ../scss/document.scss */
-#document table.body tbody tr#signature .stamp {
-  margin-bottom: 4rem;
-}
-/* line 104, ../scss/document.scss */
-#document table.body tfoot {
-  line-height: 2rem;
-  font-size: 7px;
-  border: 1px solid black;
-  border-top: none;
-}
-/* line 110, ../scss/document.scss */
-#document table.body tfoot td {
-  padding-left: 1rem;
-  height: 5rem;
-  vertical-align: bottom;
-  font-weight: 400;
-}
-/* line 117, ../scss/document.scss */
-#document table.body .left {
-  float: left;
-}
-/* line 120, ../scss/document.scss */
-#document table.body .right {
-  float: right;
-}
-/* line 123, ../scss/document.scss */
-#document table.body .center {
-  text-align: center;
-}
-/* line 126, ../scss/document.scss */
-#document table.body .half {
-  width: 50%;
-}
-/* line 129, ../scss/document.scss */
-#document table.body .quater {
-  width: 25%;
-}
-/* line 132, ../scss/document.scss */
-#document table.body .full {
-  width: 100%;
-  padding: 0;
-}
-/* line 135, ../scss/document.scss */
-#document table.body .full table {
-  margin: 0;
-}
-/* line 139, ../scss/document.scss */
-#document table.body td.blank {
-  border: none;
-}
-/* line 142, ../scss/document.scss */
-#document table.body .r-b-none {
-  border-right: none;
-}
-/* line 145, ../scss/document.scss */
-#document table.body .l-b-none {
-  border-left: none;
-}
-
-/* line 152, ../scss/document.scss */
-table, tr, td {
-  border-collapse: collapse;
-}
-
-</style>
-
+ body {font-family: DejaVu Sans, sans-serif;font-size: 14px; } .r {text-align: right; } table.container { width:100%; } table.body { width:100%; border-collapse: collapse; } table.body thead tr{ font-size: 0.9rem; } table.body thead h1{ font-size: 1.2rem ; padding: 0; margin: 0; padding-top: 0.7rem; padding-bottom: 0.7rem; padding-left: 0.2rem; } .border { border:1px solid black; } table.body .left { float:left; } table.body .right { float:right; } table.body .center { text-align: center; } table.body tbody { border: 1px solid black; border-bottom: none; } table.body tfoot {line-height: 2rem;font-size: 0.8rem;border: 1px solid black;border-top: none; } table.body tfoot td {padding-left:1rem;height: 5rem;vertical-align: bottom; } table.body .half { width: 50%; } table.body .quater { width: 25%; } table,tr,td { border-collapse: collapse; } td.blank { border: none; } table.body .r-b-none { border-right: none; } table.body .l-b-none { border-left: none; } #contacts td {font-size: 0.9rem; vertical-align: top; padding-top: 1rem; } #contacts small{ margin-left: 1.5rem; } #contacts p{ margin-left: 2rem; } #contacts p>i{ font-size: 0.9rem; } table.body .full { width:100%; padding:0 1rem; } #dates td {font-size: 0.9rem;padding: 0.6rem;padding-left: 1rem; } #items table { width: 100%; height: auto; font-size: 0.9rem; padding:0; margin:0; margin-bottom: 1rem; margin-top: 1rem; } #items table th {text-align: left;font-size: 1rem;line-height: 1.5rem;vertical-align: top; } #items table tbody {border: none;margin: 0; } #items table tbody tr {line-height: 1.3rem; } @media print {#items table th {  font-size: 1.2rem;  line-height: 1.3rem;}#items table tbody tr {  line-height: 1rem;} } #items table td {vertical-align: top; } #endPrice td {font-size: 0.9rem;padding-bottom: 1rem;padding-top: 1rem;padding-left: 1rem;padding-right: 1rem; } #signature {vertical-align: top;height:8rem;font-size: 0.9rem; } #signature .sign {margin-bottom: 2rem;padding-left:1rem; } #signature .stamp {margin-bottom: 4rem; }
+    </style>
   </head>
   <body>
-
-    <article id="document">
+    <table class="container">
+      <tr>
+        <td>
+          <center>
           <table class="body">
             <thead>
               <tr>
@@ -202,7 +28,7 @@ table, tr, td {
             <tbody>
               <tr id="contacts">
                 <td class="half">
-                  <small>Dodavatel:</small>
+                  <small>Dodavatel</small>
                   <p>
                   <strong>Vaše jméno</strong><br />
                   Ulice č.p. <br />
@@ -216,7 +42,7 @@ table, tr, td {
                   </p>
                 </td>
                 <td class="half" colspan="2">
-                  <small>Odběratel:</small>
+                  <small>Odběratel</small>
                   <p>
                   <strong>Jméno</strong><br />
                   Ulice č.p. <br />
@@ -296,6 +122,9 @@ table, tr, td {
               </tr>
             </tfoot>
           </table>
- </article>
+          </center>
+        </td>
+      </tr>
+    </table>
   </body>
 </html>
