@@ -27,7 +27,7 @@ return array(
 	*/
 
 	//'default' => 'mysql',
-	'default' => 'mysql-localhost',
+	'default' => 'wedos',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -64,7 +64,16 @@ return array(
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
 		),
-
+		'wedos' => array(
+			'driver'    => 'mysql',
+			'host'      => 'wm97.wedos.net',
+			'database'  => 'd115090_cenovka',
+			'username'  => 'w115090_cenovka',
+			'password'  => 'FkEtJBRu',
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+			'prefix'    => '',
+			),
 		'mysql-localhost' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
@@ -75,7 +84,7 @@ return array(
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
 		),
-		
+
 		'pgsql' => array(
 			'driver'   => 'pgsql',
 			'host'     => 'localhost',
