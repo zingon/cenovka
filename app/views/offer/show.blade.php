@@ -2,19 +2,22 @@
 @section("submenu")
   <button id="actual" class="expand" data-id="{{$id}}">Aktuální verze</button>
 <h4>Historie Dokumentů</h4>
-<ul id="history" class="side-nav">
-  <li><a href="">24.1.2016</a></li>
-</ul>
+<ul id="history" class="side-nav"></ul>
 @stop
 
 
 @section('content')
+<section>
+    <div class="small-12 columns">
+        <ul class="button-group right">
+         	<li><a href="{{URL::route('export.offer',$id)}}/0" class="button success" id="saveButton"><i class="fi-page-add"></i> Uložit verzi</a></li>
+            <li><a href="{{URL::route('export.offer',$id)}}/1" class="button success" id="exportButton" target="_blank"><i class="fi-page-add"></i> Export PDF</a></li>
+        </ul>
+    </div>
+</section>
 <article id="document">
   <iframe src="" class="document" scrolling="no" onload="resizeIframe(this)"></iframe>
 </article>
-
-
-
 @stop
 
 @section('script')

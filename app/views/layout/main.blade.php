@@ -90,6 +90,10 @@
         //Nastavení
         localStorage.SettingUserUrl = "{{route('get.setting.user')}}";
 
+        //Export
+        localStorage.ExportUrl = "{{route('api.export.index')}}";
+        localStorage.ExportShowUrl = "{{route('export.show',0)}}";
+        localStorage.ExportOfferUrl = "{{route('export.offer',0)}}";
         </script>
 
         {{ HTML::script('js/putDelete.js')}}

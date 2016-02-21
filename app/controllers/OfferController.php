@@ -115,39 +115,39 @@ class OfferController extends BaseController {
 		}
 	}
 
-	public function reload($id)
-	{
-		$document = Auth::getUser()->documents()->find($id);
-		$total_price=0;
-		$polozky = array();
-		$dph_kons = $document->dph/100;
+	// public function reload($id)
+	// {
+	// 	$document = Auth::getUser()->documents()->find($id);
+	// 	$total_price=0;
+	// 	$polozky = array();
+	// 	$dph_kons = $document->dph/100;
 
-		foreach ($document->items()->withTrashed()->get() as $key => $item) {
+	// 	foreach ($document->items()->withTrashed()->get() as $key => $item) {
 
-			$connection = DocumentItem::right(array($item->id,$document->id))->first();
-			$item_price = ($item->price * $connection->count) - (($item->price/100*$connection->discount)*$connection->count);
-			$total_price += round($item_price,2);
+	// 		$connection = DocumentItem::right(array($item->id,$document->id))->first();
+	// 		$item_price = ($item->price * $connection->count) - (($item->price/100*$connection->discount)*$connection->count);
+	// 		$total_price += round($item_price,2);
 
 
-			$polozky[$item->id] 				= $item;
-			$polozky[$item->id]->priceDiscount 	= $item_price;
-			$polozky[$item->id]->count 			= $connection->count;
-			$polozky[$item->id]->discount 		= $connection->discount;
-			$polozky[$item->id]->unit 			= explode('^',$item->unit);
-		}
+	// 		$polozky[$item->id] 				= $item;
+	// 		$polozky[$item->id]->priceDiscount 	= $item_price;
+	// 		$polozky[$item->id]->count 			= $connection->count;
+	// 		$polozky[$item->id]->discount 		= $connection->discount;
+	// 		$polozky[$item->id]->unit 			= explode('^',$item->unit);
+	// 	}
 
-		$document->exported_document = View::make('offer.test',array(
-			'document' => $document,
-			'polozky' => $polozky,
-			'total_price' => $total_price,
-			'dph_kons'	=> $dph_kons,
-			));
-		$date = new DateTime();
-		$document->last_update = $date;
-		if($document->save()){
-			return Redirect::route('document.show',array($document->id));
-		}
-	}
+	// 	$document->exported_document = View::make('offer.test',array(
+	// 		'document' => $document,
+	// 		'polozky' => $polozky,
+	// 		'total_price' => $total_price,
+	// 		'dph_kons'	=> $dph_kons,
+	// 		));
+	// 	$date = new DateTime();
+	// 	$document->last_update = $date;
+	// 	if($document->save()){
+	// 		return Redirect::route('document.show',array($document->id));
+	// 	}
+	// }
 
 	/**
 	 * Display the specified resource.
@@ -157,24 +157,7 @@ class OfferController extends BaseController {
 	 */
 	public function show($id)
 	{
-		//$document = Auth::getUser()->documents()->find($id);
-		/*$total_price=0;
-		$polozky = array();
-		$dph_kons = $document->dph/100;
 
-		foreach ($document->items()->withTrashed()->get() as $key => $item) {
-
-			$connection = DocumentItem::right(array($item->id,$document->id))->first();
-			$item_price = ($item->price * $connection->count) - (($item->price/100*$connection->discount)*$connection->count);
-			$total_price += round($item_price,2);
-
-
-			$polozky[$item->id] 				= $item;
-			$polozky[$item->id]->priceDiscount 	= $item_price;
-			$polozky[$item->id]->count 			= $connection->count;
-			$polozky[$item->id]->discount 		= $connection->discount;
-			$polozky[$item->id]->unit 			= explode('^',$item->unit);
-		}*/
 		if(Request::ajax()){
 
 			$document = Auth::getUser()->documents()->with("odberatel","items_conection","items_conection.item","user.user_setting","user")->find($id);

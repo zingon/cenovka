@@ -24,7 +24,7 @@ class Document extends Eloquent {
     	return $this->hasMany('DocumentItem', 'document_id');
     }
 
-    public function cell_values() {
-        return $this->hasMany('OwnCellValue');
+    public function exported() {
+        return $this->hasMany('ExportedDocument');
     }
 }

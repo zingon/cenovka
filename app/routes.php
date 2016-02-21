@@ -23,27 +23,20 @@ Route::group(['before' => 'auth'], function () {
 	Route::group(['before' => 'admin'], function () {
 		Route::resource('user', 'UserController', ['only' => ['index', 'destroy']]);
 	});
-
+	Route::get("/export/document/{document_id}/{pdf?}", array(
+		'uses' => "ExportDocumentController@export",
+		'as' => "export.offer"
+		));
 	Route::post('/item/poradi/', array(
 		'uses' => 'ItemController@changePosition',
 		'as' => 'changePosition',
 	));
-	Route::get("/test/pdf", function() {
-		$view = View::make('offer.document');
-		$view = mb_convert_encoding($view, 'HTML-ENTITIES', 'UTF-8');
-		$pdf = App::make('dompdf');
-		$pdf->loadHTML($view);
-		return $pdf->download('temp.pdf');//PDF::load($view, 'A4', 'portrait')->download('my_pdf');
-	});
-	Route::get("/test/doc", function() {
-
-		return Response::view('offer.show');
-	});
 	Route::group(['prefix' => 'api','before' => 'ajax'], function()
 	{
 		Route::resource('category', 'CategoryController', ['only' => ['index', 'create', 'show', 'edit']]);
 		Route::resource('contact', 'ContactController', ['only' => ['show']]);
 		Route::get('setting/user/{id?}', array('as' => 'get.setting.user','uses' => 'SettingController@getUserSetting'));
+		Route::resource('export', 'ExportDocumentController', ['only' => ['index']]);
 
 	});
 
