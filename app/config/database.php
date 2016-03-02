@@ -26,8 +26,8 @@ return array(
 	|
 	*/
 
-	//'default' => 'mysql',
-	'default' => 'wedos',
+	'default' => 'mysql-localhost',
+	//'default' => 'wedos',
 
 	/*
 	|--------------------------------------------------------------------------

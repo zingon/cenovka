@@ -5,7 +5,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width"/>
 	<style type="text/css">
-  body {font-family: DejaVu Sans, sans-serif;font-size: 14px; } table table{margin-top: 0; padding-top: 0} .r {text-align: right; } table.container { width:100%; } table.body { width:100%; border-collapse: collapse; } table.body thead tr{ font-size: 0.9rem; } table.body thead h1{ font-size: 1.2rem ; padding: 0; margin: 0; padding-top: 0.7rem; padding-bottom: 0.7rem; padding-left: 0.2rem; } .border { border:1px solid black; } table.body .left { float:left; } table.body .right { float:right; } table.body .center { text-align: center; } table.body tbody { border: 1px solid black; border-bottom: none; } table.body tfoot {line-height: 2rem;font-size: 0.8rem;border: 1px solid black;border-top: none; } table.body tfoot td {padding-left:1rem;height: 5rem;vertical-align: bottom; } table.body .half { width: 50%; } table.body .quater { width: 25%; } table,tr,td { border-collapse: collapse; } td.blank { border: none; } table.body .r-b-none { border-right: none; } table.body .l-b-none { border-left: none; } #contacts td {font-size: 0.9rem; vertical-align: top; padding-top: 1rem; } #contacts small{ margin-left: 1.5rem; } #contacts p{ margin-left: 2rem; } #contacts p>i{ font-size: 0.9rem; } table.body .full { width:100%; padding:0 0rem; } #dates td {font-size: 0.9rem;padding: 0.6rem;padding-left: 1rem; } #items table { width: 100%; height: auto; font-size: 0.9rem; padding:0; margin:0; margin-bottom: 1rem; margin-top: 1rem; } #items table thead tr {line-height: 2.5rem} #items table th {text-align: left;font-size: 0.7rem;line-height: 1rem;vertical-align: middle; padding:0 0.5rem;} #items table tbody {border: none;margin: 0; } #items table tbody tr {line-height: 1.3rem; font-size: 0.7rem; padding-top:0.3rem;} #items table tbody td { padding-top:0.3rem; } @media print {#items table th {  font-size: 1.2rem;  line-height: 1.3rem;}#items table tbody tr {  line-height: 1rem;} } #items table td {vertical-align: top; } #endPrice td {font-size: 0.9rem;padding-bottom: 1rem;padding-top: 1rem;padding-left: 1rem;padding-right: 1rem; } #signature {vertical-align: top;height:8rem;font-size: 0.9rem; } #signature .sign {margin-bottom: 2rem;padding-left:1rem; } #signature .stamp {margin-bottom: 4rem; }
+  body {font-family: DejaVu Sans, sans-serif;font-size: 14px; } table table{margin-top: 0; padding-top: 0} .r {text-align: right; } table.container { width:100%; } table.body { width:100%; border-collapse: collapse; } table.body thead tr{ font-size: 0.9rem; } table.body thead h1{ font-size: 1.2rem ; padding: 0; margin: 0; padding-top: 0.7rem; padding-bottom: 0.7rem; padding-left: 0.2rem; } .border { border:1px solid black; } table.body .left { float:left; } table.body .right { float:right; } table.body .center { text-align: center; } table.body tbody { border: 1px solid black; border-bottom: none; } table.body tfoot {line-height: 2rem;font-size: 0.8rem;border: 1px solid black;border-top: none; } table.body tfoot td {padding-left:1rem;height: 5rem;vertical-align: bottom; } table.body .half { width: 50%; } table.body .quater { width: 25%; } table,tr,td { border-collapse: collapse; } td.blank { border: none; } table.body .r-b-none { border-right: none; } table.body .l-b-none { border-left: none; } #contacts td {font-size: 0.9rem; vertical-align: top; padding-top: 1rem; } #contacts small{ margin-left: 1.5rem; } #contacts p{ margin-left: 2rem; } #contacts p>i{ font-size: 0.9rem; } table.body .full { width:100%; padding:0 0rem; } #dates td {font-size: 0.9rem;padding: 0.6rem;padding-left: 1rem; } #items table { width: 100%; height: auto; font-size: 0.9rem; padding:0; margin:0; margin-bottom: 1rem; margin-top: 1rem; } #items table thead tr {line-height: 2.5rem} #items table th {text-align: left;font-size: 0.7rem;line-height: 1rem;vertical-align: middle; padding:0 0.5rem;} #items table tbody {border: none;margin: 0; } #items table tbody tr {line-height: 1.3rem; font-size: 0.7rem; padding-top:0.3rem;} #items table tbody td { padding-top:0.3rem; } @media print {#items table th {  font-size: 1.2rem;  line-height: 1.3rem;}#items table tbody tr {  line-height: 1rem;} } #items table td {vertical-align: top; } #endPrice td {font-size: 0.8rem;padding-bottom: 0.5rem;padding-top: 0.5rem;padding-left: 1rem;padding-right: 1rem; } #signature {vertical-align: top;height:8rem;font-size: 0.9rem; } #signature .sign {margin-bottom: 2rem;padding-left:1rem; } #signature .stamp {margin-bottom: 4rem; } table.body .b-b-none{border-bottom: none} table.body .b-l {border-left: 1px black solid;} table.body .b-r {border-right: 1px black solid;} table.body .b-b {  border-bottom: 1px black solid;}
 	</style>
   </head>
   <body>
@@ -92,12 +92,23 @@
 					</tbody>
 				  </table>
 				</td>
-			  </tr>
-			  <tr id="endPrice">
-				<td class="half"></td>
-				<td class="quater border r-b-none"><strong>Celkem k úhradě: </strong></td>
-				<td class="quater border l-b-none r"><strong>{{:total_price}} Kč</strong></td>
-			  </tr>
+			</tr>
+				<tr id="endPrice">
+	                <td class="half"></td>
+	                <td class="quater b-l">Celkem k úhradě bez DPH: </td>
+	                <td class="quater b-r r">{{:total_price_without_tax}} Kč</td>
+             	</tr>
+              	<tr id="endPrice">
+                <td class="half"></td>
+                <td class="quater b-l">{{:dph}}% DPH: </td>
+                <td class="quater b-r r">{{:total_tax}} Kč</td>
+              	</tr>
+              	<tr id="endPrice">
+                <td class="half"></td>
+                <td class="quater b-l b-b"><strong>Celkem k úhradě s DPH: </strong></td>
+                <td class="quater b-r b-b r"><strong>{{:total_price}} Kč</strong></td>
+              	</tr>
+
 			   <tr id="signature">
 				<td class="half"><p class="sign">Podpis:</p></td>
 				 <td class="half" colspan="2"><p class="stamp">Razítko:</p></td>

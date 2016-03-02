@@ -162,6 +162,8 @@ class OfferController extends BaseController {
 
 			$document = Auth::getUser()->documents()->with("odberatel","items_conection","items_conection.item","user.user_setting","user")->find($id);
 			$document->total_price = 0;
+			$document->total_price_without_tax = 0;
+			$document->total_tax = 0;
 			$dph_kons = $document->dph/100;
 			foreach ($document->items_conection as $key => $item) {
 				$price_discount = (($item->item->price/100)*(100-$item->discount));
@@ -171,8 +173,12 @@ class OfferController extends BaseController {
 				$document->items_conection[$key]->without_tax_one = number_format($price_discount,2,","," ");
 				$document->items_conection[$key]->without_tax_all = number_format($price_discount*$item->count,2,","," ");
 				$document->total_price += $price_tax*$item->count;
+				$document->total_price_without_tax += $price_discount*$item->count;
+				$document->total_tax +=($document->total_price-$document->total_price_without_tax);
 			}
 			$document->total_price =number_format($document->total_price,2,","," ");
+			$document->total_price_without_tax = number_format($document->total_price_without_tax,2,","," ");
+			$document->total_tax = number_format($document->total_tax,2,","," ");
 			return Response::json($document);
 		}else {
 			return Response::view('offer.show',array("id"=>$id));

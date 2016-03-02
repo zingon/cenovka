@@ -75,6 +75,18 @@
     table.body .l-b-none {
     border-left: none;
     }
+    table.body .b-l {
+      border-left: 1px black solid;
+    }
+    table.body .b-r {
+      border-right: 1px black solid;
+    }
+    table.body .b-b {
+      border-bottom: 1px black solid;
+    }
+    table.body .b-b-none {
+    border-bottom: none;
+    }
     #contacts td {
       font-size: 0.9rem;
     vertical-align: top;
@@ -136,8 +148,8 @@
     }
     #endPrice td {
       font-size: 0.9rem;
-      padding-bottom: 1rem;
-      padding-top: 1rem;
+      padding-bottom: 0.5rem;
+      padding-top: 0.5rem;
       padding-left: 1rem;
       padding-right: 1rem;
     }
@@ -259,8 +271,18 @@
               </tr>
               <tr id="endPrice">
                 <td class="half"></td>
-                <td class="quater border r-b-none"><strong>Celkem k úhradě: </strong></td>
-                <td class="quater border l-b-none r"><strong>302 850 Kč</strong></td>
+                <td class="quater b-l">Celkem k úhradě bez DPH: </td>
+                <td class="quater b-r r">302 850 Kč</td>
+              </tr>
+              <tr id="endPrice">
+                <td class="half"></td>
+                <td class="quater b-l">20% DPH: </td>
+                <td class="quater b-r r">302 850 Kč</td>
+              </tr>
+              <tr id="endPrice">
+                <td class="half"></td>
+                <td class="quater b-l b-b"><strong>Celkem k úhradě s DPH: </strong></td>
+                <td class="quater b-r b-b r"><strong>302 850 Kč</strong></td>
               </tr>
                <tr id="signature">
                 <td class="half"><p class="sign">Podpis:</p></td>
