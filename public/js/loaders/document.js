@@ -26,10 +26,54 @@ function changeTab(open,getfunction,data) {
 	}
 }
 
-function loadItems() {
-	$.get(localStorage.ItemsUrl, function(response) {
-		window.App.Items = response;
-	});
+function loadItems(param) {
+  if (typeof param == "undefined") param = false;
+  if (!(window.App.Items.length > 0)) {
+    $.get(localStorage.ItemsUrl, function(response) {
+      window.App.Items = response;
+      if(response.length>0) {
+        return itemFilter(response,param);
+      } else {
+        $("#loader").hide();
+      }
+
+    });
+  }
+}
+function itemFilter(items,param) {
+	if (param.length > 0 || param) {
+      switch (typeof param) {
+        case "object":
+        case "array":
+          var filtered = items;
+          $.each(param, function(k, v) {
+            switch (typeof v) {
+              case "string":
+                filtered = searchItems(filtered, v, ["name", "note", "code", "unit", "price"]);
+                break;
+              case "number":
+                filtered = filterItems(filtered, v);
+                break;
+            }
+          });
+         return filtered;
+          break;
+        case "string":
+          return searchItems(items, param, ["name", "note", "code", "unit", "price"]);
+          break;
+        case "number":
+          return filterItems(items, param);
+          break;
+      }
+    } else {
+    	return window.App.Items;
+    }
+}
+function loadCategories(target, callback) {
+  $.get(localStorage.categoryUrl, function(response) {
+    categoryTemplate(response, target);
+    return callback(target, response);
+  });
 }
 
 function insertItems(html, targetHtml, target, items,edit) {
@@ -121,3 +165,17 @@ var onlyInB = selected.filter(function(current_selected){
  		message(res);
  	});
  }
+
+
+function searchItems(objects, string, elementsToFilter) {
+  var items = [];
+  if (typeof objects == "object") {
+    $.each(objects, function(key, value) {
+      if (searchObject(value, string, elementsToFilter)) {
+        items.push(value);
+      }
+    });
+  }
+  return items;
+
+}

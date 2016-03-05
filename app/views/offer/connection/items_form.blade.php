@@ -1,3 +1,8 @@
+<section>
+<div class="medium-4 large-3 columns">
+Nav
+</div>
+<div class="medium-8 large-9 columns">
 {{Form::open(array('route'=>$route,'method'=>$method,'id'=>'documentNewItems', "data-edit" =>$edit))}}
 <table>
         <thead>
@@ -37,3 +42,5 @@
         </div>
     </div>
 {{Form::close()}}
+    </div>
+</section>

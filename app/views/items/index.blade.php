@@ -57,12 +57,10 @@
 				</div>
 			</td>
 		</tr>
-		</tfooter>
+		</tfoot>
 	</table>
 </section>
 @stop
 @section("script")
 {{ HTML::script('js/items.js')}}
-{{ HTML::script('js/loaders/item.js')}}
-{{ HTML::script('js/templates/item.js')}}
 @stop

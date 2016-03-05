@@ -60,8 +60,49 @@
             },
             success: function() {}
         });
+        var urls = {
+            //Položky
+            categoryUrl: "{{route('api.category.index')}}",
+            ItemsUrl: "{{route('item.index')}}",
+            ItemDeleteUrl: "{{route('item.destroy',0)}}",
+            ItemEditUrl: "{{route('item.edit',0)}}",
+            ItemChangePosition: "{{route('changePosition')}}",
 
-        localStorage.first_login = ('{{$first_login}}'.lenght>0)?true:false;
+            //Kontakty
+            ContactsUrl: "{{route('contact.index')}}",
+            ContactCreateUrl: "{{route('contact.create')}}",
+            ContactDeleteUrl: "{{route('contact.destroy',0)}}",
+            ContactEditUrl: "{{route('contact.edit',0)}}",
+
+            //Nabídky
+            DocumentUrl: "{{ route('document.index') }}",
+            DocumentShowUrl: "{{ route('document.show',0) }}",
+            DocumentCreateUrl: "{{ route('document.create') }}",
+            DocumentEditUrl: "{{ route('document.edit',0) }}",
+            DocumentDeleteUrl: "{{ route('document.destroy',0) }}",
+
+            // Spojení nabídky s položkamy
+            SelectEdit: "{{ route('select.edit',0)}}",
+            SelectDeleteUrl: "{{ route('select.destroy',0)}}",
+
+            //Nastavení
+            SettingUserUrl: "{{route('get.setting.user')}}",
+
+            //Export
+            ExportUrl: "{{route('api.export.index')}}",
+            ExportShowUrl: "{{route('export.show',0)}}",
+            ExportOfferUrl: "{{route('export.offer',0)}}",
+        }
+        var firstLogin = ('{{$first_login}}'.lenght>0)?true:false;
+
+        $(document).ready(function() {
+            var mainController = new GlobalController();
+            mainController.setUrls(urls);
+            mainController.setFirstLogin(firstLogin);
+            mainController.init(window.location.pathname.replace("/",""));
+        });
+
+        // localStorage.first_login = ('{{$first_login}}'.lenght>0)?true:false;
 
         //Položky
         localStorage.categoryUrl = "{{route('api.category.index')}}";

@@ -115,6 +115,7 @@ function reload() {
 
 	loadDocuments(documents);
 	loadItems();
+	console.log(window.App.Items);
 
 
 }
