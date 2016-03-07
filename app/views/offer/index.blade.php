@@ -34,7 +34,8 @@
 </section>
 @stop
 @section("script")
+{{ HTML::script('js/items.js')}}
 {{ HTML::script('js/document.js')}}
-{{ HTML::script('js/loaders/document.js')}}
-{{ HTML::script('js/templates/document.js')}}
+<!-- {{ HTML::script('js/loaders/document.js')}}
+{{ HTML::script('js/templates/document.js')}} -->
 @stop

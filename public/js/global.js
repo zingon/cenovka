@@ -76,7 +76,17 @@ function GlobalController() {
 
 	//Načte dokumenty a přepošle je do příslušného  controlleru
 	this.documents = function() {
-		console.log("documents");
+		var parentThis = this;
+		$.get(parentThis.App.getUrl("DocumentUrl"),function(documents) {
+			var documents = new DocumentController(parentThis.App,documents);
+			$.get(parentThis.App.getUrl("ItemsUrl"),function(items) {
+				documents.setItems(items);
+				$.get(parentThis.App.getUrl("categoryUrl"),function(categories) {
+					documents.setCategories(categories);
+					documents.init();
+				});			
+			});
+		});
 	}
 
 	//Uložení url 

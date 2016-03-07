@@ -106,36 +106,36 @@
 		// localStorage.first_login = ('{{$first_login}}'.lenght>0)?true:false;
 
 		//Položky
-		localStorage.categoryUrl = "{{route('api.category.index')}}";
-		localStorage.ItemsUrl = "{{route('item.index')}}";
-		localStorage.ItemDeleteUrl = "{{route('item.destroy',0)}}";
-		localStorage.ItemEditUrl = "{{route('item.edit',0)}}";
-		localStorage.ItemChangePosition = "{{route('changePosition')}}";
+		// localStorage.categoryUrl = "{{route('api.category.index')}}";
+		// localStorage.ItemsUrl = "{{route('item.index')}}";
+		// localStorage.ItemDeleteUrl = "{{route('item.destroy',0)}}";
+		// localStorage.ItemEditUrl = "{{route('item.edit',0)}}";
+		// localStorage.ItemChangePosition = "{{route('changePosition')}}";
 
-		//Kontakty
-		localStorage.ContactsUrl = "{{route('contact.index')}}";
-		localStorage.ContactCreateUrl = "{{route('contact.create')}}";
-		localStorage.ContactDeleteUrl = "{{route('contact.destroy',0)}}";
-		localStorage.ContactEditUrl = "{{route('contact.edit',0)}}";
+		// //Kontakty
+		// localStorage.ContactsUrl = "{{route('contact.index')}}";
+		// localStorage.ContactCreateUrl = "{{route('contact.create')}}";
+		// localStorage.ContactDeleteUrl = "{{route('contact.destroy',0)}}";
+		// localStorage.ContactEditUrl = "{{route('contact.edit',0)}}";
 
-		//Nabídky
-		localStorage.DocumentUrl = "{{ route('document.index') }}";
+		// //Nabídky
+		// localStorage.DocumentUrl = "{{ route('document.index') }}";
 		localStorage.DocumentShowUrl = "{{ route('document.show',0) }}";
-		localStorage.DocumentCreateUrl = "{{ route('document.create') }}";
-		localStorage.DocumentEditUrl = "{{ route('document.edit',0) }}";
-		localStorage.DocumentDeleteUrl = "{{ route('document.destroy',0) }}";
+		// localStorage.DocumentCreateUrl = "{{ route('document.create') }}";
+		// localStorage.DocumentEditUrl = "{{ route('document.edit',0) }}";
+		// localStorage.DocumentDeleteUrl = "{{ route('document.destroy',0) }}";
 
-		// Spojení nabídky s položkamy
-		localStorage.SelectEdit = "{{ route('select.edit',0)}}"
-		localStorage.SelectDeleteUrl = "{{ route('select.destroy',0)}}"
+		// // Spojení nabídky s položkamy
+		// localStorage.SelectEdit = "{{ route('select.edit',0)}}"
+		// localStorage.SelectDeleteUrl = "{{ route('select.destroy',0)}}"
 
-		//Nastavení
-		localStorage.SettingUserUrl = "{{route('get.setting.user')}}";
+		// //Nastavení
+		// localStorage.SettingUserUrl = "{{route('get.setting.user')}}";
 
-		//Export
-		localStorage.ExportUrl = "{{route('api.export.index')}}";
-		localStorage.ExportShowUrl = "{{route('export.show',0)}}";
-		localStorage.ExportOfferUrl = "{{route('export.offer',0)}}";
+		// //Export
+		// localStorage.ExportUrl = "{{route('api.export.index')}}";
+		// localStorage.ExportShowUrl = "{{route('export.show',0)}}";
+		// localStorage.ExportOfferUrl = "{{route('export.offer',0)}}";
 		</script>
 
 		

@@ -10,7 +10,7 @@ class Document extends Eloquent {
 
 
     public function odberatel() {
-    	return $this->belongsTo('Contact','odberatel_id','id');
+    	return $this->belongsTo('Contact','odberatel_id','id')->withTrashed();
     }
     public function user() {
         return $this->belongsTo("User",'user_id');

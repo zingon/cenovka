@@ -204,6 +204,7 @@ function ItemHelpers(globalHelpers) {
 			return result;
 		}
 	}
+	
 	this.searchItems = function(objects, string, elementsToFilter) {
 		var items = [];
 		if (typeof objects == "object") {
