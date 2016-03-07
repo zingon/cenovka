@@ -133,9 +133,21 @@ class ContactController extends BaseController {
 	 */
 	public function destroy($id)
 	{
-		Auth::getUser()->contacts()->destroy($id);
+		Auth::getUser()->contacts()->where("id","=",$id)->delete();
+		if (Request::ajax()) {
+			return Response::json(array(
+				"messages" => array(
+					array(
+						"type" => "warning",
+						"text" => "Položka byla úspěšně smazána."
+					)
+				)
+			));
+		} else {
 		return Redirect::route('contact.index')
 			->with('global','Položka byla úspěšně smazána.');
+		}
+			
 	}
 
 	private function saveValues(){

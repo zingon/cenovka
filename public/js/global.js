@@ -54,7 +54,12 @@ function GlobalController() {
 
 	//Načte kontakty a přepošle je do příslušného controlleru
 	this.contacts = function() {
-		console.log("contacts");
+		var parentThis = this;
+		$.get(parentThis.App.getUrl("ContactsUrl"),function(contacts) {
+			var contacts = new ContactController(parentThis.App,contacts);
+			contacts.init();
+
+		});
 	}
 
 	//Načte položky a přepošle je do příslušného controlleru

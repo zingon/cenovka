@@ -15,9 +15,9 @@ Route::group(['before' => 'auth'], function () {
 	Route::get('/', function () {
 		return Redirect::route('document.index');
 	});
-	Route::resource('item', 'ItemController', ['except' => ['store', 'update', 'destory', 'show']]);
-	Route::resource('contact', 'ContactController', ['except' => ['store', 'update', 'destory']]);
-	Route::resource('document', 'OfferController', ['except' => ['store', 'update', 'destory']]);
+	Route::resource('item', 'ItemController', ['except' => ['store', 'update', 'destroy', 'show']]);
+	Route::resource('contact', 'ContactController', ['except' => ['store', 'update', 'destroy']]);
+	Route::resource('document', 'OfferController', ['except' => ['store', 'update', 'destroy']]);
 	Route::resource('select', 'DocumentItemController', ['only' => ['create', 'edit']]);
 	Route::resource('export', 'ExportDocumentController', ['only' => ['show']]);
 	Route::group(['before' => 'admin'], function () {

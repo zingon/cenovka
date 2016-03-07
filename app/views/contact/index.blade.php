@@ -39,6 +39,4 @@
 @stop
 @section("script")
 {{ HTML::script('js/contacts.js')}}
-{{ HTML::script('js/loaders/contact.js')}}
-{{ HTML::script('js/templates/contact.js')}}
 @stop
