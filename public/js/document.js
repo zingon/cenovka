@@ -84,19 +84,81 @@ function DocumentController(App,data) {
 		$("body").on("click","a.modalLink",function(){
 
 			$('#universalLargeModal').foundation('reveal', 'open', {
-		    url: parentThis.getUrl("DocumentCreateUrl"),
+		    url: parentThis.App.getUrl("DocumentCreateUrl"),
 		    success: function(data) {
+		    	var documentModalCreate = new DocumentModalCreate();
 		    	$("body").on("click", "button.next", function() {
-		    		parentThis.modelCreateDocument("next");
+		    		documentModalCreate.setPositionThis(this);
+		    		documentModalCreate.postForm(this.changeTab($(this).data("open"),function(responce) {
+
+		    		}));
 		    	});
-		    	parentThis.modelCreateDocument();
-		        //onModalCreate();
 		    },
 		    error: function() {
 		        console.log('failed loading modal');
 		    }
 		});
 		});
+	}
+	this.changeTab= function(open,getfunction,data) {
+		if(typeof data == "undefined") data={edit:0};
+		var parts = ["items","offer","editItems"];
+		parts.forEach(function(v, k) {
+			$("#"+ v).hide();
+			$("li."+v).removeClass("active");
+		});
+		$("#"+open).show();
+		$("li."+open).addClass("active");
+		var url =$("#"+open).data("url");
+		if(url.length>0) {
+			$.get(url,{edit:data.edit}, function(response){
+				getfunction(response);
+			});
+		}
+	}
+
+}
+
+function DocumentModalCreate() {
+	this.positionThis;
+	this.form;
+	this.actualId;
+	this.edit = 0;
+
+	this.postForm = function(callback) {
+		$.post(form.attr("action"),form.serialize(),function(res) {
+			var messageRes = res;
+			if(messageRes.type == "danger") {
+				$.each(messageRes.messages,function(k,v){
+					var input = $("input[name="+k+"]");
+					inputError(input,v);
+				});
+			} else {
+				window.App.Edit.documentId = res.document;
+					return callback
+
+			}
+	 	});
+	}	
+	
+	this.inputError=function(input,v) {
+		input.addClass("error");
+		input.parent().find("small.error").remove();
+		this.inputErrorTemplate(text,input.parent());
+	} 
+
+	this.setPositionThis = function(positionThis) {
+		this.positionThis = positionThis;
+		this.form = $(positionThis).closest("form");
+		this.actualId = this.form.parent().attr("id");
+		this.edit = this.form.data("edit");
+		console.log(this);
+	}
+
+	this.inputErrorTemplate = function(text,target) {
+		target.append($.render.errorInput({
+			'text':text
+		}));
 	}
 }
 
@@ -109,7 +171,6 @@ function DocumentHelpers(globalHelper) {
 	}
 
 	this.insert=function(what,where) {
-		console.log("inserter");
 		$(where).html(what);
 	}
 }
