@@ -10,7 +10,8 @@
 		"barryvdh/laravel-ide-helper": "~1.11",
 		"yangqi/htmldom": "dev-master",
 		"barryvdh/laravel-dompdf": "0.4.*",
-		"thujohn/pdf": "^1.0"
+		"thujohn/pdf": "^1.0",
+		"jacopo/laravel-import-export": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

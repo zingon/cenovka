@@ -34,7 +34,11 @@ class SessionController extends BaseController {
 		$remember	= (Input::get('remember-me',false))?true:false;
 
 			if(Auth::attempt(array('email' => $email, 'password' => $password),$remember)){
-				return Redirect::route('document.index');
+				if(Auth::getUser()->admin) {
+					return Redirect::route('admin.user.index');
+				} else {
+					return Redirect::route('document.index');
+				}
 			} else {
 				return Redirect::back()
 					->with("wrong", "Zadaný email/heslo nebyl/o nalezen/o");
