@@ -49,7 +49,7 @@ class ExportDocumentController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function export($document_id,$pdf = 0)
+	public function export($document_id,$pdf = 0,$json = 0)
 	{
 		$version = Input::get("version",0);
 		if(!$version) {
@@ -88,11 +88,15 @@ class ExportDocumentController extends \BaseController {
 					return Redirect::route("document.show",$document->id);
 				}
 			}
+		} elseif($json) {
+
 		} else {
+			$document = Document::find($document->id);
 			$view = mb_convert_encoding($template, 'HTML-ENTITIES', 'UTF-8');
 			$pdf = App::make('dompdf');
 			$pdf->loadHTML($view);
-			return $pdf->download('temp.pdf');
+			$name = str_replace(array("/"),array("_"),$document->code);
+			return $pdf->download($name.'.pdf');
 		}
 	}
 

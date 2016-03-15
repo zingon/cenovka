@@ -46,7 +46,7 @@ Route::filter('auth', function () {
 });
 
 Route::filter('admin', function () {
-	if (!Auth::getUser()->admin) {
+	if (!Auth::user()->admin) {
 		return Response::make('Na to nemáš právo', 401);
 	}
 });

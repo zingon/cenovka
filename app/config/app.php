@@ -124,6 +124,7 @@ return array(
 		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 		'Yangqi\Htmldom\HtmldomServiceProvider',
 		'Barryvdh\DomPDF\ServiceProvider',
+		//'Jacopo\LaravelImportExport\LaravelImportExportServiceProvider',
 		//'Thujohn\Pdf\PdfServiceProvider',
 	),
 

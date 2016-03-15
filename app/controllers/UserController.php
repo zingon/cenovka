@@ -9,7 +9,7 @@ class UserController extends BaseController {
 	 */
 	public function index()
 	{
-		$users = User::all();
+		$users = User::with("user_setting","documents","items","contacts")->get();
 		return Response::view('user.index',array('users'=>$users));
 	}
 
@@ -64,10 +64,10 @@ class UserController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
-	{
-		//
-	}
+	// public function show($id)
+	// {
+	// 	//
+	// }
 
 
 	/**
@@ -76,10 +76,10 @@ class UserController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	/*public function edit($id)
+	public function edit($id)
 	{
-		//
-	}*/
+		return Response::view("user.edit");
+	}
 
 
 	/**
@@ -88,10 +88,34 @@ class UserController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	/*public function update($id)
+	public function update($id)
 	{
-		//
-	}*/
+		$validator = Validator::make(Input::all(),array(
+				'new_password' 			=> 'required|max:255|min:8',
+				'new_password_again' 	=> 'required|max:255|min:8|same:new_password',
+				'old_password' 			=> 'required'
+			));
+		if($validator->fails()){
+			return Redirect::back()
+				->withErrors($validator)
+				->withInput();
+
+		} else {
+			$old_password 	= Hash::make(Input::get("old_password"));
+			$new_password 	= Hash::make(Input::get("new_password"));
+			$user = Auth::getUser();
+			if(Auth::check($user->email, $old_password)) {
+				$user->password = $new_password;
+				if($user->save()) {
+					return Redirect::back()
+						->with("global", "Heslo bylo změněno");
+				}
+			} else {
+				return Redirect::back();
+			}
+
+		}
+	}
 
 
 	/**
@@ -108,11 +132,6 @@ class UserController extends BaseController {
 			return Redirect::route('user.index')
 				->with('global','Uživatel byl úspěšně smazán.');
 		}
-	}
-
-	public function getSetting($id) {
-		die("NO");
-		return Response::json("JA!!" . $id);
 	}
 
 

@@ -9,7 +9,7 @@ class DocumentItem extends Eloquent {
 
 	public function item()
 	{
-		return $this->belongsTo('Item','item_id');
+		return $this->belongsTo('Item','item_id')->withTrashed();
 	}
 
 	public function scopeRight($query,$array=array())

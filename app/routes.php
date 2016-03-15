@@ -20,9 +20,7 @@ Route::group(['before' => 'auth'], function () {
 	Route::resource('document', 'OfferController', ['except' => ['store', 'update', 'destory']]);
 	Route::resource('select', 'DocumentItemController', ['only' => ['create', 'edit']]);
 	Route::resource('export', 'ExportDocumentController', ['only' => ['show']]);
-	Route::group(['before' => 'admin'], function () {
-		Route::resource('user', 'UserController', ['only' => ['index', 'destroy']]);
-	});
+
 	Route::get("/export/document/{document_id}/{pdf?}", array(
 		'uses' => "ExportDocumentController@export",
 		'as' => "export.offer"
@@ -36,6 +34,7 @@ Route::group(['before' => 'auth'], function () {
 		Route::resource('category', 'CategoryController', ['only' => ['index', 'create', 'show', 'edit']]);
 		Route::resource('contact', 'ContactController', ['only' => ['show']]);
 		Route::get('setting/user/{id?}', array('as' => 'get.setting.user','uses' => 'SettingController@getUserSetting'));
+		Route::resource("user", "UserController", ['only' => ['edit']]);
 		Route::resource('export', 'ExportDocumentController', ['only' => ['index']]);
 
 	});
@@ -47,6 +46,7 @@ Route::group(['before' => 'auth'], function () {
 		Route::resource('category', 'CategoryController', ['only' => ['store', 'destroy']]);
 		Route::post('setting/user', array('as' => 'post.setting.user','uses' => 'SettingController@postUserSetting'));
 		Route::resource('select', 'DocumentItemController', ['only' => ['store', 'update', 'destroy']]);
+		Route::resource('user', 'UserController', ['only' => ['update']]);
 	});
 });
 
@@ -60,4 +60,7 @@ Route::get('/register', function () {
 	return Redirect::route('user.create');
 });
 
+Route::group(['prefix'=>'admin','before' => 'admin'], function () {
+		Route::resource('user', 'UserController', ['only' => ['index']]);
+	});
 Route::get('/logout', ['uses' => "SessionController@destroy", 'as' => "session.destroy"]);

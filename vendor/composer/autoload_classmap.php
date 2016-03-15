@@ -441,6 +441,7 @@ return array(
     'DocumentSetting' => $baseDir . '/app/models/DocumentSetting.php',
     'Encoding_Map' => $vendorDir . '/phenx/php-font-lib/classes/Encoding_Map.php',
     'ExportDocumentController' => $baseDir . '/app/controllers/ExportDocumentController.php',
+    'ExportedDocument' => $baseDir . '/app/models/ExportedDocument.php',
     'File_ANSI' => $vendorDir . '/phpseclib/phpseclib/phpseclib/File/ANSI.php',
     'File_ASN1' => $vendorDir . '/phpseclib/phpseclib/phpseclib/File/ASN1.php',
     'File_ASN1_Element' => $vendorDir . '/phpseclib/phpseclib/phpseclib/File/ASN1.php',
