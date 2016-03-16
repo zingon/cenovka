@@ -43,9 +43,14 @@ class ExportDocumentController extends \BaseController {
 
 
 	public function exportJson($id, $version) {
-		return Response::json();
+		if($version>0) {
+			$exported =  Auth::getUser()->documents()->find($id)->exported()->find($version);
+			return Response::json(array("id"=>$id,"version"=>$version, "document"=>$exported->document));
+		}
 	}
-
+	public function getJson() {
+		return Responce::view("offer.import");
+	}
 	public function importJson() {
 
 	}

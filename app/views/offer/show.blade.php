@@ -10,8 +10,10 @@
 <section>
     <div class="small-12 columns">
         <ul class="button-group right">
-         	<li><a href="{{URL::route('export.offer',$id)}}/0" class="button success" id="saveButton"><i class="fi-page-add"></i> Uložit verzi</a></li>
-            <li><a href="{{URL::route('export.offer',$id)}}/1" class="button success" id="exportButton" target="_blank"><i class="fi-page-add"></i> Export PDF</a></li>
+            <li><a href="{{URL::route('export.offer',$id)}}/0" class="button success" id="saveButton"><i class="fi-page-add"></i> Uložit verzi</a></li>
+            <li><a href="{{URL::route('export.offer',$id)}}/1" class="button success" id="exportButton" target="_blank"><i class="fi-page-add"></i> PDF</a></li>
+            <li><a href="{{URL::route('export.offer.json',[$id,"0"])}}" class="button success" id="exportJsonButton" download="">Export</a></li>
+            <li><a href="{{URL::route('export.offer',$id)}}/0" class="button success" id="saveButton">Import</a></li>
         </ul>
     </div>
 </section>

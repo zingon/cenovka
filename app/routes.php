@@ -25,6 +25,10 @@ Route::group(['before' => 'auth'], function () {
 		'uses' => "ExportDocumentController@export",
 		'as' => "export.offer"
 		));
+	Route::get("/export/json/{id}_{version}.json", array(
+			'uses' 	=> "ExportDocumentController@exportJson",
+			"as"	=> "export.offer.json"
+		));
 	Route::post('/item/poradi/', array(
 		'uses' => 'ItemController@changePosition',
 		'as' => 'changePosition',
