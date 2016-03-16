@@ -9,15 +9,15 @@ class OfferController extends BaseController {
 	 */
 	public function index()
 	{
-		if (!Request::ajax()) {
+
 			return Response::view('offer.index');
-		} else {
-			$documents = Auth::getUser()->documents()->with("odberatel","user","user.user_setting","items_conection")->orderBy('created_at','DESC')->get();
-			return Response::json($documents);
-		}
+
 
 	}
-
+	public function getOffers() {
+		$documents = Auth::getUser()->documents()->with("odberatel","user","user.user_setting","items_conection")->orderBy('created_at','DESC')->get();
+		return Response::json($documents);
+	}
 
 	/**
 	 * Show the form for creating a new resource.

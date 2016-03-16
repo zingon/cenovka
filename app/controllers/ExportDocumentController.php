@@ -42,14 +42,20 @@ class ExportDocumentController extends \BaseController {
 	}*/
 
 
+	public function exportJson($id, $version) {
+		return Response::json();
+	}
 
+	public function importJson() {
+
+	}
 
 	/**
 	 * Store a newly created resource in storage.
 	 *
 	 * @return Response
 	 */
-	public function export($document_id,$pdf = 0,$json = 0)
+	public function export($document_id,$pdf = 0)
 	{
 		$version = Input::get("version",0);
 		if(!$version) {

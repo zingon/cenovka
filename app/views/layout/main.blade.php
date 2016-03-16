@@ -63,19 +63,19 @@
         var urls = {
             //Položky
             categoryUrl: "{{route('api.category.index')}}",
-            ItemsUrl: "{{route('item.index')}}",
+            ItemsUrl: "{{route('api.get.items')}}",
             ItemDeleteUrl: "{{route('item.destroy',0)}}",
             ItemEditUrl: "{{route('item.edit',0)}}",
             ItemChangePosition: "{{route('changePosition')}}",
 
             //Kontakty
-            ContactsUrl: "{{route('contact.index')}}",
+            ContactsUrl: "{{route('api.get.contacts')}}",
             ContactCreateUrl: "{{route('contact.create')}}",
             ContactDeleteUrl: "{{route('contact.destroy',0)}}",
             ContactEditUrl: "{{route('contact.edit',0)}}",
 
             //Nabídky
-            DocumentUrl: "{{ route('document.index') }}",
+            DocumentUrl: "{{ route('api.get.documents') }}",
             DocumentShowUrl: "{{ route('document.show',0) }}",
             DocumentCreateUrl: "{{ route('document.create') }}",
             DocumentEditUrl: "{{ route('document.edit',0) }}",
@@ -106,19 +106,19 @@
 
         //Položky
         localStorage.categoryUrl = "{{route('api.category.index')}}";
-        localStorage.ItemsUrl = "{{route('item.index')}}";
+        localStorage.ItemsUrl = "{{route('api.get.items')}}";
         localStorage.ItemDeleteUrl = "{{route('item.destroy',0)}}";
         localStorage.ItemEditUrl = "{{route('item.edit',0)}}";
         localStorage.ItemChangePosition = "{{route('changePosition')}}";
 
         //Kontakty
-        localStorage.ContactsUrl = "{{route('contact.index')}}";
+        localStorage.ContactsUrl = "{{route('api.get.contacts')}}";
         localStorage.ContactCreateUrl = "{{route('contact.create')}}";
         localStorage.ContactDeleteUrl = "{{route('contact.destroy',0)}}";
         localStorage.ContactEditUrl = "{{route('contact.edit',0)}}";
 
         //Nabídky
-        localStorage.DocumentUrl = "{{ route('document.index') }}";
+        localStorage.DocumentUrl = "{{ route('api.get.documents') }}";
         localStorage.DocumentShowUrl = "{{ route('document.show',0) }}";
         localStorage.DocumentCreateUrl = "{{ route('document.create') }}";
         localStorage.DocumentEditUrl = "{{ route('document.edit',0) }}";

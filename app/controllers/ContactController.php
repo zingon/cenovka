@@ -9,15 +9,14 @@ class ContactController extends BaseController {
 	 */
 	public function index()
 	{
-		if(Request::ajax()){
-			$contacts = Auth::getUser()->contacts()->where("hidden","=",0)->get();
-			return Response::json($contacts);
-		} else {
-			$contacts = Auth::getUser()->contacts()->where("hidden","=",0)->get();
-			return Response::view('contact.index', array('contacts' => $contacts));
-		}
+		$contacts = Auth::getUser()->contacts()->where("hidden","=",0)->get();
+		return Response::view('contact.index', array('contacts' => $contacts));
+		
 	}
-
+	public function getContacts() {
+		$contacts = Auth::getUser()->contacts()->where("hidden","=",0)->get();
+		return Response::json($contacts);
+	}
 
 	/**
 	 * Show the form for creating a new resource.

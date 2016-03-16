@@ -34,6 +34,9 @@ Route::group(['before' => 'auth'], function () {
 		Route::resource('category', 'CategoryController', ['only' => ['index', 'create', 'show', 'edit']]);
 		Route::resource('contact', 'ContactController', ['only' => ['show']]);
 		Route::get('setting/user/{id?}', array('as' => 'get.setting.user','uses' => 'SettingController@getUserSetting'));
+		Route::get('documents', array('as'=>"api.get.documents","uses"=>"OfferController@getOffers"));
+		Route::get('items', array('as'=>"api.get.items","uses"=>"ItemController@getItems"));
+		Route::get('contacts', array('as'=>"api.get.contacts","uses"=>"ContactController@getContacts"));
 		Route::resource("user", "UserController", ['only' => ['edit']]);
 		Route::resource('export', 'ExportDocumentController', ['only' => ['index']]);
 

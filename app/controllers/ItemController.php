@@ -39,15 +39,13 @@ class ItemController extends BaseController
 	 * @return Response
 	 */
 	public function index() {
-		if (!Request::ajax()) {
-			return Response::view('items.index');
-		}
-		else {
-			$items = Auth::user()->items()->with("category")->orderBy('poradi', 'asc')->get();
-			return Response::json($items);
-		}
+		return Response::view('items.index');
 	}
-
+	
+	public function getItems() {
+		$items = Auth::user()->items()->with("category")->orderBy('poradi', 'asc')->get();
+		return Response::json($items);
+	}
 	/**
 	 * Show the form for creating a new resource.
 	 *
