@@ -8,7 +8,7 @@
 	<h4>Řadit dle:</h4>
 	<label>
 	<select id="sort">
-		<option value="poradi:asc:num" data-user-sort="true">Vlastního pořadí</option>
+		<!-- <option value="poradi:asc:num" data-user-sort="true">Vlastního pořadí</option> -->
 		<option value="code:desc" data-user-sort="false">Kódu - Sestupně</option>
 		<option value="code:asc" data-user-sort="false">Kódu - Vzestupně</option>
 		<option value="name:desc" data-user-sort="false">Názvu - Sestupně</option>

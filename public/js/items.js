@@ -3,7 +3,7 @@ function ItemController(App,data) {
 	this.App.Items = data;
 	this.App.Categories = {};
 	this.App.helpers.item = new ItemHelpers(App.helpers.global);
-	this.App.itemSort = "poradi:asc";
+	this.App.itemSort = "nazev:asc";
 	
 	this.App._pagination.onPage = 15;
 
@@ -93,6 +93,13 @@ function ItemController(App,data) {
 			parentThis.App.helpers.item.insertItems(filtered,parentThis.parts.items);
 		});
 	}
+	this.categoryReloader = function() {
+		var parentThis = this;
+		$.get(parentThis.App.getUrl("categoryUrl"),function(categories) {
+			parentThis.setCategories(categories);
+			parentThis.App.helpers.item.insertCategories(categories,parentThis.parts.sidenav);
+		});
+	}	
 
 	this.sortSetup = function() {
 		var parentThis = this;
@@ -114,6 +121,7 @@ function ItemController(App,data) {
 		}
 		});
 		$(".sortable").disableSelection();
+		$(".sortable").sortable( "disable" );
 	}
 	this.eventSetup = function() {
 		var parentThis = this;
@@ -121,11 +129,11 @@ function ItemController(App,data) {
 		$(parentThis.parts.sort).change(function() {
 			parentThis.App.itemSort = $(this).val();
 
-			if($(parentThis.parts.sort +" option[value='"+$(this).val()+"']").data("user-sort")) {
-			  $(".sortable").sortable( "enable" );
-			} else {
+			/*if($(parentThis.parts.sort +" option[value='"+$(this).val()+"']").data("user-sort")) {
 			  $(".sortable").sortable( "disable" );
-			}
+			} else {*/
+			  $(".sortable").sortable( "disable" );
+			//}
 			parentThis.itemChanger();
 		});
 
@@ -151,6 +159,13 @@ function ItemController(App,data) {
 			parentThis.App.helpers.item.editItem($(this).data("id"),parentThis.App.getUrl("ItemEditUrl"));
 		});
 
+		//Mazání Kategorii
+		$("#universalLargeModal").on("click", "#categoryDelete", function() {
+			parentThis.App.helpers.item.deleteCategory($(this).data("id"),parentThis.App.getUrl("categoryDeleteUrl"));
+			$("#universalLargeModal").foundation('reveal','close');
+			parentThis.categoryReloader();
+		});
+
 
 	}
 }
@@ -170,6 +185,17 @@ function ItemHelpers(globalHelpers) {
 
 	this.insertCategories = function(data,target) {
 		this.insert($.render.categoryRow(data),target);
+	}
+
+	this.deleteCategory = function(catId, route) {
+		var parentThis = this;
+		var url = route.replace("0", catId);
+		$.delete(url, {
+			id: catId
+		}, function(response) {
+
+			parentThis.globalHelpers.message(response);
+		});
 	}
 
 	this.deleteItem=function(itemId,route) {
@@ -206,9 +232,10 @@ function ItemHelpers(globalHelpers) {
 	}
 	this.searchItems = function(objects, string, elementsToFilter) {
 		var items = [];
+		var parentThis = this;
 		if (typeof objects == "object") {
 			$.each(objects, function(key, value) {
-				if (searchObject(value, string, elementsToFilter)) {
+				if (parentThis.globalHelpers.searchObject(value, string, elementsToFilter)) {
 					items.push(value);
 				}
 			});
@@ -227,14 +254,7 @@ function ItemHelpers(globalHelpers) {
 				case "array":
 					var filtered = data;
 					$.each(param, function(k, v) {
-								switch (typeof v) {
-									case "string":
-										filtered = parentThis.searchItems(filtered, v, ["name", "note", "code", "unit", "price"]);
-										break;
-									case "number":
-										filtered = parentThis.filterItemsByCategoryId(filtered, v);
-										break;
-								}
+						filtered = parentThis.itemFilter(filtered,v);
 					});
 					return filtered;
 					break;

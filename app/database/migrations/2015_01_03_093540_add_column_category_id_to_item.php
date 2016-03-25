@@ -15,7 +15,7 @@ class AddColumnCategoryIdToItem extends Migration {
 		Schema::table('items', function($table)
 		{
 			$table->integer('category_id')->unsigned();
-			$table->foreign("category_id")->references("id")->on("categories");
+			$table->foreign("category_id")->references("id")->on("categories")->onDelete('cascade');
 		});
 	}
 

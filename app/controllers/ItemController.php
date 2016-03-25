@@ -5,7 +5,7 @@ class ItemController extends BaseController
 	/**
 	 * Change position of ordered items
 	 */
-	public function changePosition() {
+	/*public function changePosition() {
 		$category_id = Input::get('category');
 		$items_raw = Auth::getUser()->items()->where('category_id', "=", $category_id);
 
@@ -19,19 +19,19 @@ class ItemController extends BaseController
 		if($start_pos > $end_pos) {
 			$items_to_change = Auth::getUser()->items()->where('category_id', "=", $category_id)->where("poradi",">=",$end_pos)->where("poradi","<",$start_pos)->get();
 			foreach ($items_to_change as $item_to_change) {
-				$item_to_change->increment('poradi');
+				$item_to_change->increment('poradi')->save();
 			}
 		} else if($end_pos> $start_pos) {
 			$items_to_change = Auth::getUser()->items()->where('category_id', "=", $category_id)->where("poradi","<=",$end_pos)->where("poradi",">",$start_pos)->get();
 			foreach ($items_to_change as $item_to_change) {
-				$item_to_change->decrement('poradi');
+				$item_to_change->decrement('poradi')->save();
 			}
 		}
 		$item->poradi = $end_pos;
 
 		$item->save();
 
-	}
+	}*/
 
 	/**
 	 * Display a listing of the resource.

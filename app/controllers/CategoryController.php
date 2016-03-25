@@ -80,6 +80,24 @@ class CategoryController extends BaseController
         return Response::view('category.edit',array('categories'=>$category));
     }
 
+    public function update($id) {
+        foreach (Input::get("categories") as $key => $value) {
+            $validator = Validator::make($value,$this->saveValues());
+            if($validator->fails()){
+            return Redirect::route('item.index')
+                ->withErrors($validator);
+            } else {
+                $category = Auth::getUser()->categories()->find($key);
+                foreach ($this->saveValues() as $sKey => $save) {
+                    $category->$sKey = $value[$sKey];
+                }
+                $category->save();
+            }
+
+        }
+           return Redirect::route('item.index')
+                    ->with('global','Kategorie byly úspěšně upraveny.');
+    }
     /**
      * Remove the specified resource from storage.
      *
@@ -88,9 +106,32 @@ class CategoryController extends BaseController
      */
     public function destroy($id) {
         $category = Auth::getUser()->categories()->find($id);
-        $items = Auth::getUser()->categories()->where('category_id','=',$id)->update(array('category_id'=>0));
-        $category->delete();
-        return Redirect::back()->with('warning','Položka byla úspěšně smazána !');
+        $undefined_category = Auth::getUser()->categories()->where("code",'=',"000")->first();
+        if(!sizeof($undefined_category)) {
+                $undefined_category = new Category(array("name"=>"Nedefinováná","code" => "000","class"=>"undefined"));
+                $undefined_category =Auth::getUser()->categories()->save($undefined_category);
+            }
+        if($category->id != $undefined_category->id) {
+            
+            $items = Auth::getUser()->items()->withTrashed()->where('category_id','=',$id)->get();
+            foreach ($items as $key => $item) {
+                $item->category()->associate($undefined_category)->save();
+            }
+            $category->delete();
+            if(Request::ajax()) {
+          
+                return Response::json(array("messages"=>array('type'=>'warning','text'=>'Položka byla úspěšně smazána!')));
+            } else {
+                return Redirect::back()->with('warning','Položka byla úspěšně smazána!');
+            }
+        } else {
+            if(Request::json()) {
+                return Response::json(array("messages"=>array('type'=>'warning','text'=>'Tato kategorie nemůže být smazána.')));
+            } else {
+                return Redirect::back()->with('global','Pokud jsou v této kategorii položky tak nemůže být smazána!');
+            }
+
+        }
     }
 
     private function saveValues() {

@@ -63,6 +63,7 @@
         var urls = {
             //Položky
             categoryUrl: "{{route('api.category.index')}}",
+            categoryDeleteUrl: "{{route('category.destroy',0)}}",
             ItemsUrl: "{{route('api.get.items')}}",
             ItemDeleteUrl: "{{route('item.destroy',0)}}",
             ItemEditUrl: "{{route('item.edit',0)}}",
