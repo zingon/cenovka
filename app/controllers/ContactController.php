@@ -153,4 +153,7 @@ class ContactController extends BaseController {
 			'hidden'			=> '',
 			);
 	}
+	public static function saveValuesForAll(){
+		return array('name','firstname','lastname','email','phone','city','zip_code','adress','ic','dic','note','hidden');
+	}
 }

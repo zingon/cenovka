@@ -3,6 +3,7 @@
 <section>
     <div class="small-12 columns">
         <ul class="button-group right">
+            <li><a href="{{URL::route('api.import.create')}}" class="button success" data-reveal-id="universalSmallModal" data-reveal-ajax="true"><i class="fi-paperclip"></i> Importovat dokument</a></li>
             <li><a href="{{URL::route('document.create')}}" class="button success modalLink" data-reveal-id="universalLargeModal" data-reveal-ajax="true"><i class="fi-page-add"></i> Nový dokument</a></li>
         </ul>
     </div>

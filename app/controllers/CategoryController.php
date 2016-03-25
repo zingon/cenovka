@@ -45,9 +45,9 @@ class CategoryController extends BaseController
             foreach ($this->saveValues() as $key => $value) {
                 $save[$key] = Input::get($key);
             }
-            $last = Auth::getUser()->categories()->orderBy('code','DESC')->first();
+            
 
-            $save['code']   = isset($last->code)?sprintf("%03s",$last->code+1):sprintf("%03s","1");
+            $save['code']   = self::getCode();
             $save['class']  = implode('-', explode(' ', Input::get('name')));
 
             $category = new Category($save);
@@ -139,5 +139,13 @@ class CategoryController extends BaseController
             'name' => 'required|max:255',
             'note' => 'max:65535',
             );
+    }
+    public static function saveValuesForAll() {
+        return array('name','note');
+    }
+
+    public static function getCode() {
+         $last = Auth::getUser()->categories()->orderBy('code','DESC')->first();
+         return isset($last->code)?sprintf("%03s",$last->code+1):sprintf("%03s","1");
     }
 }

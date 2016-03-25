@@ -78,16 +78,7 @@ class OfferController extends BaseController {
 
 			$last = Auth::getUser()->documents()->orderBy('created_at','desc')->first();
 
-			if(empty($last->code)){
-				$code = sprintf("%04s","1") ."/".date('Y',time());
-			} else {
-				$last_code = explode('/',$last->code);
-				if($last_code[1]!=date('Y',time())){
-					$code = sprintf("%04s","1") ."/".date('Y',time());
-				} else {
-					$code = sprintf("%04s",($last_code[0]+1)) ."/".date('Y',time());
-				}
-			}
+			$code = self::getCode();
 			$expire = Input::get("expire");$vystaven = Input::get("expire");
 
 			$expire = DateTime::createFromFormat('d.m.Y', $expire);
@@ -318,6 +309,26 @@ class OfferController extends BaseController {
 				'note' 		=> 'max:65535',
 				'dph' 		=> 'required|numeric|in:21,15,0',
 			);
+	}
+	public static function saveValuesForAll()
+	{
+		return array('name','vystaven','expire','note','dph');
+	}
+
+	public static function getCode() {
+		$last = Auth::getUser()->documents()->orderBy('created_at','desc')->first();
+
+			if(empty($last->code)){
+				$code = sprintf("%04s","1") ."/".date('Y',time());
+			} else {
+				$last_code = explode('/',$last->code);
+				if($last_code[1]!=date('Y',time())){
+					$code = sprintf("%04s","1") ."/".date('Y',time());
+				} else {
+					$code = sprintf("%04s",($last_code[0]+1)) ."/".date('Y',time());
+				}
+			}
+			return $code;
 	}
 
 }

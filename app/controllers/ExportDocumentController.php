@@ -93,7 +93,7 @@ class ExportDocumentController extends \BaseController {
 	}
 
 	public function exportDocument($document_id) {
-		$document = Auth::getUser()->documents()->with("odberatel","items_conection","items_conection.item","user.user_setting","user")->find($document_id);
+		$document = Auth::getUser()->documents()->with("odberatel","items_conection","items_conection.item","items_conection.item.category","user.user_setting","user")->find($document_id);
 			$document->total_price = 0;
 				$dph_kons = $document->dph/100;
 				foreach ($document->items_conection as $key => $item) {

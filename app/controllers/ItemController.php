@@ -43,7 +43,7 @@ class ItemController extends BaseController
 	}
 	
 	public function getItems() {
-		$items = Auth::user()->items()->with("category")->orderBy('poradi', 'asc')->get();
+		$items = Auth::user()->items()->with("category")->orderBy('code', 'desc')->get();
 		return Response::json($items);
 	}
 	/**
@@ -80,30 +80,17 @@ class ItemController extends BaseController
 			return Redirect::back()->withErrors($validator);
 		}
 		else {
-
 			$save = array();
 			foreach ($this->saveValues() as $key => $value) {
 				$save[$key] = Input::get($key);
 			}
 
-			$category = Auth::getUser()->categories()->find(Input::get('category'));
+			$save['code'] = self::getCode(Input::get('category'));
 
-			$last = $category->items()->orderBy('created_at', 'desc')->first();
-			 // největší identifikační číslo
-
-			if (empty($last->code)) {
-				$code = sprintf("%04s", "1");
-			}
-			else {
-				$code = sprintf("%04s", ($last->code + 1));
-			}
-			$category = Auth::getUser()->categories()->find(Input::get('category'));
 			$last = $category->items()->orderBy('poradi', 'desc')->first();
-
-
-			$save['code'] = $code . "/" . $category->code;
 			$save['poradi'] = empty($last->poradi) ? 1 : $last->poradi + 1;
 
+			$category = Auth::getUser()->categories()->find(Input::get('category'));
 			$item = new Item($save);
 			$item->category()->associate($category);
 
@@ -202,5 +189,25 @@ class ItemController extends BaseController
 			'note' => 'max:65535',
 			'unit' => 'required',
 		);
+	}
+	public static function saveValuesForAll() {
+		return array('name',"price","buy_price",'note','unit');
+	}
+
+	public static function getCode($category_id) {
+		$category = Auth::getUser()->categories()->find($category_id);
+
+		$last = $category->items()->orderBy('created_at', 'desc')->first();
+		 // největší identifikační číslo
+
+		if (empty($last->code)) {
+			$code = sprintf("%04s", "1");
+		}
+		else {
+			$code = sprintf("%04s", ($last->code + 1));
+		}
+		$category = Auth::getUser()->categories()->find($category_id);
+		
+		return $code . "/" . $category->code;
 	}
 }

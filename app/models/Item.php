@@ -12,4 +12,7 @@ class Item extends Eloquent {
 	{
 		return $this->belongsTo('Category');
 	}
+	public function user() {
+    	return $this->belongsTo('User');
+    }
 }

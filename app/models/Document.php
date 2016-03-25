@@ -27,4 +27,17 @@ class Document extends Eloquent {
     public function exported() {
         return $this->hasMany('ExportedDocument');
     }
+    
+    public function scopeFindOrCreate($query, $arrayOrId)
+    {
+        if(is_array($arrayOrId)) {
+            foreach ($arrayOrId as $key => $value) {
+                $query->where($key,"=",$value);
+            }
+            $obj = $query->first();
+        } else {
+            $obj = $query->find($id);
+        }
+        return $obj ?: new static;
+    }
 }

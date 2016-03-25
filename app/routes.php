@@ -43,6 +43,7 @@ Route::group(['before' => 'auth'], function () {
 		Route::get('contacts', array('as'=>"api.get.contacts","uses"=>"ContactController@getContacts"));
 		Route::resource("user", "UserController", ['only' => ['edit']]);
 		Route::resource('export', 'ExportDocumentController', ['only' => ['index']]);
+		Route::resource('import', 'ImportDocumentController', ['only' => ['create']]);
 
 	});
 
@@ -54,6 +55,7 @@ Route::group(['before' => 'auth'], function () {
 		Route::post('setting/user', array('as' => 'post.setting.user','uses' => 'SettingController@postUserSetting'));
 		Route::resource('select', 'DocumentItemController', ['only' => ['store', 'update', 'destroy']]);
 		Route::resource('user', 'UserController', ['only' => ['update']]);
+		Route::resource('import', 'ImportDocumentController', ['only' => ['store']]);
 	});
 });
 
